@@ -1,5 +1,5 @@
-# Signal processing library
-*STM32 library with high-level abstractions for signal processing (WIP).*
+# Signal Processing library
+*STM32 library with high-level abstractions for Signal Processing (WIP).*
 
 [![build](https://github.com/NikitaEvs/signal_stm/actions/workflows/build.yml/badge.svg)](https://github.com/NikitaEvs/signal_stm/actions/workflows/build.yml)
 [![docs](https://github.com/NikitaEvs/signal_stm/actions/workflows/docs.yml/badge.svg)](https://github.com/NikitaEvs/signal_stm/actions/workflows/docs.yml)
