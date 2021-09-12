@@ -1,0 +1,30 @@
+name: docs
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: GenerateDocs
+        run : |
+          echo "Start creating a documentation ^_^"
+          sudo apt install doxygen
+          sudo apt install graphviz
+          cd Docs
+          doxygen Doxyfile
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: Docs
