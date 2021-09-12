@@ -41,6 +41,20 @@ class AsyncBuffer : public Hardware::DMAPipe {
                       settings);
   }
 
+  void SetInputCallback(std::function<void()>&& callback) {
+    auto& input = GetInput();
+    if (input) {
+      input->SetCallback(std::move(callback));
+    }
+  }
+
+  void SetOutputCallback(std::function<void()>&& callback) {
+    auto& output = GetOutput();
+    if (output) {
+      output->SetCallback(std::move(callback));
+    }
+  }
+
   void EnableInput() {
     auto& input = GetInput();
     if (input) {
