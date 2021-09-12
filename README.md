@@ -1,5 +1,5 @@
 # Signal processing library
-STM32 library with high-level abstractions for signal processing (WIP)
+STM32 library with high-level abstractions for signal processing (WIP).
     
 ---    
 ## Examples
