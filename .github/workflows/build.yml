@@ -1,0 +1,17 @@
+name: build
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build
+        run : |
+          mkdir build
+          cd build
+          cmake -DCMAKE_TOOLCHAIN_FILE=../CMake/arm-none-eabi-gcc.cmake ..
+          make
