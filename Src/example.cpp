@@ -60,6 +60,9 @@ int main() {
   adc.Calibrate();
   adc.Read();
 
+  // Enable DMA for the ADC
+  buffer.EnableInput();
+
   // Do something in the main loop while data is processed in the background
   while (true) {
     led.On();
