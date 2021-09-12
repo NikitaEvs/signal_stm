@@ -59,3 +59,30 @@ This library provide high-level asynchronous abstractions that can be useful in 
 
 Guide for other devices support coming soon.
 ### Documentation
+
+## Build
+### Prerequisites
+- An arm-none-eabi toolchain.
+- gcc 9.3.0 with stdlib C++20.
+### Example compilation and execution
+Firstly, compile the project:
+```shell
+mkdir build
+cd build
+cmake -DCMAKE_TOOLCHAIN_FILE=../CMake/arm-none-eabi-gcc.cmake ..
+make
+```
+In case of success, you see a message like this:
+```shell
+Memory region         Used Size  Region Size  %age Used
+             RAM:        1752 B        20 KB      8.55%
+           FLASH:       18472 B        64 KB     28.19%
+   text	   data	    bss	    dec	    hex	filename
+  18348	    124	   1640	  20112	   4e90	Example.out
+```
+And you can see ```Example.bin```. You can use 
+this file for booting with programs like ```st-link``` or ```Open OCD```.
+Example for ```st-link```:
+```shell
+st-flash write Example.bin 0x08000000
+```
