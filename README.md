@@ -1,6 +1,8 @@
 # Signal processing library
-STM32 library with high-level abstractions for signal processing (WIP).
-    
+*STM32 library with high-level abstractions for signal processing (WIP).*
+
+[![build](https://github.com/NikitaEvs/signal_stm/actions/workflows/build.yml/badge.svg)](https://github.com/NikitaEvs/signal_stm/actions/workflows/build.yml)
+[![docs](https://github.com/NikitaEvs/signal_stm/actions/workflows/docs.yml/badge.svg)](https://github.com/NikitaEvs/signal_stm/actions/workflows/docs.yml)
 ---    
 ## Examples
 ### Led blinking
@@ -59,6 +61,7 @@ This library provide high-level asynchronous abstractions that can be useful in 
 
 Guide for other devices support coming soon.
 ### Documentation
+[Link to the documentation](https://nikitaevs.github.io/signal_stm/)
 
 ## Build
 ### Prerequisites
