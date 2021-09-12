@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_s_d_1_1_hardware_1_1_abstract_master.html" title="Abstract base class for a hardware&#45;specific implementation of a main control class." alt="" coords="5,5,224,32"/>
+<area shape="rect" id="node2" href="$class_s_d_1_1_specific_1_1_master.html" title="Master&#45;class implementation for a certain controller." alt="" coords="272,5,423,32"/>
+</map>

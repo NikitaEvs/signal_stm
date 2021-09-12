@@ -1,0 +1,11 @@
+<map id="abstract_master.hpp" name="abstract_master.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="242,5,397,32"/>
+<area shape="rect" id="node2" href="$adc_8hpp.html" title=" " alt="" coords="5,155,79,181"/>
+<area shape="rect" id="node3" href="$dma_8hpp.html" title=" " alt="" coords="139,80,217,107"/>
+<area shape="rect" id="node4" href="$uart_8hpp.html" title=" " alt="" coords="160,229,236,256"/>
+<area shape="rect" id="node7" href="$ioport_8hpp.html" title=" " alt="" coords="317,80,405,107"/>
+<area shape="rect" id="node8" href="$led_8hpp.html" title=" " alt="" coords="365,155,436,181"/>
+<area shape="rect" id="node9" href="$master_8hpp.html" title=" " alt="" coords="480,80,575,107"/>
+<area shape="rect" id="node6" href="$buffer_8hpp.html" title=" " alt="" coords="155,155,241,181"/>
+<area shape="rect" id="node5" href="$logger_8hpp.html" title=" " alt="" coords="153,304,243,331"/>
+</map>

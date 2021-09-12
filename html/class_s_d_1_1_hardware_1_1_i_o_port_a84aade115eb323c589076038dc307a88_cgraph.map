@@ -1,0 +1,4 @@
+<map id="SD::Hardware::IOPort::IOPort" name="SD::Hardware::IOPort::IOPort">
+<area shape="rect" id="node1" title="Simple port initialization with a necessary link to the Master in the purpose of an initialization an..." alt="" coords="5,5,164,47"/>
+<area shape="rect" id="node2" href="$class_s_d_1_1_hardware_1_1_abstract_master.html#ad2bb6a798ad7ff22115c5b85ee9f008a" title="Configure the GPIO certain pin for using as a I/O port." alt="" coords="212,5,431,47"/>
+</map>

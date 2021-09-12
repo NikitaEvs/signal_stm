@@ -1,0 +1,21 @@
+var NAVTREEINDEX1 =
+{
+"namespacemembers.html":[0,1,0],
+"namespacemembers_enum.html":[0,1,2],
+"namespacemembers_func.html":[0,1,1],
+"namespaces.html":[0,0],
+"pages.html":[],
+"port_8hpp.html":[2,0,11],
+"port_8hpp_source.html":[2,0,11],
+"struct_s_d_1_1_hardware_1_1_d_m_a_port.html":[1,0,0,0,8],
+"struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a42a9d719c7cf8868e349b966452bdef1":[1,0,0,0,8,1],
+"struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a8aec09df8fd95495135d19216d490b81":[1,0,0,0,8,0],
+"struct_s_d_1_1_hardware_1_1_d_m_a_settings.html":[1,0,0,0,9],
+"struct_s_d_1_1_hardware_1_1_d_m_a_settings.html#a2e533b953ea51af10410f83564998f96":[1,0,0,0,9,0],
+"struct_s_d_1_1_hardware_1_1_d_m_a_settings.html#a331f89a5fe53b941d4a25af144c73537":[1,0,0,0,9,3],
+"struct_s_d_1_1_hardware_1_1_d_m_a_settings.html#a3cb0d0207501224079f75036d050a1bd":[1,0,0,0,9,2],
+"struct_s_d_1_1_hardware_1_1_d_m_a_settings.html#a4c6de9193c34b04637acd84cf502cc28":[1,0,0,0,9,1],
+"struct_s_d_1_1_hardware_1_1_d_m_a_settings.html#a5e164911002df75bd9e278f522150607":[1,0,0,0,9,4],
+"uart_8hpp.html":[2,0,12],
+"uart_8hpp_source.html":[2,0,12]
+};

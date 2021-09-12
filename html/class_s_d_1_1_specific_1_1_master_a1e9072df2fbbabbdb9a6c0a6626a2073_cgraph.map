@@ -1,0 +1,5 @@
+<map id="SD::Specific::Master::ConfigureIOPort" name="SD::Specific::Master::ConfigureIOPort">
+<area shape="rect" id="node1" title=" " alt="" coords="5,39,156,80"/>
+<area shape="rect" id="node2" href="$class_s_d_1_1_specific_1_1_master.html#a0f4f225d72769e7006081710351d71b7" title="Enable clocking on the certain port." alt="" coords="204,5,355,47"/>
+<area shape="rect" id="node3" href="$class_s_d_1_1_specific_1_1_master.html#a3152a554a050d0a245824ccf034256aa" title="Reset the certain pin in the certain port." alt="" coords="204,71,355,112"/>
+</map>
