@@ -56,5 +56,6 @@ This library provide high-level asynchronous abstractions that can be useful in 
 |-----------|----------|
 | STM32F103 | Support  |
 | STM32F411 | Planning |
+
 Guide for other devices support coming soon.
 ### Documentation
