@@ -1,0 +1,5 @@
+-Wuseless-cast
+-Wsuggest-override
+
+-fno-exceptions
+-fno-rtti
