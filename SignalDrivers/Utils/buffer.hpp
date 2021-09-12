@@ -1,7 +1,6 @@
 #pragma once
 
 #include <array>
-#include <span>
 
 #include "Hardware/dma.hpp"
 
