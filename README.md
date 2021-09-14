@@ -44,7 +44,7 @@ int main() {
 See [example.cpp](Src/example.cpp).
 
 ## Details
-This library provide high-level asynchronous abstractions that can be useful in the effective signal measurement and processing.
+This library provides high-level asynchronous abstractions that can be useful in effective signal measurement and processing.
 
 ### Main features
 | Name                                   | Description                                                                                                                                               | Status      |
