@@ -1,6 +1,5 @@
 var class_s_d_1_1_hardware_1_1_d_m_a_unit =
 [
-    [ "DMAUnit", "class_s_d_1_1_hardware_1_1_d_m_a_unit.html#a45e2de21ce144cc0196c16b6551dd409", null ],
     [ "DMAUnit", "class_s_d_1_1_hardware_1_1_d_m_a_unit.html#aec7e45ee53f00919849655a4f18aaafb", null ],
     [ "DMAUnit", "class_s_d_1_1_hardware_1_1_d_m_a_unit.html#a642236eee4cb1f82cdffb9026ba90fd8", null ],
     [ "DMAUnit", "class_s_d_1_1_hardware_1_1_d_m_a_unit.html#af45ddb66681557fbef79462468bb3d3e", null ],

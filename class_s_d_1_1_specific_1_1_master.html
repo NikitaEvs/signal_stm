@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('class_s_d_1_1_specific_1_1_master.html
 <p>Master-class implementation for a certain controller.  
  <a href="class_s_d_1_1_specific_1_1_master.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="master_8hpp_source.html">master.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">master.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for SD::Specific::Master:</div>
 <div class="dyncontent">
@@ -153,32 +153,92 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7cd16c76ebacd13113d8d722d2365d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1d0740eb8e7342edadfb40a082206c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#ab1d0740eb8e7342edadfb40a082206c7">ConfigureADC</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a> device, uint8_t channels_number, bool isDMA) const override</td></tr>
 <tr class="separator:ab1d0740eb8e7342edadfb40a082206c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ae9ec6f4aadae211f11093c84fb875e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a0ae9ec6f4aadae211f11093c84fb875e">ConfigureDMAInterruption</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156">Hardware::DMADevice</a> device, <a class="el" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06b">Hardware::DMAChannel</a> channel) const override</td></tr>
-<tr class="separator:a0ae9ec6f4aadae211f11093c84fb875e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1c1047b02a3f21ff009de5675600be3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#ad1c1047b02a3f21ff009de5675600be3">ConfigureDMA</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156">Hardware::DMADevice</a> dma_device, <a class="el" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06b">Hardware::DMAChannel</a> dma_channel, const <a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_settings.html">Hardware::DMASettings</a> &amp;settings, uint32_t periph_or_src_address, uint32_t mem_or_dst_address, uint32_t size) const override</td></tr>
-<tr class="separator:ad1c1047b02a3f21ff009de5675600be3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b84a4097ebecb0ab157552c804acc88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a8b84a4097ebecb0ab157552c804acc88">ConfigureDMA</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156">Hardware::DMADevice</a> dma_device, <a class="el" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06b">Hardware::DMAChannel</a> dma_channel, const <a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_settings.html">Hardware::DMASettings</a> &amp;settings, <a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a> adc_device, uint32_t mem_address, uint32_t size) const override</td></tr>
-<tr class="separator:a8b84a4097ebecb0ab157552c804acc88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c2d199c662b24d8d8dccb1bfc8a0ac8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a5c2d199c662b24d8d8dccb1bfc8a0ac8">ConfigureDMA</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156">Hardware::DMADevice</a> dma_device, <a class="el" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06b">Hardware::DMAChannel</a> dma_channel, const <a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_settings.html">Hardware::DMASettings</a> &amp;settings, <a class="el" href="namespace_s_d_1_1_hardware.html#ad1e8b1bacc9a620a73832d79b77632d6">Hardware::UART</a> uart_device, uint32_t mem_address, uint32_t size) const override</td></tr>
-<tr class="separator:a5c2d199c662b24d8d8dccb1bfc8a0ac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac11c1e5484a5538d53799e24ed1ab203"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#ac11c1e5484a5538d53799e24ed1ab203">EnableDMA</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156">Hardware::DMADevice</a> device, <a class="el" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06b">Hardware::DMAChannel</a> channel) const override</td></tr>
-<tr class="separator:ac11c1e5484a5538d53799e24ed1ab203"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af097294c96c7e888a82af17990581caf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#af097294c96c7e888a82af17990581caf">DisableDMA</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156">Hardware::DMADevice</a> device, <a class="el" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06b">Hardware::DMAChannel</a> channel) const override</td></tr>
-<tr class="separator:af097294c96c7e888a82af17990581caf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43e8a6ced3f2f4eda21961a1e4eceffa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a43e8a6ced3f2f4eda21961a1e4eceffa">SetDMACallback</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156">Hardware::DMADevice</a> device, <a class="el" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06b">Hardware::DMAChannel</a> channel, std::function&lt; void()&gt; &amp;&amp;func) override</td></tr>
-<tr class="separator:a43e8a6ced3f2f4eda21961a1e4eceffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8355b1a2ab89615b74e02d9ad90ddba4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a8355b1a2ab89615b74e02d9ad90ddba4">DMACallback</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156">Hardware::DMADevice</a> device, <a class="el" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06b">Hardware::DMAChannel</a> channel) const</td></tr>
-<tr class="separator:a8355b1a2ab89615b74e02d9ad90ddba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acceecfda00d1d24122b4e91da49dd481"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#acceecfda00d1d24122b4e91da49dd481">ConfigureDMAInterruption</a> (<a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port) const override</td></tr>
+<tr class="separator:acceecfda00d1d24122b4e91da49dd481"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5b5016154a6511c225a5dd610c2c546"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#ae5b5016154a6511c225a5dd610c2c546">ConfigureDMA</a> (<a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port, const <a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_settings.html">Hardware::DMASettings</a> &amp;settings, uint32_t periph_or_src_address, uint32_t mem_or_dst_address, uint32_t size) const override</td></tr>
+<tr class="separator:ae5b5016154a6511c225a5dd610c2c546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a64868de82a090b9583eeee2efa2130"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a8a64868de82a090b9583eeee2efa2130">ConfigureDMA</a> (<a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port, const <a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_settings.html">Hardware::DMASettings</a> &amp;settings, <a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a> adc_device, uint32_t mem_address, uint32_t size) const override</td></tr>
+<tr class="separator:a8a64868de82a090b9583eeee2efa2130"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca77efe993b1f4856eb45c6cfcece70b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#aca77efe993b1f4856eb45c6cfcece70b">ConfigureDMA</a> (<a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port, const <a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_settings.html">Hardware::DMASettings</a> &amp;settings, <a class="el" href="namespace_s_d_1_1_hardware.html#ad1e8b1bacc9a620a73832d79b77632d6">Hardware::UART</a> uart_device, uint32_t mem_address, uint32_t size) const override</td></tr>
+<tr class="separator:aca77efe993b1f4856eb45c6cfcece70b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ed9fd066c718418e24ed6c5bb501cb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a4ed9fd066c718418e24ed6c5bb501cb6">EnableDMA</a> (<a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port) const override</td></tr>
+<tr class="separator:a4ed9fd066c718418e24ed6c5bb501cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbc2802388b263a35dd98871edca4647"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#afbc2802388b263a35dd98871edca4647">DisableDMA</a> (<a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port) const override</td></tr>
+<tr class="separator:afbc2802388b263a35dd98871edca4647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37b6b041911a06e7c0036bfe6d6edba0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a37b6b041911a06e7c0036bfe6d6edba0">SetDMACallback</a> (<a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port, std::function&lt; void()&gt; &amp;&amp;func) override</td></tr>
+<tr class="separator:a37b6b041911a06e7c0036bfe6d6edba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a85aa3d5f1e776320adf9902be1f181"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a8a85aa3d5f1e776320adf9902be1f181">DMACallback</a> (<a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port) const</td></tr>
+<tr class="separator:a8a85aa3d5f1e776320adf9902be1f181"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65ced6d6d41ab067f4d66941f68e3b85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a65ced6d6d41ab067f4d66941f68e3b85">ReadADCAsync</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a> device) const override</td></tr>
+<tr class="separator:a65ced6d6d41ab067f4d66941f68e3b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fa98cb3e6ccf0b0051ad83593c272f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a2fa98cb3e6ccf0b0051ad83593c272f6">EnableClocking</a> () const override</td></tr>
+<tr class="memdesc:a2fa98cb3e6ccf0b0051ad83593c272f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">System clock configuration The system clock is configured as follow:  <a href="class_s_d_1_1_specific_1_1_master.html#a2fa98cb3e6ccf0b0051ad83593c272f6">More...</a><br /></td></tr>
+<tr class="separator:a2fa98cb3e6ccf0b0051ad83593c272f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad78ec6d2522399890e868b5b3ebe9110"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#ad78ec6d2522399890e868b5b3ebe9110">Delay</a> (uint32_t millis) const override</td></tr>
+<tr class="separator:ad78ec6d2522399890e868b5b3ebe9110"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f4f225d72769e7006081710351d71b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a0f4f225d72769e7006081710351d71b7">ClockPort</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#ab116e9e8f29c58a522a398a4bd1b6717">Hardware::GPIO</a> port) const override</td></tr>
+<tr class="memdesc:a0f4f225d72769e7006081710351d71b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable clocking on the certain port.  <a href="class_s_d_1_1_specific_1_1_master.html#a0f4f225d72769e7006081710351d71b7">More...</a><br /></td></tr>
+<tr class="separator:a0f4f225d72769e7006081710351d71b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e9072df2fbbabbdb9a6c0a6626a2073"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a1e9072df2fbbabbdb9a6c0a6626a2073">ConfigureIOPort</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#ab116e9e8f29c58a522a398a4bd1b6717">Hardware::GPIO</a> port, <a class="el" href="namespace_s_d_1_1_hardware.html#aa3de14d9eb7caec3aaa2c2401350e003">Hardware::Pin</a> pin) const override</td></tr>
+<tr class="separator:a1e9072df2fbbabbdb9a6c0a6626a2073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32b32091a5c143e7914d91d626694e92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a32b32091a5c143e7914d91d626694e92">SetIOPort</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#ab116e9e8f29c58a522a398a4bd1b6717">Hardware::GPIO</a> port, <a class="el" href="namespace_s_d_1_1_hardware.html#aa3de14d9eb7caec3aaa2c2401350e003">Hardware::Pin</a> pin) const override</td></tr>
+<tr class="memdesc:a32b32091a5c143e7914d91d626694e92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the certain pin in the certain port.  <a href="class_s_d_1_1_specific_1_1_master.html#a32b32091a5c143e7914d91d626694e92">More...</a><br /></td></tr>
+<tr class="separator:a32b32091a5c143e7914d91d626694e92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3152a554a050d0a245824ccf034256aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a3152a554a050d0a245824ccf034256aa">ResetIOPort</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#ab116e9e8f29c58a522a398a4bd1b6717">Hardware::GPIO</a> port, <a class="el" href="namespace_s_d_1_1_hardware.html#aa3de14d9eb7caec3aaa2c2401350e003">Hardware::Pin</a> pin) const override</td></tr>
+<tr class="memdesc:a3152a554a050d0a245824ccf034256aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the certain pin in the certain port.  <a href="class_s_d_1_1_specific_1_1_master.html#a3152a554a050d0a245824ccf034256aa">More...</a><br /></td></tr>
+<tr class="separator:a3152a554a050d0a245824ccf034256aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a5a511fd03fac5ee5771d1db7036684"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a0a5a511fd03fac5ee5771d1db7036684">ConfigureUART</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#ad1e8b1bacc9a620a73832d79b77632d6">Hardware::UART</a> uart, bool async) const override</td></tr>
+<tr class="separator:a0a5a511fd03fac5ee5771d1db7036684"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac26bb3c3be57ecb525e4191b2157a019"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#ac26bb3c3be57ecb525e4191b2157a019">SendByteUARTBlocking</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#ad1e8b1bacc9a620a73832d79b77632d6">Hardware::UART</a> uart, uint8_t byte) const override</td></tr>
+<tr class="separator:ac26bb3c3be57ecb525e4191b2157a019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0705d0a8afd68d2957aaba224a21f7a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#aa0705d0a8afd68d2957aaba224a21f7a">ReceiveByteUARTBlocking</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#ad1e8b1bacc9a620a73832d79b77632d6">Hardware::UART</a> uart) const override</td></tr>
+<tr class="separator:aa0705d0a8afd68d2957aaba224a21f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab52019e2b7ee9660609c6c3c1795ab29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#ab52019e2b7ee9660609c6c3c1795ab29">ConfigureADCSingleChannelBlocking</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a> device, <a class="el" href="namespace_s_d_1_1_hardware.html#ab116e9e8f29c58a522a398a4bd1b6717">Hardware::GPIO</a> port, <a class="el" href="namespace_s_d_1_1_hardware.html#aa3de14d9eb7caec3aaa2c2401350e003">Hardware::Pin</a> pin) const override</td></tr>
+<tr class="separator:ab52019e2b7ee9660609c6c3c1795ab29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c1424fd57eb16ad7b73989a32e05d19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a2c1424fd57eb16ad7b73989a32e05d19">CalibrateADC</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a> device) const override</td></tr>
+<tr class="separator:a2c1424fd57eb16ad7b73989a32e05d19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af064375b0712a1d8eab9fcec6bb2ce71"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#af064375b0712a1d8eab9fcec6bb2ce71">ReadADC</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a> device) const override</td></tr>
+<tr class="separator:af064375b0712a1d8eab9fcec6bb2ce71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfb894f467f99e6f76e9ffb126cfa94a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#acfb894f467f99e6f76e9ffb126cfa94a">ClockADC</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a> device) const override</td></tr>
+<tr class="separator:acfb894f467f99e6f76e9ffb126cfa94a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b60a07313a44dda2de915adcb6ea569"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a6b60a07313a44dda2de915adcb6ea569">AddADCChannel</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a> device, uint8_t rank, <a class="el" href="namespace_s_d_1_1_hardware.html#ab116e9e8f29c58a522a398a4bd1b6717">Hardware::GPIO</a> port, <a class="el" href="namespace_s_d_1_1_hardware.html#aa3de14d9eb7caec3aaa2c2401350e003">Hardware::Pin</a> pin) const override</td></tr>
+<tr class="separator:a6b60a07313a44dda2de915adcb6ea569"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a652123dc34c322ce7c4cdad1e0cab040"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a652123dc34c322ce7c4cdad1e0cab040">ConfigureADCDataSingleChannel</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a> device) const override</td></tr>
+<tr class="separator:a652123dc34c322ce7c4cdad1e0cab040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cd16c76ebacd13113d8d722d2365d20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a7cd16c76ebacd13113d8d722d2365d20">ConfigureADCDataScanning</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a> device) const override</td></tr>
+<tr class="separator:a7cd16c76ebacd13113d8d722d2365d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1d0740eb8e7342edadfb40a082206c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#ab1d0740eb8e7342edadfb40a082206c7">ConfigureADC</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a> device, uint8_t channels_number, bool isDMA) const override</td></tr>
+<tr class="separator:ab1d0740eb8e7342edadfb40a082206c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8faf86462bb3c15fd4791f7a3470088b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a8faf86462bb3c15fd4791f7a3470088b">GetDMAMapping</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a> device) const override</td></tr>
+<tr class="separator:a8faf86462bb3c15fd4791f7a3470088b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a3c82569d6c2dd22d0377bce09eeb81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a4a3c82569d6c2dd22d0377bce09eeb81">GetDMAMapping</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#ad1e8b1bacc9a620a73832d79b77632d6">Hardware::UART</a> device, bool isTX) const override</td></tr>
+<tr class="separator:a4a3c82569d6c2dd22d0377bce09eeb81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acceecfda00d1d24122b4e91da49dd481"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#acceecfda00d1d24122b4e91da49dd481">ConfigureDMAInterruption</a> (<a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port) const override</td></tr>
+<tr class="separator:acceecfda00d1d24122b4e91da49dd481"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5b5016154a6511c225a5dd610c2c546"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#ae5b5016154a6511c225a5dd610c2c546">ConfigureDMA</a> (<a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port, const <a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_settings.html">Hardware::DMASettings</a> &amp;settings, uint32_t periph_or_src_address, uint32_t mem_or_dst_address, uint32_t size) const override</td></tr>
+<tr class="separator:ae5b5016154a6511c225a5dd610c2c546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a64868de82a090b9583eeee2efa2130"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a8a64868de82a090b9583eeee2efa2130">ConfigureDMA</a> (<a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port, const <a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_settings.html">Hardware::DMASettings</a> &amp;settings, <a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a> adc_device, uint32_t mem_address, uint32_t size) const override</td></tr>
+<tr class="separator:a8a64868de82a090b9583eeee2efa2130"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca77efe993b1f4856eb45c6cfcece70b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#aca77efe993b1f4856eb45c6cfcece70b">ConfigureDMA</a> (<a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port, const <a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_settings.html">Hardware::DMASettings</a> &amp;settings, <a class="el" href="namespace_s_d_1_1_hardware.html#ad1e8b1bacc9a620a73832d79b77632d6">Hardware::UART</a> uart_device, uint32_t mem_address, uint32_t size) const override</td></tr>
+<tr class="separator:aca77efe993b1f4856eb45c6cfcece70b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ed9fd066c718418e24ed6c5bb501cb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a4ed9fd066c718418e24ed6c5bb501cb6">EnableDMA</a> (<a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port) const override</td></tr>
+<tr class="separator:a4ed9fd066c718418e24ed6c5bb501cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbc2802388b263a35dd98871edca4647"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#afbc2802388b263a35dd98871edca4647">DisableDMA</a> (<a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port) const override</td></tr>
+<tr class="separator:afbc2802388b263a35dd98871edca4647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37b6b041911a06e7c0036bfe6d6edba0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a37b6b041911a06e7c0036bfe6d6edba0">SetDMACallback</a> (<a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port, std::function&lt; void()&gt; &amp;&amp;func) override</td></tr>
+<tr class="separator:a37b6b041911a06e7c0036bfe6d6edba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a85aa3d5f1e776320adf9902be1f181"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a8a85aa3d5f1e776320adf9902be1f181">DMACallback</a> (<a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port) const</td></tr>
+<tr class="separator:a8a85aa3d5f1e776320adf9902be1f181"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65ced6d6d41ab067f4d66941f68e3b85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_specific_1_1_master.html#a65ced6d6d41ab067f4d66941f68e3b85">ReadADCAsync</a> (<a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a> device) const override</td></tr>
 <tr class="separator:a65ced6d6d41ab067f4d66941f68e3b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Master-class implementation for a certain controller. </p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00027">27</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00027">27</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a6b60a07313a44dda2de915adcb6ea569"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b60a07313a44dda2de915adcb6ea569">&#9670;&nbsp;</a></span>AddADCChannel()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b60a07313a44dda2de915adcb6ea569">&#9670;&nbsp;</a></span>AddADCChannel() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -225,7 +285,68 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a879b629a7f145e2a0922e320f8a40031">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00220">220</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00220">220</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_s_d_1_1_specific_1_1_master_a6b60a07313a44dda2de915adcb6ea569_cgraph.png" border="0" usemap="#class_s_d_1_1_specific_1_1_master_a6b60a07313a44dda2de915adcb6ea569_cgraph" alt=""/></div>
+<map name="class_s_d_1_1_specific_1_1_master_a6b60a07313a44dda2de915adcb6ea569_cgraph" id="class_s_d_1_1_specific_1_1_master_a6b60a07313a44dda2de915adcb6ea569_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,156,47"/>
+<area shape="rect" href="class_s_d_1_1_specific_1_1_master.html#a0f4f225d72769e7006081710351d71b7" title="Enable clocking on the certain port." alt="" coords="204,5,355,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6b60a07313a44dda2de915adcb6ea569"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b60a07313a44dda2de915adcb6ea569">&#9670;&nbsp;</a></span>AddADCChannel() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::AddADCChannel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a>&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>rank</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#ab116e9e8f29c58a522a398a4bd1b6717">Hardware::GPIO</a>&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#aa3de14d9eb7caec3aaa2c2401350e003">Hardware::Pin</a>&#160;</td>
+          <td class="paramname"><em>pin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a879b629a7f145e2a0922e320f8a40031">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00221">221</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -239,7 +360,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <a id="a2c1424fd57eb16ad7b73989a32e05d19"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c1424fd57eb16ad7b73989a32e05d19">&#9670;&nbsp;</a></span>CalibrateADC()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c1424fd57eb16ad7b73989a32e05d19">&#9670;&nbsp;</a></span>CalibrateADC() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -264,12 +385,42 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#aca4478eea90d3a2a260f8d3416834f59">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00191">191</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00191">191</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a2c1424fd57eb16ad7b73989a32e05d19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c1424fd57eb16ad7b73989a32e05d19">&#9670;&nbsp;</a></span>CalibrateADC() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::CalibrateADC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a>&#160;</td>
+          <td class="paramname"><em>device</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#aca4478eea90d3a2a260f8d3416834f59">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00196">196</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
 
 </div>
 </div>
 <a id="acfb894f467f99e6f76e9ffb126cfa94a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfb894f467f99e6f76e9ffb126cfa94a">&#9670;&nbsp;</a></span>ClockADC()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acfb894f467f99e6f76e9ffb126cfa94a">&#9670;&nbsp;</a></span>ClockADC() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -294,12 +445,42 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a7f029b28afed9554df2385ad1d12eb5e">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00213">213</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00213">213</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="acfb894f467f99e6f76e9ffb126cfa94a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfb894f467f99e6f76e9ffb126cfa94a">&#9670;&nbsp;</a></span>ClockADC() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::ClockADC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a>&#160;</td>
+          <td class="paramname"><em>device</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a7f029b28afed9554df2385ad1d12eb5e">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00214">214</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a0f4f225d72769e7006081710351d71b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f4f225d72769e7006081710351d71b7">&#9670;&nbsp;</a></span>ClockPort()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f4f225d72769e7006081710351d71b7">&#9670;&nbsp;</a></span>ClockPort() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -332,12 +513,50 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a9c3eea3e487400ea1811fae6060d758f">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00087">87</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00087">87</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0f4f225d72769e7006081710351d71b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f4f225d72769e7006081710351d71b7">&#9670;&nbsp;</a></span>ClockPort() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::ClockPort </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#ab116e9e8f29c58a522a398a4bd1b6717">Hardware::GPIO</a>&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enable clocking on the certain port. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a9c3eea3e487400ea1811fae6060d758f">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00089">89</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
 
 </div>
 </div>
 <a id="ab1d0740eb8e7342edadfb40a082206c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1d0740eb8e7342edadfb40a082206c7">&#9670;&nbsp;</a></span>ConfigureADC()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1d0740eb8e7342edadfb40a082206c7">&#9670;&nbsp;</a></span>ConfigureADC() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -378,12 +597,58 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#ac4b0a98dd8438b924262e37e2e238e1c">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00255">255</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00255">255</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ab1d0740eb8e7342edadfb40a082206c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1d0740eb8e7342edadfb40a082206c7">&#9670;&nbsp;</a></span>ConfigureADC() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::ConfigureADC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a>&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>channels_number</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isDMA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#ac4b0a98dd8438b924262e37e2e238e1c">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00259">259</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a7cd16c76ebacd13113d8d722d2365d20"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7cd16c76ebacd13113d8d722d2365d20">&#9670;&nbsp;</a></span>ConfigureADCDataScanning()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cd16c76ebacd13113d8d722d2365d20">&#9670;&nbsp;</a></span>ConfigureADCDataScanning() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -408,12 +673,42 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#aa2e8a590711179508781f6af916665f0">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00248">248</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00248">248</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a7cd16c76ebacd13113d8d722d2365d20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cd16c76ebacd13113d8d722d2365d20">&#9670;&nbsp;</a></span>ConfigureADCDataScanning() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::ConfigureADCDataScanning </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a>&#160;</td>
+          <td class="paramname"><em>device</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#aa2e8a590711179508781f6af916665f0">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00251">251</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a652123dc34c322ce7c4cdad1e0cab040"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a652123dc34c322ce7c4cdad1e0cab040">&#9670;&nbsp;</a></span>ConfigureADCDataSingleChannel()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a652123dc34c322ce7c4cdad1e0cab040">&#9670;&nbsp;</a></span>ConfigureADCDataSingleChannel() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -438,12 +733,42 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a0895a2aecfebfede9c70d21c1d8fa8c0">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00240">240</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00240">240</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a652123dc34c322ce7c4cdad1e0cab040"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a652123dc34c322ce7c4cdad1e0cab040">&#9670;&nbsp;</a></span>ConfigureADCDataSingleChannel() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::ConfigureADCDataSingleChannel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a>&#160;</td>
+          <td class="paramname"><em>device</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a0895a2aecfebfede9c70d21c1d8fa8c0">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00242">242</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
 
 </div>
 </div>
 <a id="ab52019e2b7ee9660609c6c3c1795ab29"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab52019e2b7ee9660609c6c3c1795ab29">&#9670;&nbsp;</a></span>ConfigureADCSingleChannelBlocking()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab52019e2b7ee9660609c6c3c1795ab29">&#9670;&nbsp;</a></span>ConfigureADCSingleChannelBlocking() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -484,12 +809,58 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#ad5526cb7e00cae0b4a2388d3c74a9d7a">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00153">153</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00153">153</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a8b84a4097ebecb0ab157552c804acc88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b84a4097ebecb0ab157552c804acc88">&#9670;&nbsp;</a></span>ConfigureDMA() <span class="overload">[1/3]</span></h2>
+<a id="ab52019e2b7ee9660609c6c3c1795ab29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab52019e2b7ee9660609c6c3c1795ab29">&#9670;&nbsp;</a></span>ConfigureADCSingleChannelBlocking() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::ConfigureADCSingleChannelBlocking </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a>&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#ab116e9e8f29c58a522a398a4bd1b6717">Hardware::GPIO</a>&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#aa3de14d9eb7caec3aaa2c2401350e003">Hardware::Pin</a>&#160;</td>
+          <td class="paramname"><em>pin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#ad5526cb7e00cae0b4a2388d3c74a9d7a">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00156">156</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8a64868de82a090b9583eeee2efa2130"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a64868de82a090b9583eeee2efa2130">&#9670;&nbsp;</a></span>ConfigureDMA() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -500,14 +871,8 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void SD::Specific::Master::ConfigureDMA </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156">Hardware::DMADevice</a>&#160;</td>
-          <td class="paramname"><em>dma_device</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06b">Hardware::DMAChannel</a>&#160;</td>
-          <td class="paramname"><em>dma_channel</em>, </td>
+          <td class="paramtype"><a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a>&#160;</td>
+          <td class="paramname"><em>dma_port</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -546,23 +911,23 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#ae91697c1a417ac7316b1b69d9f556c6a">SD::Hardware::AbstractMaster</a>.</p>
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a9abbb21333604af48424c0b1c7364d73">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00308">308</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00306">306</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_s_d_1_1_specific_1_1_master_a8b84a4097ebecb0ab157552c804acc88_cgraph.png" border="0" usemap="#class_s_d_1_1_specific_1_1_master_a8b84a4097ebecb0ab157552c804acc88_cgraph" alt=""/></div>
-<map name="class_s_d_1_1_specific_1_1_master_a8b84a4097ebecb0ab157552c804acc88_cgraph" id="class_s_d_1_1_specific_1_1_master_a8b84a4097ebecb0ab157552c804acc88_cgraph">
+<div class="center"><img src="class_s_d_1_1_specific_1_1_master_a8a64868de82a090b9583eeee2efa2130_cgraph.png" border="0" usemap="#class_s_d_1_1_specific_1_1_master_a8a64868de82a090b9583eeee2efa2130_cgraph" alt=""/></div>
+<map name="class_s_d_1_1_specific_1_1_master_a8a64868de82a090b9583eeee2efa2130_cgraph" id="class_s_d_1_1_specific_1_1_master_a8a64868de82a090b9583eeee2efa2130_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,156,47"/>
-<area shape="rect" href="class_s_d_1_1_specific_1_1_master.html#ad1c1047b02a3f21ff009de5675600be3" title=" " alt="" coords="204,5,355,47"/>
+<area shape="rect" href="class_s_d_1_1_specific_1_1_master.html#ae5b5016154a6511c225a5dd610c2c546" title=" " alt="" coords="204,5,355,47"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a5c2d199c662b24d8d8dccb1bfc8a0ac8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c2d199c662b24d8d8dccb1bfc8a0ac8">&#9670;&nbsp;</a></span>ConfigureDMA() <span class="overload">[2/3]</span></h2>
+<a id="a8a64868de82a090b9583eeee2efa2130"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a64868de82a090b9583eeee2efa2130">&#9670;&nbsp;</a></span>ConfigureDMA() <span class="overload">[2/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -573,14 +938,75 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void SD::Specific::Master::ConfigureDMA </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156">Hardware::DMADevice</a>&#160;</td>
-          <td class="paramname"><em>dma_device</em>, </td>
+          <td class="paramtype"><a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a>&#160;</td>
+          <td class="paramname"><em>dma_port</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06b">Hardware::DMAChannel</a>&#160;</td>
-          <td class="paramname"><em>dma_channel</em>, </td>
+          <td class="paramtype">const <a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_settings.html">Hardware::DMASettings</a> &amp;&#160;</td>
+          <td class="paramname"><em>settings</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a>&#160;</td>
+          <td class="paramname"><em>adc_device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>mem_address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a9abbb21333604af48424c0b1c7364d73">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00349">349</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_s_d_1_1_specific_1_1_master_a8a64868de82a090b9583eeee2efa2130_cgraph.png" border="0" usemap="#class_s_d_1_1_specific_1_1_master_a8a64868de82a090b9583eeee2efa2130_cgraph" alt=""/></div>
+<map name="class_s_d_1_1_specific_1_1_master_a8a64868de82a090b9583eeee2efa2130_cgraph" id="class_s_d_1_1_specific_1_1_master_a8a64868de82a090b9583eeee2efa2130_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,156,47"/>
+<area shape="rect" href="class_s_d_1_1_specific_1_1_master.html#ae5b5016154a6511c225a5dd610c2c546" title=" " alt="" coords="204,5,355,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aca77efe993b1f4856eb45c6cfcece70b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca77efe993b1f4856eb45c6cfcece70b">&#9670;&nbsp;</a></span>ConfigureDMA() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::ConfigureDMA </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a>&#160;</td>
+          <td class="paramname"><em>dma_port</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -619,23 +1045,23 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a34dd3bbcbd8d43cfc138bdf3312a62af">SD::Hardware::AbstractMaster</a>.</p>
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#acc5ddc0b9ee5f1a6365b5783c31d1eff">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00321">321</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00318">318</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_s_d_1_1_specific_1_1_master_a5c2d199c662b24d8d8dccb1bfc8a0ac8_cgraph.png" border="0" usemap="#class_s_d_1_1_specific_1_1_master_a5c2d199c662b24d8d8dccb1bfc8a0ac8_cgraph" alt=""/></div>
-<map name="class_s_d_1_1_specific_1_1_master_a5c2d199c662b24d8d8dccb1bfc8a0ac8_cgraph" id="class_s_d_1_1_specific_1_1_master_a5c2d199c662b24d8d8dccb1bfc8a0ac8_cgraph">
+<div class="center"><img src="class_s_d_1_1_specific_1_1_master_aca77efe993b1f4856eb45c6cfcece70b_cgraph.png" border="0" usemap="#class_s_d_1_1_specific_1_1_master_aca77efe993b1f4856eb45c6cfcece70b_cgraph" alt=""/></div>
+<map name="class_s_d_1_1_specific_1_1_master_aca77efe993b1f4856eb45c6cfcece70b_cgraph" id="class_s_d_1_1_specific_1_1_master_aca77efe993b1f4856eb45c6cfcece70b_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,156,47"/>
-<area shape="rect" href="class_s_d_1_1_specific_1_1_master.html#ad1c1047b02a3f21ff009de5675600be3" title=" " alt="" coords="204,5,355,47"/>
+<area shape="rect" href="class_s_d_1_1_specific_1_1_master.html#ae5b5016154a6511c225a5dd610c2c546" title=" " alt="" coords="204,5,355,47"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ad1c1047b02a3f21ff009de5675600be3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1c1047b02a3f21ff009de5675600be3">&#9670;&nbsp;</a></span>ConfigureDMA() <span class="overload">[3/3]</span></h2>
+<a id="aca77efe993b1f4856eb45c6cfcece70b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca77efe993b1f4856eb45c6cfcece70b">&#9670;&nbsp;</a></span>ConfigureDMA() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -646,14 +1072,75 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void SD::Specific::Master::ConfigureDMA </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156">Hardware::DMADevice</a>&#160;</td>
-          <td class="paramname"><em>dma_device</em>, </td>
+          <td class="paramtype"><a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a>&#160;</td>
+          <td class="paramname"><em>dma_port</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06b">Hardware::DMAChannel</a>&#160;</td>
-          <td class="paramname"><em>dma_channel</em>, </td>
+          <td class="paramtype">const <a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_settings.html">Hardware::DMASettings</a> &amp;&#160;</td>
+          <td class="paramname"><em>settings</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#ad1e8b1bacc9a620a73832d79b77632d6">Hardware::UART</a>&#160;</td>
+          <td class="paramname"><em>uart_device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>mem_address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#acc5ddc0b9ee5f1a6365b5783c31d1eff">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00361">361</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_s_d_1_1_specific_1_1_master_aca77efe993b1f4856eb45c6cfcece70b_cgraph.png" border="0" usemap="#class_s_d_1_1_specific_1_1_master_aca77efe993b1f4856eb45c6cfcece70b_cgraph" alt=""/></div>
+<map name="class_s_d_1_1_specific_1_1_master_aca77efe993b1f4856eb45c6cfcece70b_cgraph" id="class_s_d_1_1_specific_1_1_master_aca77efe993b1f4856eb45c6cfcece70b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,156,47"/>
+<area shape="rect" href="class_s_d_1_1_specific_1_1_master.html#ae5b5016154a6511c225a5dd610c2c546" title=" " alt="" coords="204,5,355,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae5b5016154a6511c225a5dd610c2c546"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5b5016154a6511c225a5dd610c2c546">&#9670;&nbsp;</a></span>ConfigureDMA() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::ConfigureDMA </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a>&#160;</td>
+          <td class="paramname"><em>dma_port</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -692,14 +1179,14 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a216bb82ffefb13c05147f343769d4561">SD::Hardware::AbstractMaster</a>.</p>
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a6cd76f6ae1d493cc43b98c91cda11d7f">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00288">288</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00287">287</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a0ae9ec6f4aadae211f11093c84fb875e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ae9ec6f4aadae211f11093c84fb875e">&#9670;&nbsp;</a></span>ConfigureDMAInterruption()</h2>
+<a id="ae5b5016154a6511c225a5dd610c2c546"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5b5016154a6511c225a5dd610c2c546">&#9670;&nbsp;</a></span>ConfigureDMA() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -708,16 +1195,34 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void SD::Specific::Master::ConfigureDMAInterruption </td>
+          <td class="memname">void SD::Specific::Master::ConfigureDMA </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156">Hardware::DMADevice</a>&#160;</td>
-          <td class="paramname"><em>device</em>, </td>
+          <td class="paramtype"><a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a>&#160;</td>
+          <td class="paramname"><em>dma_port</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06b">Hardware::DMAChannel</a>&#160;</td>
-          <td class="paramname"><em>channel</em>&#160;</td>
+          <td class="paramtype">const <a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_settings.html">Hardware::DMASettings</a> &amp;&#160;</td>
+          <td class="paramname"><em>settings</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>periph_or_src_address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>mem_or_dst_address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -732,14 +1237,74 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a32fddae7957a49c6086bd1f617442a38">SD::Hardware::AbstractMaster</a>.</p>
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a6cd76f6ae1d493cc43b98c91cda11d7f">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00279">279</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00328">328</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="acceecfda00d1d24122b4e91da49dd481"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acceecfda00d1d24122b4e91da49dd481">&#9670;&nbsp;</a></span>ConfigureDMAInterruption() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::ConfigureDMAInterruption </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a>&#160;</td>
+          <td class="paramname"><em>dma_port</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a6d5014c44b71990da9d1b43ef390a0ce">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00279">279</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="acceecfda00d1d24122b4e91da49dd481"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acceecfda00d1d24122b4e91da49dd481">&#9670;&nbsp;</a></span>ConfigureDMAInterruption() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::ConfigureDMAInterruption </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a>&#160;</td>
+          <td class="paramname"><em>dma_port</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a6d5014c44b71990da9d1b43ef390a0ce">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00320">320</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a1e9072df2fbbabbdb9a6c0a6626a2073"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e9072df2fbbabbdb9a6c0a6626a2073">&#9670;&nbsp;</a></span>ConfigureIOPort()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e9072df2fbbabbdb9a6c0a6626a2073">&#9670;&nbsp;</a></span>ConfigureIOPort() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -775,7 +1340,58 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#ad2bb6a798ad7ff22115c5b85ee9f008a">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00097">97</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00097">97</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_s_d_1_1_specific_1_1_master_a1e9072df2fbbabbdb9a6c0a6626a2073_cgraph.png" border="0" usemap="#class_s_d_1_1_specific_1_1_master_a1e9072df2fbbabbdb9a6c0a6626a2073_cgraph" alt=""/></div>
+<map name="class_s_d_1_1_specific_1_1_master_a1e9072df2fbbabbdb9a6c0a6626a2073_cgraph" id="class_s_d_1_1_specific_1_1_master_a1e9072df2fbbabbdb9a6c0a6626a2073_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,156,80"/>
+<area shape="rect" href="class_s_d_1_1_specific_1_1_master.html#a0f4f225d72769e7006081710351d71b7" title="Enable clocking on the certain port." alt="" coords="204,5,355,47"/>
+<area shape="rect" href="class_s_d_1_1_specific_1_1_master.html#a3152a554a050d0a245824ccf034256aa" title="Reset the certain pin in the certain port." alt="" coords="204,71,355,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1e9072df2fbbabbdb9a6c0a6626a2073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e9072df2fbbabbdb9a6c0a6626a2073">&#9670;&nbsp;</a></span>ConfigureIOPort() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::ConfigureIOPort </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#ab116e9e8f29c58a522a398a4bd1b6717">Hardware::GPIO</a>&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#aa3de14d9eb7caec3aaa2c2401350e003">Hardware::Pin</a>&#160;</td>
+          <td class="paramname"><em>pin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section warning"><dt>Warning</dt><dd>Currently configure the port as output </dd></dl>
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#ad2bb6a798ad7ff22115c5b85ee9f008a">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00099">99</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -790,7 +1406,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <a id="a0a5a511fd03fac5ee5771d1db7036684"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a5a511fd03fac5ee5771d1db7036684">&#9670;&nbsp;</a></span>ConfigureUART()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a5a511fd03fac5ee5771d1db7036684">&#9670;&nbsp;</a></span>ConfigureUART() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -825,12 +1441,52 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#aeda76e9b81fb4a88e6e7786cdc6caf24">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00123">123</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00123">123</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0a5a511fd03fac5ee5771d1db7036684"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a5a511fd03fac5ee5771d1db7036684">&#9670;&nbsp;</a></span>ConfigureUART() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::ConfigureUART </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#ad1e8b1bacc9a620a73832d79b77632d6">Hardware::UART</a>&#160;</td>
+          <td class="paramname"><em>uart</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>async</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#aeda76e9b81fb4a88e6e7786cdc6caf24">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00126">126</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
 
 </div>
 </div>
 <a id="ad78ec6d2522399890e868b5b3ebe9110"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad78ec6d2522399890e868b5b3ebe9110">&#9670;&nbsp;</a></span>Delay()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad78ec6d2522399890e868b5b3ebe9110">&#9670;&nbsp;</a></span>Delay() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -856,12 +1512,43 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a027dd392546351e3168039fd2d954f26">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00083">83</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00083">83</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
 
 </div>
 </div>
-<a id="af097294c96c7e888a82af17990581caf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af097294c96c7e888a82af17990581caf">&#9670;&nbsp;</a></span>DisableDMA()</h2>
+<a id="ad78ec6d2522399890e868b5b3ebe9110"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad78ec6d2522399890e868b5b3ebe9110">&#9670;&nbsp;</a></span>Delay() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::Delay </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>millis</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section warning"><dt>Warning</dt><dd>This implementation is a simple wrapper for LL_mDelay function So there is a bug with extra millisecond <a href="https://community.st.com/s/question/0D50X00009XkXQA/llmdelay-taking-an-extra-millisecond">https://community.st.com/s/question/0D50X00009XkXQA/llmdelay-taking-an-extra-millisecond</a> </dd></dl>
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a027dd392546351e3168039fd2d954f26">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00085">85</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="afbc2802388b263a35dd98871edca4647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbc2802388b263a35dd98871edca4647">&#9670;&nbsp;</a></span>DisableDMA() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -872,19 +1559,9 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void SD::Specific::Master::DisableDMA </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156">Hardware::DMADevice</a>&#160;</td>
-          <td class="paramname"><em>device</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06b">Hardware::DMAChannel</a>&#160;</td>
-          <td class="paramname"><em>channel</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a>&#160;</td>
+          <td class="paramname"><em>dma_port</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -894,14 +1571,44 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a29f6b6c623955222d0ec9bebee7781e7">SD::Hardware::AbstractMaster</a>.</p>
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a52e9bd6a0dbd4c7f40635ae772237e23">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00339">339</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00335">335</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a8355b1a2ab89615b74e02d9ad90ddba4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8355b1a2ab89615b74e02d9ad90ddba4">&#9670;&nbsp;</a></span>DMACallback()</h2>
+<a id="afbc2802388b263a35dd98871edca4647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbc2802388b263a35dd98871edca4647">&#9670;&nbsp;</a></span>DisableDMA() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::DisableDMA </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a>&#160;</td>
+          <td class="paramname"><em>dma_port</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a52e9bd6a0dbd4c7f40635ae772237e23">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00378">378</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8a85aa3d5f1e776320adf9902be1f181"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a85aa3d5f1e776320adf9902be1f181">&#9670;&nbsp;</a></span>DMACallback() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -912,19 +1619,9 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void SD::Specific::Master::DMACallback </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156">Hardware::DMADevice</a>&#160;</td>
-          <td class="paramname"><em>device</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06b">Hardware::DMAChannel</a>&#160;</td>
-          <td class="paramname"><em>channel</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a>&#160;</td>
+          <td class="paramname"><em>dma_port</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -934,12 +1631,40 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00367">367</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00362">362</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8a85aa3d5f1e776320adf9902be1f181"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a85aa3d5f1e776320adf9902be1f181">&#9670;&nbsp;</a></span>DMACallback() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::DMACallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a>&#160;</td>
+          <td class="paramname"><em>dma_port</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00405">405</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a2fa98cb3e6ccf0b0051ad83593c272f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fa98cb3e6ccf0b0051ad83593c272f6">&#9670;&nbsp;</a></span>EnableClocking()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fa98cb3e6ccf0b0051ad83593c272f6">&#9670;&nbsp;</a></span>EnableClocking() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -976,12 +1701,54 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a8d31d53f8f429af8253687cf0b36feac">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00042">42</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00042">42</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ac11c1e5484a5538d53799e24ed1ab203"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac11c1e5484a5538d53799e24ed1ab203">&#9670;&nbsp;</a></span>EnableDMA()</h2>
+<a id="a2fa98cb3e6ccf0b0051ad83593c272f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fa98cb3e6ccf0b0051ad83593c272f6">&#9670;&nbsp;</a></span>EnableClocking() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::EnableClocking </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>System clock configuration The system clock is configured as follow: </p>
+<ul>
+<li>System clock source = PLL (HSE / 1)</li>
+<li>SYSCLK(MHz) = 72</li>
+<li>HCLK(MHz) = 72</li>
+<li>AHB prescaler = 1</li>
+<li>APB1 prescaler = 2</li>
+<li>APB2 prescaler = 1</li>
+<li>HSE frequency(MHz) = 8</li>
+<li>PLLMUL = 9</li>
+<li>Flash latency = 2 </li>
+</ul>
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a8d31d53f8f429af8253687cf0b36feac">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00043">43</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4ed9fd066c718418e24ed6c5bb501cb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ed9fd066c718418e24ed6c5bb501cb6">&#9670;&nbsp;</a></span>EnableDMA() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -992,14 +1759,104 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void SD::Specific::Master::EnableDMA </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156">Hardware::DMADevice</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a>&#160;</td>
+          <td class="paramname"><em>dma_port</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a312ce3839f609f7f3c37aa19f16cdcdd">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00330">330</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4ed9fd066c718418e24ed6c5bb501cb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ed9fd066c718418e24ed6c5bb501cb6">&#9670;&nbsp;</a></span>EnableDMA() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::EnableDMA </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a>&#160;</td>
+          <td class="paramname"><em>dma_port</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a312ce3839f609f7f3c37aa19f16cdcdd">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00373">373</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8faf86462bb3c15fd4791f7a3470088b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8faf86462bb3c15fd4791f7a3470088b">&#9670;&nbsp;</a></span>GetDMAMapping() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> SD::Specific::Master::GetDMAMapping </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a>&#160;</td>
+          <td class="paramname"><em>device</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a63a1a6ef180bed67eb45a4b0a415598f">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00283">283</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4a3c82569d6c2dd22d0377bce09eeb81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a3c82569d6c2dd22d0377bce09eeb81">&#9670;&nbsp;</a></span>GetDMAMapping() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> SD::Specific::Master::GetDMAMapping </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#ad1e8b1bacc9a620a73832d79b77632d6">Hardware::UART</a>&#160;</td>
           <td class="paramname"><em>device</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06b">Hardware::DMAChannel</a>&#160;</td>
-          <td class="paramname"><em>channel</em>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isTX</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1014,14 +1871,14 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a5b008b7eac6e613a25ee238a80799b51">SD::Hardware::AbstractMaster</a>.</p>
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#ac67337fb93ab1fdc7178108219ae32f8">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00334">334</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00297">297</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
 
 </div>
 </div>
 <a id="af064375b0712a1d8eab9fcec6bb2ce71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af064375b0712a1d8eab9fcec6bb2ce71">&#9670;&nbsp;</a></span>ReadADC()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af064375b0712a1d8eab9fcec6bb2ce71">&#9670;&nbsp;</a></span>ReadADC() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1046,12 +1903,42 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#ae060986bfb0742aa9d6ad91cc9cad194">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00203">203</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00203">203</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af064375b0712a1d8eab9fcec6bb2ce71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af064375b0712a1d8eab9fcec6bb2ce71">&#9670;&nbsp;</a></span>ReadADC() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t SD::Specific::Master::ReadADC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a>&#160;</td>
+          <td class="paramname"><em>device</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#ae060986bfb0742aa9d6ad91cc9cad194">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00204">204</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a65ced6d6d41ab067f4d66941f68e3b85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65ced6d6d41ab067f4d66941f68e3b85">&#9670;&nbsp;</a></span>ReadADCAsync()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a65ced6d6d41ab067f4d66941f68e3b85">&#9670;&nbsp;</a></span>ReadADCAsync() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1076,12 +1963,42 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#ad1ee1841a9b2fb3ae8c571ab49e9faad">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00394">394</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00388">388</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a65ced6d6d41ab067f4d66941f68e3b85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65ced6d6d41ab067f4d66941f68e3b85">&#9670;&nbsp;</a></span>ReadADCAsync() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::ReadADCAsync </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a>&#160;</td>
+          <td class="paramname"><em>device</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#ad1ee1841a9b2fb3ae8c571ab49e9faad">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00426">426</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
 
 </div>
 </div>
 <a id="aa0705d0a8afd68d2957aaba224a21f7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0705d0a8afd68d2957aaba224a21f7a">&#9670;&nbsp;</a></span>ReceiveByteUARTBlocking()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0705d0a8afd68d2957aaba224a21f7a">&#9670;&nbsp;</a></span>ReceiveByteUARTBlocking() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1106,12 +2023,42 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#aeb9af220f46c8f6d6eeffc64a3fc34c0">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00144">144</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00144">144</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa0705d0a8afd68d2957aaba224a21f7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0705d0a8afd68d2957aaba224a21f7a">&#9670;&nbsp;</a></span>ReceiveByteUARTBlocking() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t SD::Specific::Master::ReceiveByteUARTBlocking </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#ad1e8b1bacc9a620a73832d79b77632d6">Hardware::UART</a>&#160;</td>
+          <td class="paramname"><em>uart</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#aeb9af220f46c8f6d6eeffc64a3fc34c0">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00147">147</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a3152a554a050d0a245824ccf034256aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3152a554a050d0a245824ccf034256aa">&#9670;&nbsp;</a></span>ResetIOPort()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3152a554a050d0a245824ccf034256aa">&#9670;&nbsp;</a></span>ResetIOPort() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1155,12 +2102,61 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a21b2aace70964ed7702587076f01edbf">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00118">118</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00118">118</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a3152a554a050d0a245824ccf034256aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3152a554a050d0a245824ccf034256aa">&#9670;&nbsp;</a></span>ResetIOPort() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::ResetIOPort </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#ab116e9e8f29c58a522a398a4bd1b6717">Hardware::GPIO</a>&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#aa3de14d9eb7caec3aaa2c2401350e003">Hardware::Pin</a>&#160;</td>
+          <td class="paramname"><em>pin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reset the certain pin in the certain port. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td></td></tr>
+    <tr><td class="paramname">pin</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a21b2aace70964ed7702587076f01edbf">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00121">121</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
 
 </div>
 </div>
 <a id="ac26bb3c3be57ecb525e4191b2157a019"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac26bb3c3be57ecb525e4191b2157a019">&#9670;&nbsp;</a></span>SendByteUARTBlocking()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac26bb3c3be57ecb525e4191b2157a019">&#9670;&nbsp;</a></span>SendByteUARTBlocking() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1195,12 +2191,52 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a525e10eedf64f466b061dea38fcc4709">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00133">133</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00133">133</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a43e8a6ced3f2f4eda21961a1e4eceffa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43e8a6ced3f2f4eda21961a1e4eceffa">&#9670;&nbsp;</a></span>SetDMACallback()</h2>
+<a id="ac26bb3c3be57ecb525e4191b2157a019"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac26bb3c3be57ecb525e4191b2157a019">&#9670;&nbsp;</a></span>SendByteUARTBlocking() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::SendByteUARTBlocking </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#ad1e8b1bacc9a620a73832d79b77632d6">Hardware::UART</a>&#160;</td>
+          <td class="paramname"><em>uart</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>byte</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a525e10eedf64f466b061dea38fcc4709">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00136">136</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a37b6b041911a06e7c0036bfe6d6edba0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37b6b041911a06e7c0036bfe6d6edba0">&#9670;&nbsp;</a></span>SetDMACallback() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1211,14 +2247,8 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void SD::Specific::Master::SetDMACallback </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156">Hardware::DMADevice</a>&#160;</td>
-          <td class="paramname"><em>device</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06b">Hardware::DMAChannel</a>&#160;</td>
-          <td class="paramname"><em>channel</em>, </td>
+          <td class="paramtype"><a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a>&#160;</td>
+          <td class="paramname"><em>dma_port</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1239,14 +2269,54 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a9a5f1159db13f3f15504676967fac25b">SD::Hardware::AbstractMaster</a>.</p>
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a0ae7dc2fdfda11cde9dce888e4733b27">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00344">344</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00340">340</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a37b6b041911a06e7c0036bfe6d6edba0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37b6b041911a06e7c0036bfe6d6edba0">&#9670;&nbsp;</a></span>SetDMACallback() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::SetDMACallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a>&#160;</td>
+          <td class="paramname"><em>dma_port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void()&gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>func</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a0ae7dc2fdfda11cde9dce888e4733b27">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00383">383</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a32b32091a5c143e7914d91d626694e92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32b32091a5c143e7914d91d626694e92">&#9670;&nbsp;</a></span>SetIOPort()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a32b32091a5c143e7914d91d626694e92">&#9670;&nbsp;</a></span>SetIOPort() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1290,12 +2360,61 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a1e99c0111b2e152dfe92bf79054be34b">SD::Hardware::AbstractMaster</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="master_8hpp_source.html#l00113">113</a> of file <a class="el" href="master_8hpp_source.html">master.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00113">113</a> of file <a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a32b32091a5c143e7914d91d626694e92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32b32091a5c143e7914d91d626694e92">&#9670;&nbsp;</a></span>SetIOPort() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SD::Specific::Master::SetIOPort </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#ab116e9e8f29c58a522a398a4bd1b6717">Hardware::GPIO</a>&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_s_d_1_1_hardware.html#aa3de14d9eb7caec3aaa2c2401350e003">Hardware::Pin</a>&#160;</td>
+          <td class="paramname"><em>pin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the certain pin in the certain port. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td></td></tr>
+    <tr><td class="paramname">pin</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_s_d_1_1_hardware_1_1_abstract_master.html#a1e99c0111b2e152dfe92bf79054be34b">SD::Hardware::AbstractMaster</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html#l00116">116</a> of file <a class="el" href="_s_t_m32_f411_c_e6_2master_8hpp_source.html">STM32F411CE6/master.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="master_8hpp_source.html">master.hpp</a></li>
+<li><a class="el" href="_s_t_m32_f103_c8_t_2master_8hpp_source.html">STM32F103C8T/master.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

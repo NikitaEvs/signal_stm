@@ -1,9 +1,9 @@
 var namespace_s_d_1_1_hardware =
 [
     [ "AbstractMaster", "class_s_d_1_1_hardware_1_1_abstract_master.html", "class_s_d_1_1_hardware_1_1_abstract_master" ],
-    [ "ADC", "class_s_d_1_1_hardware_1_1_a_d_c.html", null ],
-    [ "ADC< false >", "class_s_d_1_1_hardware_1_1_a_d_c_3_01false_01_4.html", "class_s_d_1_1_hardware_1_1_a_d_c_3_01false_01_4" ],
-    [ "ADC< true >", "class_s_d_1_1_hardware_1_1_a_d_c_3_01true_01_4.html", "class_s_d_1_1_hardware_1_1_a_d_c_3_01true_01_4" ],
+    [ "ADCUnit", "class_s_d_1_1_hardware_1_1_a_d_c_unit.html", null ],
+    [ "ADCUnit< false >", "class_s_d_1_1_hardware_1_1_a_d_c_unit_3_01false_01_4.html", "class_s_d_1_1_hardware_1_1_a_d_c_unit_3_01false_01_4" ],
+    [ "ADCUnit< true >", "class_s_d_1_1_hardware_1_1_a_d_c_unit_3_01true_01_4.html", "class_s_d_1_1_hardware_1_1_a_d_c_unit_3_01true_01_4" ],
     [ "AsyncUART", "class_s_d_1_1_hardware_1_1_async_u_a_r_t.html", "class_s_d_1_1_hardware_1_1_async_u_a_r_t" ],
     [ "BaseUART", "class_s_d_1_1_hardware_1_1_base_u_a_r_t.html", "class_s_d_1_1_hardware_1_1_base_u_a_r_t" ],
     [ "BlockingUART", "class_s_d_1_1_hardware_1_1_blocking_u_a_r_t.html", "class_s_d_1_1_hardware_1_1_blocking_u_a_r_t" ],

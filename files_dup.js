@@ -4,22 +4,23 @@ var files_dup =
       [ "AbstractMaster", "class_s_d_1_1_hardware_1_1_abstract_master.html", "class_s_d_1_1_hardware_1_1_abstract_master" ]
     ] ],
     [ "adc.hpp", "adc_8hpp.html", [
-      [ "ADC", "class_s_d_1_1_hardware_1_1_a_d_c.html", null ],
-      [ "ADC< true >", "class_s_d_1_1_hardware_1_1_a_d_c_3_01true_01_4.html", "class_s_d_1_1_hardware_1_1_a_d_c_3_01true_01_4" ],
-      [ "ADC< false >", "class_s_d_1_1_hardware_1_1_a_d_c_3_01false_01_4.html", "class_s_d_1_1_hardware_1_1_a_d_c_3_01false_01_4" ]
+      [ "ADCUnit", "class_s_d_1_1_hardware_1_1_a_d_c_unit.html", null ],
+      [ "ADCUnit< true >", "class_s_d_1_1_hardware_1_1_a_d_c_unit_3_01true_01_4.html", "class_s_d_1_1_hardware_1_1_a_d_c_unit_3_01true_01_4" ],
+      [ "ADCUnit< false >", "class_s_d_1_1_hardware_1_1_a_d_c_unit_3_01false_01_4.html", "class_s_d_1_1_hardware_1_1_a_d_c_unit_3_01false_01_4" ]
     ] ],
     [ "buffer.hpp", "buffer_8hpp.html", [
       [ "AsyncBuffer", "class_s_d_1_1_utils_1_1_async_buffer.html", "class_s_d_1_1_utils_1_1_async_buffer" ],
       [ "AsyncBufferView", "class_s_d_1_1_utils_1_1_async_buffer_view.html", "class_s_d_1_1_utils_1_1_async_buffer_view" ]
     ] ],
     [ "dma.hpp", "dma_8hpp.html", [
-      [ "DMAPort", "struct_s_d_1_1_hardware_1_1_d_m_a_port.html", "struct_s_d_1_1_hardware_1_1_d_m_a_port" ],
       [ "DMAUnit", "class_s_d_1_1_hardware_1_1_d_m_a_unit.html", "class_s_d_1_1_hardware_1_1_d_m_a_unit" ],
       [ "DMAPipe", "class_s_d_1_1_hardware_1_1_d_m_a_pipe.html", "class_s_d_1_1_hardware_1_1_d_m_a_pipe" ]
     ] ],
-    [ "handlers.ipp", "handlers_8ipp.html", "handlers_8ipp" ],
+    [ "STM32F103C8T/handlers.ipp", "_s_t_m32_f103_c8_t_2handlers_8ipp.html", "_s_t_m32_f103_c8_t_2handlers_8ipp" ],
+    [ "STM32F411CE6/handlers.ipp", "_s_t_m32_f411_c_e6_2handlers_8ipp.html", "_s_t_m32_f411_c_e6_2handlers_8ipp" ],
     [ "hardware_layout.hpp", "hardware__layout_8hpp.html", "hardware__layout_8hpp" ],
-    [ "hardware_mapping.hpp", "hardware__mapping_8hpp.html", null ],
+    [ "STM32F103C8T/hardware_mapping.hpp", "_s_t_m32_f103_c8_t_2hardware__mapping_8hpp.html", null ],
+    [ "STM32F411CE6/hardware_mapping.hpp", "_s_t_m32_f411_c_e6_2hardware__mapping_8hpp.html", null ],
     [ "ioport.hpp", "ioport_8hpp.html", [
       [ "IOPort", "class_s_d_1_1_hardware_1_1_i_o_port.html", "class_s_d_1_1_hardware_1_1_i_o_port" ]
     ] ],
@@ -27,7 +28,8 @@ var files_dup =
       [ "LED", "class_s_d_1_1_utils_1_1_l_e_d.html", "class_s_d_1_1_utils_1_1_l_e_d" ]
     ] ],
     [ "logger.hpp", "logger_8hpp.html", "logger_8hpp" ],
-    [ "master.hpp", "master_8hpp.html", "master_8hpp" ],
+    [ "STM32F103C8T/master.hpp", "_s_t_m32_f103_c8_t_2master_8hpp.html", "_s_t_m32_f103_c8_t_2master_8hpp" ],
+    [ "STM32F411CE6/master.hpp", "_s_t_m32_f411_c_e6_2master_8hpp.html", "_s_t_m32_f411_c_e6_2master_8hpp" ],
     [ "port.hpp", "port_8hpp.html", [
       [ "Port", "class_s_d_1_1_hardware_1_1_port.html", "class_s_d_1_1_hardware_1_1_port" ]
     ] ],

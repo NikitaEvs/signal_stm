@@ -1,7 +1,8 @@
 <map id="SD::Hardware::AsyncUART::SendBytes" name="SD::Hardware::AsyncUART::SendBytes">
-<area shape="rect" id="node1" title=" " alt="" coords="5,71,199,112"/>
-<area shape="rect" id="node2" href="$class_s_d_1_1_hardware_1_1_async_u_a_r_t.html#a62e26fdc4c40b6d0f016edab94bdae4e" title=" " alt="" coords="247,5,440,47"/>
-<area shape="rect" id="node3" href="$class_s_d_1_1_hardware_1_1_d_m_a_unit.html#a7b2406e9e3ae966177368bf0fd039052" title=" " alt="" coords="255,71,432,112"/>
-<area shape="rect" id="node5" href="$class_s_d_1_1_hardware_1_1_d_m_a_unit.html#aa64adbdbaeab04064553e209e7ffb133" title=" " alt="" coords="255,136,432,177"/>
-<area shape="rect" id="node4" href="$class_s_d_1_1_hardware_1_1_abstract_master.html#a5b008b7eac6e613a25ee238a80799b51" title=" " alt="" coords="488,71,707,112"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,104,199,145"/>
+<area shape="rect" id="node2" href="$class_s_d_1_1_hardware_1_1_async_u_a_r_t.html#a62e26fdc4c40b6d0f016edab94bdae4e" title=" " alt="" coords="259,5,453,47"/>
+<area shape="rect" id="node3" href="$class_s_d_1_1_hardware_1_1_d_m_a_unit.html#a7b2406e9e3ae966177368bf0fd039052" title=" " alt="" coords="267,71,445,112"/>
+<area shape="rect" id="node5" href="$class_s_d_1_1_hardware_1_1_abstract_master.html#a63a1a6ef180bed67eb45a4b0a415598f" title=" " alt="" coords="247,136,465,177"/>
+<area shape="rect" id="node6" href="$class_s_d_1_1_hardware_1_1_d_m_a_unit.html#aa64adbdbaeab04064553e209e7ffb133" title=" " alt="" coords="267,201,445,243"/>
+<area shape="rect" id="node4" href="$class_s_d_1_1_hardware_1_1_abstract_master.html#a312ce3839f609f7f3c37aa19f16cdcdd" title=" " alt="" coords="513,71,732,112"/>
 </map>

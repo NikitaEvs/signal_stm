@@ -1,11 +1,13 @@
 var hardware__layout_8hpp =
 [
+    [ "DMAPort", "struct_s_d_1_1_hardware_1_1_d_m_a_port.html", "struct_s_d_1_1_hardware_1_1_d_m_a_port" ],
     [ "DMASettings", "struct_s_d_1_1_hardware_1_1_d_m_a_settings.html", "struct_s_d_1_1_hardware_1_1_d_m_a_settings" ],
     [ "ADCDevice", "hardware__layout_8hpp.html#ac2afc9645ca41fddd88859781ede4c27", [
       [ "ADC_1", "hardware__layout_8hpp.html#ac2afc9645ca41fddd88859781ede4c27a7db4c68e0a85031797c43decd8fa42c8", null ],
       [ "ADC_2", "hardware__layout_8hpp.html#ac2afc9645ca41fddd88859781ede4c27a736254a788a7ce83e5259f8eb18a5d16", null ]
     ] ],
     [ "DMAChannel", "hardware__layout_8hpp.html#a9ee875bc428d3aff721ee7d11b1ce06b", [
+      [ "Channel0", "hardware__layout_8hpp.html#a9ee875bc428d3aff721ee7d11b1ce06baa103e02952aa83a69bdb843834d4b406", null ],
       [ "Channel1", "hardware__layout_8hpp.html#a9ee875bc428d3aff721ee7d11b1ce06ba6e7930d9e45cf08519eb5ea33285a737", null ],
       [ "Channel2", "hardware__layout_8hpp.html#a9ee875bc428d3aff721ee7d11b1ce06baa41a549bb6e132a1807a57bb17a83211", null ],
       [ "Channel3", "hardware__layout_8hpp.html#a9ee875bc428d3aff721ee7d11b1ce06bab7824fd5b5e65fc437a3a617797983cf", null ],
@@ -15,7 +17,8 @@ var hardware__layout_8hpp =
       [ "Channel7", "hardware__layout_8hpp.html#a9ee875bc428d3aff721ee7d11b1ce06ba8284862e267c6989622db69cb7e4602b", null ]
     ] ],
     [ "DMADevice", "hardware__layout_8hpp.html#a25dd574e1e2b7aa369eaa8c778990156", [
-      [ "DMA_1", "hardware__layout_8hpp.html#a25dd574e1e2b7aa369eaa8c778990156a605f1a120c73ab3b1dea879c2b3a106f", null ]
+      [ "DMA_1", "hardware__layout_8hpp.html#a25dd574e1e2b7aa369eaa8c778990156a605f1a120c73ab3b1dea879c2b3a106f", null ],
+      [ "DMA_2", "hardware__layout_8hpp.html#a25dd574e1e2b7aa369eaa8c778990156a85cbc35592e46c3733f353314e268a46", null ]
     ] ],
     [ "DMADirection", "hardware__layout_8hpp.html#a2926cd28dcd0e15e3305002504551275", [
       [ "PeriphToMemory", "hardware__layout_8hpp.html#a2926cd28dcd0e15e3305002504551275adfaca1923b8973bf578c7980fe6ea190", null ],
@@ -39,6 +42,16 @@ var hardware__layout_8hpp =
       [ "MemoryByte", "hardware__layout_8hpp.html#af858701185980fa0ce4b334fa04fe3ceaa5d0e158763eb1762d30eb0333b1aa6f", null ],
       [ "MemoryHalfword", "hardware__layout_8hpp.html#af858701185980fa0ce4b334fa04fe3cead8eaafc06aa64a182a8746964b43cdee", null ],
       [ "MemoryWord", "hardware__layout_8hpp.html#af858701185980fa0ce4b334fa04fe3cea7d48517f1270772809e58f6e3d6de692", null ]
+    ] ],
+    [ "DMAStream", "hardware__layout_8hpp.html#a94040770d58dcf9ead982348cb734b28", [
+      [ "Stream0", "hardware__layout_8hpp.html#a94040770d58dcf9ead982348cb734b28a78852ceeeeaf3431515b65b1f7f0a19b", null ],
+      [ "Stream1", "hardware__layout_8hpp.html#a94040770d58dcf9ead982348cb734b28a83d97660e78cc57886c47f48b3fa819b", null ],
+      [ "Stream2", "hardware__layout_8hpp.html#a94040770d58dcf9ead982348cb734b28ae4e839199fc93a527583746c7e535f2d", null ],
+      [ "Stream3", "hardware__layout_8hpp.html#a94040770d58dcf9ead982348cb734b28a70999f9c602762d2165174daea9c97eb", null ],
+      [ "Stream4", "hardware__layout_8hpp.html#a94040770d58dcf9ead982348cb734b28a5023c6bc8bd640986ea7b6153882b7c0", null ],
+      [ "Stream5", "hardware__layout_8hpp.html#a94040770d58dcf9ead982348cb734b28a63ec8fe237148dbbb362931cd4e04914", null ],
+      [ "Stream6", "hardware__layout_8hpp.html#a94040770d58dcf9ead982348cb734b28a5915323599bf01425a93e875aa9cb94e", null ],
+      [ "Stream7", "hardware__layout_8hpp.html#a94040770d58dcf9ead982348cb734b28a9e10d788e5883c64815e813a2ce2ef02", null ]
     ] ],
     [ "GPIO", "hardware__layout_8hpp.html#ab116e9e8f29c58a522a398a4bd1b6717", [
       [ "A", "hardware__layout_8hpp.html#ab116e9e8f29c58a522a398a4bd1b6717a7fc56270e7a70fa81a5935b72eacbe29", null ],
