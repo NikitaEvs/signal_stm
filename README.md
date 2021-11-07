@@ -41,7 +41,7 @@ int main() {
 ```
 
 ### Background ADC measurements
-See [example.cpp](Src/example.cpp).
+See [examples](Src).
 
 ## Details
 This library provides high-level asynchronous abstractions that can be useful in effective signal measurement and processing.
