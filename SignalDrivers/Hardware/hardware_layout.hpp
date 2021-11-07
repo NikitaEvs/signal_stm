@@ -46,10 +46,12 @@ enum class ADCDevice {
 };
 
 enum class DMADevice {
-  DMA_1
+  DMA_1,
+  DMA_2
 };
 
 enum class DMAChannel {
+  Channel0,
   Channel1,
   Channel2,
   Channel3,
@@ -57,6 +59,25 @@ enum class DMAChannel {
   Channel5,
   Channel6,
   Channel7
+};
+
+enum class DMAStream {
+  Stream0,
+  Stream1,
+  Stream2,
+  Stream3,
+  Stream4,
+  Stream5,
+  Stream6,
+  Stream7
+};
+
+// Default initialization is needed because some STM models don't use
+// DMAStream, but we want list initialization support
+struct DMAPort {
+  DMADevice device = DMADevice::DMA_1;
+  DMAChannel channel = DMAChannel::Channel1;
+  DMAStream stream = DMAStream::Stream0;
 };
 
 enum class DMADirection {
