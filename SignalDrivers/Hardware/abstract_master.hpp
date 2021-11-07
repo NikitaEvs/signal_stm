@@ -78,38 +78,35 @@ namespace Hardware {
                              uint8_t channels_number,
                              bool isDMA) const = 0;
 
-    virtual void ConfigureDMAInterruption(Hardware::DMADevice device,
-                                          Hardware::DMAChannel channel) const = 0;
+    virtual Hardware::DMAPort GetDMAMapping(Hardware::ADCDevice device) const = 0;
 
-    virtual void ConfigureDMA(Hardware::DMADevice dma_device,
-                             Hardware::DMAChannel dma_channel,
+    virtual Hardware::DMAPort GetDMAMapping(Hardware::UART device, bool isTX) const = 0;
+
+    virtual void ConfigureDMAInterruption(Hardware::DMAPort dma_port) const = 0;
+
+    virtual void ConfigureDMA(Hardware::DMAPort dma_port,
                              const Hardware::DMASettings& settings,
                              uint32_t from_address,
                              uint32_t to_address,
                              uint32_t size) const = 0;
 
-    virtual void ConfigureDMA(Hardware::DMADevice dma_device,
-                              Hardware::DMAChannel dma_channel,
+    virtual void ConfigureDMA(Hardware::DMAPort dma_port,
                               const Hardware::DMASettings& settings,
                               Hardware::ADCDevice adc_device,
                               uint32_t to_address,
                               uint32_t size) const = 0;
 
-    virtual void ConfigureDMA(Hardware::DMADevice dma_device,
-                              Hardware::DMAChannel dma_channel,
+    virtual void ConfigureDMA(Hardware::DMAPort dma_port,
                               const Hardware::DMASettings& settings,
                               Hardware::UART uart_device,
                               uint32_t to_address,
                               uint32_t size) const = 0;
 
-    virtual void EnableDMA(Hardware::DMADevice device,
-                           Hardware::DMAChannel channel) const = 0;
+    virtual void EnableDMA(Hardware::DMAPort dma_port) const = 0;
 
-    virtual void DisableDMA(Hardware::DMADevice device,
-                            Hardware::DMAChannel channel) const = 0;
+    virtual void DisableDMA(Hardware::DMAPort dma_port) const = 0;
 
-    virtual void SetDMACallback(Hardware::DMADevice device,
-                                Hardware::DMAChannel channel,
+    virtual void SetDMACallback(Hardware::DMAPort,
                                 std::function<void()>&& func) = 0;
 
     virtual void ReadADCAsync(ADCDevice device) const = 0;

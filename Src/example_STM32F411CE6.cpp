@@ -2,7 +2,10 @@
  * @brief Example of the library usage with led blinking
  * while data is processed in the background
  */
-#include "Specific/STM32F103C8/master.hpp"
+
+// Choose the using driver (the corresponding DEVICE variable
+// should be set as the CMake argument)
+#include "Specific/STM32F411CE6/master.hpp"
 
 #include "Utils/buffer.hpp"
 #include "Utils/led.hpp"
@@ -11,8 +14,11 @@
 #include "Hardware/adc.hpp"
 #include "Hardware/hardware_layout.hpp"
 
-
 int main() {
+  // Configure peripherals usage
+  const auto kUsingUART = SD::Hardware::UART::UART1;
+  const auto kUsingADC = SD::Hardware::ADCDevice::ADC_1;
+
   // Get main supervisor instance and enable default clocking
   auto& master = SD::Specific::GetMasterInstance();
   master.EnableClocking();
@@ -21,27 +27,26 @@ int main() {
   SD::Utils::LED led(master);
 
   // Create non-blocking UART class
-  SD::Hardware::AsyncUART uart(master, SD::Hardware::UART::UART1);
+  SD::Hardware::AsyncUART uart(master, kUsingUART);
 
   // Create non-blocking ADC class, add one channel and configure it
-  SD::Hardware::ADC</*Blocking=*/false> adc(master,
-                                            SD::Hardware::ADCDevice::ADC_1);
-  adc.AddChannel({SD::Hardware::GPIO::A, SD::Hardware::Pin::Pin1});
+  SD::Hardware::ADCUnit</*Blocking=*/false> adc(master,
+                                            kUsingADC);
+  adc.AddChannel({SD::Hardware::GPIO::A, SD::Hardware::Pin::Pin0});
   adc.Init();
 
   // Create storage with the asynchronous support
-  SD::Utils::AsyncBuffer<uint16_t, /*size=*/16> buffer(master);
+  SD::Utils::AsyncBuffer<uint16_t, /*size=*/64 + 1> buffer(master,
+                      /* delimiter=*/ std::numeric_limits<uint16_t>::max());
 
   // Connect UART1 as a destination point for the buffer
   buffer.ConnectDestination(SD::Hardware::UART::UART1,
-                            {SD::Hardware::DMADevice::DMA_1,
-                             SD::Hardware::DMAChannel::Channel4},
+                            master.GetDMAMapping(kUsingUART, /*isTX=*/true),
                             uart.GetDMAInSettings());
 
   // Connect ADC1 as a source point for the buffer
   buffer.ConnectSource(SD::Hardware::ADCDevice::ADC_1,
-                       {SD::Hardware::DMADevice::DMA_1,
-                        SD::Hardware::DMAChannel::Channel1},
+                       master.GetDMAMapping(kUsingADC),
                        adc.GetDMAOutSettings());
 
   // Set input and output callbacks
@@ -51,8 +56,9 @@ int main() {
     buffer.EnableOutput();
   });
 
-  buffer.SetOutputCallback([&buffer]{
+  buffer.SetOutputCallback([&buffer, &adc]{
     buffer.DisableOutput();
+    adc.Read();
     buffer.EnableInput();
   });
 

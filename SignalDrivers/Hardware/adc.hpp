@@ -10,12 +10,12 @@ namespace SD {
 namespace Hardware {
 
 template <bool Blocking>
-class ADC;
+class ADCUnit;
 
 template<>
-class ADC<true> {
+class ADCUnit<true> {
  public:
-  ADC(Hardware::AbstractMaster& master, ADCDevice device, Port port)
+  ADCUnit(Hardware::AbstractMaster& master, ADCDevice device, Port port)
     : master_(master), device_(device) {
     master_.ConfigureADCSingleChannelBlocking(device, port.gpio, port.pin);
   }
@@ -35,9 +35,9 @@ class ADC<true> {
 
 
 template<>
-class ADC<false> {
+class ADCUnit<false> {
  public:
-  ADC(Hardware::AbstractMaster& master, ADCDevice device)
+  ADCUnit(Hardware::AbstractMaster& master, ADCDevice device)
       : master_(master), device_(device) {
     master_.ClockADC(device);
   }
@@ -57,10 +57,6 @@ class ADC<false> {
   }
 
   void Init() {
-    static constexpr auto kUsingDMA = Hardware::DMADevice::DMA_1;
-    static constexpr auto kUsingChannel = Hardware::DMAChannel::Channel1;
-
-
     if (channels_counter_ == 1) {
       master_.ConfigureADCDataSingleChannel(device_);
     } else if (channels_counter_ > 1) {

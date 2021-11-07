@@ -56,8 +56,8 @@ This library provides high-level asynchronous abstractions that can be useful in
 ### Support devices
 | Name      | Status   |
 |-----------|----------|
-| STM32F103 | Support  |
-| STM32F411 | Planning |
+| STM32F103C8T | Support  |
+| STM32F411CE6 | Support |
 
 Guide for other devices support coming soon.
 ### Documentation
@@ -72,7 +72,7 @@ Firstly, compile the project:
 ```shell
 mkdir build
 cd build
-cmake -DCMAKE_TOOLCHAIN_FILE=../CMake/arm-none-eabi-gcc.cmake ..
+cmake -DCMAKE_TOOLCHAIN_FILE=../CMake/arm-none-eabi-gcc.cmake -DDEVICE=<name-of-device> ..
 make
 ```
 In case of success, you see a message like this:

@@ -2,15 +2,16 @@
 
 #include <functional>
 
-#include "stm32f1xx_ll_adc.h"
-#include "stm32f1xx_ll_bus.h"
-#include "stm32f1xx_ll_cortex.h"
-#include "stm32f1xx_ll_dma.h"
-#include "stm32f1xx_ll_gpio.h"
-#include "stm32f1xx_ll_rcc.h"
-#include "stm32f1xx_ll_system.h"
-#include "stm32f1xx_ll_usart.h"
-#include "stm32f1xx_ll_utils.h"
+#include "stm32f4xx_ll_adc.h"
+#include "stm32f4xx_ll_bus.h"
+#include "stm32f4xx_ll_cortex.h"
+#include "stm32f4xx_ll_dma.h"
+#include "stm32f4xx_ll_gpio.h"
+#include "stm32f4xx_ll_pwr.h"
+#include "stm32f4xx_ll_rcc.h"
+#include "stm32f4xx_ll_system.h"
+#include "stm32f4xx_ll_usart.h"
+#include "stm32f4xx_ll_utils.h"
 
 #include "Hardware/abstract_master.hpp"
 #include "Hardware/hardware_layout.hpp"
@@ -40,17 +41,18 @@ class Master : public Hardware::AbstractMaster {
    * - Flash latency        = 2
    */
   inline void EnableClocking() const override {
-    LL_FLASH_SetLatency(LL_FLASH_LATENCY_2);
-    while(LL_FLASH_GetLatency()!= LL_FLASH_LATENCY_2) {
+    LL_FLASH_SetLatency(LL_FLASH_LATENCY_3);
+    while(LL_FLASH_GetLatency()!= LL_FLASH_LATENCY_3) {
     }
 
+    LL_PWR_SetRegulVoltageScaling(LL_PWR_REGU_VOLTAGE_SCALE1);
     LL_RCC_HSE_Enable();
 
     /* Wait till HSE is ready */
     while(LL_RCC_HSE_IsReady() != 1) {
     }
 
-    LL_RCC_PLL_ConfigDomain_SYS(LL_RCC_PLLSOURCE_HSE_DIV_1, LL_RCC_PLL_MUL_9);
+    LL_RCC_PLL_ConfigDomain_SYS(LL_RCC_PLLSOURCE_HSE, LL_RCC_PLLM_DIV_12, 96, LL_RCC_PLLP_DIV_2);
     LL_RCC_PLL_Enable();
 
     /* Wait till PLL is ready */
@@ -66,13 +68,13 @@ class Master : public Hardware::AbstractMaster {
     while(LL_RCC_GetSysClkSource() != LL_RCC_SYS_CLKSOURCE_STATUS_PLL) {
     }
 
-    static constexpr uint32_t kTickTime = 72000000;
-    static constexpr uint32_t kClockFrequency = 72000000;
+    static constexpr uint32_t kTickTime = 100000000;
+    static constexpr uint32_t kClockFrequency = 100000000;
 
     LL_Init1msTick(kTickTime);
     LL_SYSTICK_SetClkSource(LL_SYSTICK_CLKSOURCE_HCLK);
     LL_SetSystemCoreClock(kClockFrequency);
-    LL_RCC_SetADCClockSource(LL_RCC_ADC_CLKSRC_PCLK2_DIV_6);
+    LL_RCC_SetTIMPrescaler(LL_RCC_TIM_PRESCALER_TWICE);
   }
 
   /**
@@ -86,8 +88,8 @@ class Master : public Hardware::AbstractMaster {
 
   inline void ClockPort(Hardware::GPIO port) const override {
     auto GPIOClock = ConvertGPIOClock(port);
-    if (!LL_APB2_GRP1_IsEnabledClock(GPIOClock)) {
-      LL_APB2_GRP1_EnableClock(GPIOClock);
+    if (!LL_AHB1_GRP1_IsEnabledClock(GPIOClock)) {
+      LL_AHB1_GRP1_EnableClock(GPIOClock);
     }
   }
 
@@ -105,6 +107,7 @@ class Master : public Hardware::AbstractMaster {
     GPIO_InitStruct.Mode = LL_GPIO_MODE_OUTPUT; // TODO: Add different modes
     GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_LOW;
     GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
+    GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
 
     LL_GPIO_Init(ConvertGPIO(port), &GPIO_InitStruct);
     // TODO: Check return ErrorStatus
@@ -155,20 +158,22 @@ class Master : public Hardware::AbstractMaster {
                                          Hardware::Pin pin) const override {
     // TODO: Catch errors
     LL_APB2_GRP1_EnableClock(ConvertADCClock(device));
-    LL_APB2_GRP1_EnableClock(ConvertGPIOClock(port));
+    LL_AHB1_GRP1_EnableClock(ConvertGPIOClock(port));
 
     LL_GPIO_InitTypeDef GPIO_init = {};
     GPIO_init.Pin = ConvertPin(pin);
     GPIO_init.Mode = LL_GPIO_MODE_ANALOG;
+    GPIO_init.Pull = LL_GPIO_PULL_NO;
     LL_GPIO_Init(ConvertGPIO(port), &GPIO_init);
 
     LL_ADC_InitTypeDef ADC_init = {};
     ADC_init.DataAlignment = LL_ADC_DATA_ALIGN_RIGHT;
     ADC_init.SequencersScanMode = LL_ADC_SEQ_SCAN_DISABLE;
+    ADC_init.Resolution = LL_ADC_RESOLUTION_12B;
     LL_ADC_Init(ConvertADCDevice(device), &ADC_init);
 
     LL_ADC_CommonInitTypeDef ADC_common_init = {};
-    ADC_common_init.Multimode = LL_ADC_MULTI_INDEPENDENT;
+    ADC_common_init.CommonClock = LL_ADC_CLOCK_SYNC_PCLK_DIV4;
     LL_ADC_CommonInit(__LL_ADC_COMMON_INSTANCE(ConvertADCDevice(device)),
                       &ADC_common_init);
 
@@ -185,7 +190,7 @@ class Master : public Hardware::AbstractMaster {
                                  ConvertADCChannel(port, pin));
     LL_ADC_SetChannelSamplingTime(ConvertADCDevice(device),
                                   ConvertADCChannel(port, pin),
-                                  LL_ADC_SAMPLINGTIME_239CYCLES_5);
+                                  LL_ADC_SAMPLINGTIME_3CYCLES);
   }
 
   inline void CalibrateADC(Hardware::ADCDevice device) const override {
@@ -193,19 +198,15 @@ class Master : public Hardware::AbstractMaster {
 
     LL_ADC_Enable(converted_ADC);
 
-    auto spin_cycles = ((LL_ADC_DELAY_ENABLE_CALIB_ADC_CYCLES * 32) >> 1); // TODO: Fix magic numbers
-    while (spin_cycles--);
-
-    LL_ADC_StartCalibration(converted_ADC);
-    while (LL_ADC_IsCalibrationOnGoing(converted_ADC));
+    // automated calibration
   }
 
   inline uint16_t ReadADC(Hardware::ADCDevice device) const override {
     auto converted_ADC = ConvertADCDevice(device);
 
     LL_ADC_REG_StartConversionSWStart(converted_ADC);
-    while (!LL_ADC_IsActiveFlag_EOS(converted_ADC));
-    LL_ADC_ClearFlag_EOS(converted_ADC);
+    while (!LL_ADC_IsActiveFlag_EOCS(converted_ADC));
+    LL_ADC_ClearFlag_EOCS(converted_ADC);
 
     return LL_ADC_REG_ReadConversionData12(converted_ADC);
   }
@@ -228,17 +229,19 @@ class Master : public Hardware::AbstractMaster {
                                  ConvertADCChannel(port, pin));
     LL_ADC_SetChannelSamplingTime(ConvertADCDevice(device),
                                   ConvertADCChannel(port, pin),
-                                  LL_ADC_SAMPLINGTIME_239CYCLES_5);
+                                  LL_ADC_SAMPLINGTIME_480CYCLES);
 
     LL_GPIO_InitTypeDef GPIO_init = {};
     GPIO_init.Pin = ConvertPin(pin);
     GPIO_init.Mode = LL_GPIO_MODE_ANALOG;
+    GPIO_init.Pull = LL_GPIO_PULL_NO;
     LL_GPIO_Init(ConvertGPIO(port), &GPIO_init);
   }
 
   inline
   void ConfigureADCDataSingleChannel(Hardware::ADCDevice device) const override {
     LL_ADC_InitTypeDef ADC_init = {};
+    ADC_init.Resolution = LL_ADC_RESOLUTION_12B;
     ADC_init.DataAlignment = LL_ADC_DATA_ALIGN_RIGHT;
     ADC_init.SequencersScanMode = LL_ADC_SEQ_SCAN_DISABLE;
     LL_ADC_Init(ConvertADCDevice(device), &ADC_init);
@@ -247,6 +250,7 @@ class Master : public Hardware::AbstractMaster {
   inline
   void ConfigureADCDataScanning(Hardware::ADCDevice device) const override {
     LL_ADC_InitTypeDef ADC_init = {};
+    ADC_init.Resolution = LL_ADC_RESOLUTION_12B;
     ADC_init.DataAlignment = LL_ADC_DATA_ALIGN_RIGHT;
     ADC_init.SequencersScanMode = LL_ADC_SEQ_SCAN_ENABLE;
     LL_ADC_Init(ConvertADCDevice(device), &ADC_init);
@@ -256,7 +260,7 @@ class Master : public Hardware::AbstractMaster {
                            uint8_t channels_number,
                            bool isDMA) const override {
     LL_ADC_CommonInitTypeDef ADC_common_init = {};
-    ADC_common_init.Multimode = LL_ADC_MULTI_INDEPENDENT;
+    ADC_common_init.CommonClock = LL_ADC_CLOCK_SYNC_PCLK_DIV4;
     LL_ADC_CommonInit(__LL_ADC_COMMON_INSTANCE(ConvertADCDevice(device)),
                       &ADC_common_init);
 
@@ -275,38 +279,74 @@ class Master : public Hardware::AbstractMaster {
     LL_ADC_REG_Init(ConvertADCDevice(device), &ADC_reg_init);
   }
 
-  inline
-  void ConfigureDMAInterruption(Hardware::DMADevice device,
-                                Hardware::DMAChannel channel) const override {
-    LL_AHB1_GRP1_EnableClock(ConvertDMAClock(device));
-
-    NVIC_SetPriority(ConvertDMAInterruption(device, channel),
-                     NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));
-    NVIC_EnableIRQ(ConvertDMAInterruption(device, channel));
+  [[nodiscard]] inline
+  Hardware::DMAPort GetDMAMapping(Hardware::ADCDevice device) const override {
+    switch (device) {
+      case Hardware::ADCDevice::ADC_1:
+        return {
+          .device = Hardware::DMADevice::DMA_2,
+          .channel = Hardware::DMAChannel::Channel0,
+          .stream = Hardware::DMAStream::Stream4
+        };
+      default:
+        return {}; // TODO: Insert assert
+    }
   }
 
-  inline void ConfigureDMA(Hardware::DMADevice dma_device,
-                           Hardware::DMAChannel dma_channel,
+  [[nodiscard]] inline
+  Hardware::DMAPort GetDMAMapping(Hardware::UART device,
+                                  bool isTX) const override {
+    switch (device) {
+      case Hardware::UART::UART1:
+        if (isTX) {
+          return {
+              .device = Hardware::DMADevice::DMA_2,
+              .channel = Hardware::DMAChannel::Channel4,
+              .stream = Hardware::DMAStream::Stream7
+          };
+        } else {
+          return {
+              .device = Hardware::DMADevice::DMA_2,
+              .channel = Hardware::DMAChannel::Channel4,
+              .stream = Hardware::DMAStream::Stream5
+          };
+        }
+      default:
+        return {}; // TODO: Insert assert
+    }
+  }
+
+  inline
+  void ConfigureDMAInterruption(Hardware::DMAPort dma_port) const override {
+    LL_AHB1_GRP1_EnableClock(ConvertDMAClock(dma_port.device));
+
+    NVIC_SetPriority(ConvertDMAInterruption(dma_port),
+                     NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));
+    NVIC_EnableIRQ(ConvertDMAInterruption(dma_port));
+  }
+
+  inline void ConfigureDMA(Hardware::DMAPort dma_port,
                            const Hardware::DMASettings& settings,
                            uint32_t periph_or_src_address,
                            uint32_t mem_or_dst_address,
                            uint32_t size) const override {
-    auto dma = ConvertDMADevice(dma_device);
-    auto channel = ConvertDMAChannel(dma_channel);
+    auto dma = ConvertDMADevice(dma_port.device);
+    auto stream = ConvertDMAStream(dma_port.stream);
 
     auto DMA_init = ConvertDMASettings(periph_or_src_address,
                                        mem_or_dst_address,
                                        size,
                                        settings);
+    DMA_init.Channel = ConvertDMAChannel(dma_port.channel);
+    DMA_init.FIFOMode = LL_DMA_FIFOMODE_DISABLE;
 
-    LL_DMA_Init(dma, channel, &DMA_init);
-    LL_DMA_DisableChannel(dma, channel);
-    LL_DMA_EnableIT_TC(dma, channel);
-    LL_DMA_EnableIT_TE(dma, channel);
+    LL_DMA_Init(dma, stream, &DMA_init);
+    LL_DMA_DisableStream(dma, stream);
+    LL_DMA_EnableIT_TC(dma, stream);
+    LL_DMA_EnableIT_TE(dma, stream);
   }
 
-  inline void ConfigureDMA(Hardware::DMADevice dma_device,
-                            Hardware::DMAChannel dma_channel,
+  inline void ConfigureDMA(Hardware::DMAPort dma_port,
                             const Hardware::DMASettings& settings,
                             Hardware::ADCDevice adc_device,
                             uint32_t mem_address,
@@ -314,12 +354,11 @@ class Master : public Hardware::AbstractMaster {
     auto adc = ConvertADCDevice(adc_device);
     auto periph_address = LL_ADC_DMA_GetRegAddr(adc, LL_ADC_DMA_REG_REGULAR_DATA);
 
-    ConfigureDMA(dma_device, dma_channel, settings,
+    ConfigureDMA(dma_port, settings,
                  periph_address, mem_address, size);
   }
 
-  inline void ConfigureDMA(Hardware::DMADevice dma_device,
-                           Hardware::DMAChannel dma_channel,
+  inline void ConfigureDMA(Hardware::DMAPort dma_port,
                            const Hardware::DMASettings& settings,
                            Hardware::UART uart_device,
                            uint32_t mem_address,
@@ -327,57 +366,30 @@ class Master : public Hardware::AbstractMaster {
     auto uart = ConvertUART(uart_device);
     auto periph_address = LL_USART_DMA_GetRegAddr(uart);
 
-    ConfigureDMA(dma_device, dma_channel, settings,
+    ConfigureDMA(dma_port, settings,
                  periph_address, mem_address, size);
   }
 
-  inline void EnableDMA(Hardware::DMADevice device,
-                        Hardware::DMAChannel channel) const override {
-    LL_DMA_EnableChannel(ConvertDMADevice(device), ConvertDMAChannel(channel));
+  inline void EnableDMA(Hardware::DMAPort dma_port) const override {
+    LL_DMA_EnableStream(ConvertDMADevice(dma_port.device),
+                        ConvertDMAStream(dma_port.stream));
   }
 
-  inline void DisableDMA(Hardware::DMADevice device,
-                         Hardware::DMAChannel channel) const override {
-    LL_DMA_DisableChannel(ConvertDMADevice(device), ConvertDMAChannel(channel));
+  inline void DisableDMA(Hardware::DMAPort dma_port) const override {
+    LL_DMA_DisableStream(ConvertDMADevice(dma_port.device),
+                        ConvertDMAStream(dma_port.stream));
   }
 
-  inline void SetDMACallback(Hardware::DMADevice device,
-                             Hardware::DMAChannel channel,
+  inline void SetDMACallback(Hardware::DMAPort dma_port,
                              std::function<void()>&& func) override {
-    switch (device) {
-      case Hardware::DMADevice::DMA_1:
-        switch (channel) {
-          case Hardware::DMAChannel::Channel1:
-            dma1_channel1_callback_ = std::move(func);
+    switch (dma_port.device) {
+      case Hardware::DMADevice::DMA_2:
+        switch (dma_port.stream) {
+          case Hardware::DMAStream::Stream4:
+            dma2_stream4_callback_ = std::move(func);
             break;
-          case Hardware::DMAChannel::Channel4:
-            dma1_channel4_callback_ = std::move(func);
-            break;
-          default:
-            // TODO: Insert assert
-            return;
-        }
-        break;
-      default:
-        // TODO: Insert assert
-        return;
-    }
-  }
-
-  void DMACallback(Hardware::DMADevice device,
-                   Hardware::DMAChannel channel) const {
-    switch (device) {
-      case Hardware::DMADevice::DMA_1:
-        switch (channel) {
-          case Hardware::DMAChannel::Channel1:
-            if (dma1_channel1_callback_) {
-              dma1_channel1_callback_();
-            }
-            break;
-          case Hardware::DMAChannel::Channel4:
-            if (dma1_channel4_callback_) {
-              dma1_channel4_callback_();
-            }
+          case Hardware::DMAStream::Stream7:
+            dma2_stream7_callback_ = std::move(func);
             break;
           default:
             // TODO: Insert assert
@@ -390,30 +402,54 @@ class Master : public Hardware::AbstractMaster {
     }
   }
 
+  void DMACallback(Hardware::DMAPort dma_port) const {
+    switch (dma_port.device) {
+      case Hardware::DMADevice::DMA_2:
+        switch (dma_port.stream) {
+          case Hardware::DMAStream::Stream4:
+            ExecuteCallback(dma2_stream4_callback_);
+            break;
+          case Hardware::DMAStream::Stream7:
+            ExecuteCallback(dma2_stream7_callback_);
+            break;
+          default:
+            // TODO: Insert assert
+            return;
+        }
+        break;
+      default:
+        // TODO: Insert assert
+        return;
+    }
+  }
 
   void ReadADCAsync(Hardware::ADCDevice device) const override {
-    LL_ADC_REG_StartConversionSWStart(ConvertADCDevice(device));
+    auto adc = ConvertADCDevice(device);
+
+    // Reference manual 11.8.1: we need to clear OVR bit in order to
+    // continue ADC sampling while using DMA after one transaction
+    LL_ADC_ClearFlag_OVR(adc);
+
+    LL_ADC_REG_StartConversionSWStart(adc);
   }
 
  private:
-  std::function<void()> dma1_channel1_callback_;
-  std::function<void()> dma1_channel4_callback_;
+  std::function<void()> dma2_stream4_callback_;
+  std::function<void()> dma2_stream7_callback_;
 
   static inline void ConfigureUART1(uint32_t speed, bool async) {
     LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_USART1);
-    LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_GPIOA);
+    LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOA);
 
     LL_USART_InitTypeDef USART_init = {};
     LL_GPIO_InitTypeDef GPIO_init = {};
 
-    GPIO_init.Pin = LL_GPIO_PIN_9;
+    GPIO_init.Pin = LL_GPIO_PIN_9 | LL_GPIO_PIN_10;
     GPIO_init.Mode = LL_GPIO_MODE_ALTERNATE;
-    GPIO_init.Speed = LL_GPIO_SPEED_FREQ_HIGH;
+    GPIO_init.Speed = LL_GPIO_SPEED_FREQ_VERY_HIGH;
     GPIO_init.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
-    LL_GPIO_Init(GPIOA, &GPIO_init);
-
-    GPIO_init.Pin = LL_GPIO_PIN_10;
-    GPIO_init.Mode = LL_GPIO_MODE_FLOATING;
+    GPIO_init.Pull = LL_GPIO_PULL_NO;
+    GPIO_init.Alternate = LL_GPIO_AF_7;
     LL_GPIO_Init(GPIOA, &GPIO_init);
 
     USART_init.BaudRate = speed;
@@ -448,6 +484,12 @@ class Master : public Hardware::AbstractMaster {
     }
 
     return LL_USART_ReceiveData8(using_uart);
+  }
+
+  static void ExecuteCallback(const std::function<void()>& func) {
+    if (func) {
+      func();
+    }
   }
 };
 

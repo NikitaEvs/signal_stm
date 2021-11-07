@@ -12,7 +12,7 @@ set(HARDWARE_SOURCES
         ${HARDWARE_PATH}/dma.hpp
         )
 
-set(SPECIFIC_PATH Specific/STM32F103C8)
+set(SPECIFIC_PATH Specific/${DEVICE})
 
 set(SPECIFIC_SOURCES
         ${SPECIFIC_PATH}/master.hpp
@@ -32,15 +32,9 @@ add_library(
         ${HARDWARE_SOURCES}
         ${SPECIFIC_SOURCES}
         ${UTIL_SOURCES}
-)
+        )
 
 set_target_properties(SignalDrivers PROPERTIES LINKER_LANGUAGE CXX)
-
-target_include_directories(SignalDrivers SYSTEM PRIVATE
-        Drivers/STM32F1xx_HAL_Driver/Inc
-        Drivers/CMSIS/Device/ST/STM32F1xx/Include
-        Drivers/CMSIS/Include
-        )
 
 set(CMAKE_INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib)
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)

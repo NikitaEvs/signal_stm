@@ -1,8 +1,9 @@
 #pragma once
 
-#include "stm32f1xx_ll_bus.h"
-#include "stm32f1xx_ll_gpio.h"
-#include "stm32f1xx_ll_usart.h"
+#include "stm32f4xx_ll_adc.h"
+#include "stm32f4xx_ll_bus.h"
+#include "stm32f4xx_ll_gpio.h"
+#include "stm32f4xx_ll_usart.h"
 
 #include "Hardware/hardware_layout.hpp"
 
@@ -36,10 +37,10 @@ static inline GPIO_TypeDef* ConvertGPIO(Hardware::GPIO port) {
  */
 static inline constexpr uint32_t ConvertGPIOClock(Hardware::GPIO port) {
   switch (port) {
-    case Hardware::GPIO::A: return LL_APB2_GRP1_PERIPH_GPIOA;
-    case Hardware::GPIO::B: return LL_APB2_GRP1_PERIPH_GPIOB;
-    case Hardware::GPIO::C: return LL_APB2_GRP1_PERIPH_GPIOC;
-    case Hardware::GPIO::D: return LL_APB2_GRP1_PERIPH_GPIOD;
+    case Hardware::GPIO::A: return LL_AHB1_GRP1_PERIPH_GPIOA;
+    case Hardware::GPIO::B: return LL_AHB1_GRP1_PERIPH_GPIOB;
+    case Hardware::GPIO::C: return LL_AHB1_GRP1_PERIPH_GPIOC;
+    case Hardware::GPIO::D: return LL_AHB1_GRP1_PERIPH_GPIOD;
     default: return {}; // TODO: Insert assert
   }
 }
@@ -47,7 +48,6 @@ static inline constexpr uint32_t ConvertGPIOClock(Hardware::GPIO port) {
 static inline constexpr uint32_t ConvertADCClock(Hardware::ADCDevice adc) {
   switch (adc) {
     case Hardware::ADCDevice::ADC_1: return LL_APB2_GRP1_PERIPH_ADC1;
-    case Hardware::ADCDevice::ADC_2: return LL_APB2_GRP1_PERIPH_ADC2;
     default: return {}; // TODO: Insert assert
   }
 }
@@ -55,6 +55,7 @@ static inline constexpr uint32_t ConvertADCClock(Hardware::ADCDevice adc) {
 static inline constexpr uint32_t ConvertDMAClock(Hardware::DMADevice device) {
   switch (device) {
     case Hardware::DMADevice::DMA_1: return LL_AHB1_GRP1_PERIPH_DMA1;
+    case Hardware::DMADevice::DMA_2: return LL_AHB1_GRP1_PERIPH_DMA2;
     default:
       return {}; // TODO: Insert assert
   }
@@ -98,7 +99,6 @@ static inline USART_TypeDef* ConvertUART(Hardware::UART uart) {
 static inline ADC_TypeDef* ConvertADCDevice(Hardware::ADCDevice adc) {
   switch (adc) {
     case Hardware::ADCDevice::ADC_1: return ADC1;
-    case Hardware::ADCDevice::ADC_2: return ADC2;
     default: return {}; // TODO: Insert assert
   }
 }
@@ -134,6 +134,7 @@ static inline constexpr uint32_t ConvertADCChannel(Hardware::GPIO gpio,
 static inline DMA_TypeDef* ConvertDMADevice(Hardware::DMADevice device) {
   switch (device) {
     case Hardware::DMADevice::DMA_1: return DMA1;
+    case Hardware::DMADevice::DMA_2: return DMA2;
     default:
       return {}; // TODO: Insert assert
   }
@@ -141,6 +142,7 @@ static inline DMA_TypeDef* ConvertDMADevice(Hardware::DMADevice device) {
 
 static inline constexpr uint32_t ConvertDMAChannel(Hardware::DMAChannel channel) {
   switch (channel) {
+    case Hardware::DMAChannel::Channel0: return LL_DMA_CHANNEL_0;
     case Hardware::DMAChannel::Channel1: return LL_DMA_CHANNEL_1;
     case Hardware::DMAChannel::Channel2: return LL_DMA_CHANNEL_2;
     case Hardware::DMAChannel::Channel3: return LL_DMA_CHANNEL_3;
@@ -153,19 +155,47 @@ static inline constexpr uint32_t ConvertDMAChannel(Hardware::DMAChannel channel)
   }
 }
 
+static inline constexpr uint32_t ConvertDMAStream(Hardware::DMAStream stream) {
+  switch (stream) {
+    case Hardware::DMAStream::Stream0: return LL_DMA_STREAM_0;
+    case Hardware::DMAStream::Stream1: return LL_DMA_STREAM_1;
+    case Hardware::DMAStream::Stream2: return LL_DMA_STREAM_2;
+    case Hardware::DMAStream::Stream3: return LL_DMA_STREAM_3;
+    case Hardware::DMAStream::Stream4: return LL_DMA_STREAM_4;
+    case Hardware::DMAStream::Stream5: return LL_DMA_STREAM_5;
+    case Hardware::DMAStream::Stream6: return LL_DMA_STREAM_6;
+    case Hardware::DMAStream::Stream7: return LL_DMA_STREAM_7;
+    default:
+      return {}; // TODO: Insert assert
+  }
+}
+
 static inline
-constexpr IRQn_Type ConvertDMAInterruption(Hardware::DMADevice device,
-                                           Hardware::DMAChannel channel) {
-  switch (device) {
+constexpr IRQn_Type ConvertDMAInterruption(Hardware::DMAPort dma_port) {
+  switch (dma_port.device) {
     case Hardware::DMADevice::DMA_1:
-      switch (channel) {
-        case Hardware::DMAChannel::Channel1: return DMA1_Channel1_IRQn;
-        case Hardware::DMAChannel::Channel2: return DMA1_Channel2_IRQn;
-        case Hardware::DMAChannel::Channel3: return DMA1_Channel3_IRQn;
-        case Hardware::DMAChannel::Channel4: return DMA1_Channel4_IRQn;
-        case Hardware::DMAChannel::Channel5: return DMA1_Channel5_IRQn;
-        case Hardware::DMAChannel::Channel6: return DMA1_Channel6_IRQn;
-        case Hardware::DMAChannel::Channel7: return DMA1_Channel7_IRQn;
+      switch (dma_port.stream) {
+        case Hardware::DMAStream::Stream0: return DMA1_Stream0_IRQn;
+        case Hardware::DMAStream::Stream1: return DMA1_Stream1_IRQn;
+        case Hardware::DMAStream::Stream2: return DMA1_Stream2_IRQn;
+        case Hardware::DMAStream::Stream3: return DMA1_Stream3_IRQn;
+        case Hardware::DMAStream::Stream4: return DMA1_Stream4_IRQn;
+        case Hardware::DMAStream::Stream5: return DMA1_Stream5_IRQn;
+        case Hardware::DMAStream::Stream6: return DMA1_Stream6_IRQn;
+        case Hardware::DMAStream::Stream7: return DMA1_Stream7_IRQn;
+        default:
+          return {}; // TODO: Insert assert
+      }
+    case Hardware::DMADevice::DMA_2:
+      switch (dma_port.stream) {
+        case Hardware::DMAStream::Stream0: return DMA2_Stream0_IRQn;
+        case Hardware::DMAStream::Stream1: return DMA2_Stream1_IRQn;
+        case Hardware::DMAStream::Stream2: return DMA2_Stream2_IRQn;
+        case Hardware::DMAStream::Stream3: return DMA2_Stream3_IRQn;
+        case Hardware::DMAStream::Stream4: return DMA2_Stream4_IRQn;
+        case Hardware::DMAStream::Stream5: return DMA2_Stream5_IRQn;
+        case Hardware::DMAStream::Stream6: return DMA2_Stream6_IRQn;
+        case Hardware::DMAStream::Stream7: return DMA2_Stream7_IRQn;
         default:
           return {}; // TODO: Insert assert
       }
@@ -257,6 +287,8 @@ static inline LL_DMA_InitTypeDef ConvertDMASettings(uint32_t periph_or_src_addre
       return {}; // TODO: Insert assert
   }
 
+  init.FIFOMode = LL_DMA_FIFOMODE_DISABLE;
+
   return init;
 }
 
@@ -285,7 +317,7 @@ static inline constexpr uint32_t ConvertADCRank(uint8_t rank) {
 
 static inline constexpr uint32_t ConvertADCScan(uint8_t number) {
   switch (number) {
-    case 1: return {}; // TODO: Insert assert
+    case 1: return LL_ADC_REG_SEQ_SCAN_DISABLE;
     case 2: return LL_ADC_REG_SEQ_SCAN_ENABLE_2RANKS;
     case 3: return LL_ADC_REG_SEQ_SCAN_ENABLE_3RANKS;
     case 4: return LL_ADC_REG_SEQ_SCAN_ENABLE_4RANKS;

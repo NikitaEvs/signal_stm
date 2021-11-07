@@ -77,7 +77,9 @@ class AsyncUART : public BaseUART {
 
   // TODO: Make sure that this blocking method is needed
   void SendBytes(const uint8_t* buffer, std::size_t size) const override {
-    Utils::AsyncBufferView<uint8_t> view(master_, kDMADevice, kDMATXChannel,
+    auto using_dma = master_.GetDMAMapping(uart_, /* isTx= */ true);
+    Utils::AsyncBufferView<uint8_t> view(master_,
+                                         using_dma,
                                          buffer, size);
     ChainFrom(view);
     view.Enable();
@@ -85,11 +87,6 @@ class AsyncUART : public BaseUART {
   }
 
  private:
-  static const constexpr auto kDMADevice = Hardware::DMADevice::DMA_1;
-  static const constexpr auto kDMATXChannel = Hardware::DMAChannel::Channel4;
-  static const constexpr auto kDMARXChannel = Hardware::DMAChannel::Channel5;
-
-
   [[nodiscard]] Hardware::DMASettings GetDMARXSettings() const {
     return {
         .direction = Hardware::DMADirection::PeriphToMemory,
