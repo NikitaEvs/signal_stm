@@ -10,22 +10,13 @@ namespace SD {
 
 namespace Hardware {
 
-struct DMAPort {
-  DMADevice device;
-  DMAChannel channel;
-};
-
 class DMAUnit {
  public:
-  DMAUnit(AbstractMaster& master, DMADevice device, DMAChannel channel) :
-    master_(master), device_(device), channel_(channel) {
-    master.SetDMACallback(device, channel, [this](){
+  DMAUnit(AbstractMaster& master, DMAPort dma_port) :
+    master_(master), dma_port_(dma_port) {
+    master.SetDMACallback(dma_port_, [this](){
       is_prepared_ = true;
     });
-  }
-
-  DMAUnit(AbstractMaster& master, DMAPort dma_port) :
-    DMAUnit(master, dma_port.device, dma_port.channel) {
   }
 
   DMAUnit(const DMAUnit& other) = default;
@@ -33,8 +24,7 @@ class DMAUnit {
   DMAUnit(DMAUnit&& other) = delete;
 
   DMAUnit& operator=(const DMAUnit& other) {
-    device_ = other.device_;
-    channel_ = other.channel_;
+    dma_port_ = other.dma_port_;
     is_prepared_ = other.is_prepared_;
 
     return *this;
@@ -50,8 +40,8 @@ class DMAUnit {
             uint32_t to_address,
             uint32_t size,
             const Hardware::DMASettings& settings) const {
-    master_.ConfigureDMAInterruption(device_, channel_);
-    master_.ConfigureDMA(device_, channel_, settings,
+    master_.ConfigureDMAInterruption(dma_port_);
+    master_.ConfigureDMA(dma_port_, settings,
                          from_address, to_address, size);
   }
 
@@ -59,8 +49,8 @@ class DMAUnit {
             uint32_t mem_address,
             uint32_t size,
             const Hardware::DMASettings& settings) const {
-    master_.ConfigureDMAInterruption(device_, channel_);
-    master_.ConfigureDMA(device_, channel_, settings,
+    master_.ConfigureDMAInterruption(dma_port_);
+    master_.ConfigureDMA(dma_port_, settings,
                          device, mem_address, size);
   }
 
@@ -68,23 +58,22 @@ class DMAUnit {
             uint32_t mem_address,
             uint32_t size,
             const Hardware::DMASettings& settings) const {
-    master_.ConfigureDMAInterruption(device_, channel_);
-    master_.ConfigureDMA(device_, channel_, settings,
+    master_.ConfigureDMAInterruption(dma_port_);
+    master_.ConfigureDMA(dma_port_, settings,
                          device, mem_address, size);
   }
 
   void Enable() {
     is_prepared_ = false;
-    master_.EnableDMA(device_, channel_);
+    master_.EnableDMA(dma_port_);
   }
 
   void Disable() {
-    is_prepared_ = false;
-    master_.DisableDMA(device_, channel_);
+    master_.DisableDMA(dma_port_);
   }
 
   void SetCallback(std::function<void()>&& callback) {
-    master_.SetDMACallback(device_, channel_, [this, callback = std::move(callback)]{
+    master_.SetDMACallback(dma_port_, [this, callback = std::move(callback)]{
       is_prepared_ = true;
       callback();
     });
@@ -98,32 +87,22 @@ class DMAUnit {
  private:
   AbstractMaster& master_;
 
-  DMADevice device_;
-  DMAChannel channel_;
-
+  DMAPort dma_port_;
   bool is_prepared_ = false;
 };
 
 
 class DMAPipe {
  public:
-  DMAPipe(AbstractMaster& master) : master_(master) {
-  }
-
-  [[deprecated]] void SetInput(Hardware::DMADevice device, Hardware::DMAChannel channel) {
-    in_pipe_.emplace(master_, device, channel);
+  explicit DMAPipe(AbstractMaster& master) : master_(master) {
   }
 
   void SetInput(Hardware::DMAPort dma_port) {
-    in_pipe_.emplace(master_, dma_port.device, dma_port.channel);
-  }
-
-  [[deprecated]] void SetOutput(Hardware::DMADevice device, Hardware::DMAChannel channel) {
-    out_pipe_.emplace(master_, device, channel);
+    in_pipe_.emplace(master_, dma_port);
   }
 
   void SetOutput(Hardware::DMAPort dma_port) {
-    out_pipe_.emplace(master_, dma_port.device, dma_port.channel);
+    out_pipe_.emplace(master_, dma_port);
   }
 
   [[nodiscard]] std::optional<DMAUnit>& GetInput() {
