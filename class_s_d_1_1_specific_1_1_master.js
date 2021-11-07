@@ -39,6 +39,8 @@ var class_s_d_1_1_specific_1_1_master =
     [ "EnableDMA", "class_s_d_1_1_specific_1_1_master.html#a4ed9fd066c718418e24ed6c5bb501cb6", null ],
     [ "EnableDMA", "class_s_d_1_1_specific_1_1_master.html#a4ed9fd066c718418e24ed6c5bb501cb6", null ],
     [ "GetDMAMapping", "class_s_d_1_1_specific_1_1_master.html#a8faf86462bb3c15fd4791f7a3470088b", null ],
+    [ "GetDMAMapping", "class_s_d_1_1_specific_1_1_master.html#a8faf86462bb3c15fd4791f7a3470088b", null ],
+    [ "GetDMAMapping", "class_s_d_1_1_specific_1_1_master.html#a4a3c82569d6c2dd22d0377bce09eeb81", null ],
     [ "GetDMAMapping", "class_s_d_1_1_specific_1_1_master.html#a4a3c82569d6c2dd22d0377bce09eeb81", null ],
     [ "ReadADC", "class_s_d_1_1_specific_1_1_master.html#af064375b0712a1d8eab9fcec6bb2ce71", null ],
     [ "ReadADC", "class_s_d_1_1_specific_1_1_master.html#af064375b0712a1d8eab9fcec6bb2ce71", null ],

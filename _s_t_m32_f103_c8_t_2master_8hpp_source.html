@@ -339,187 +339,221 @@ $(document).ready(function(){initNavTree('_s_t_m32_f103_c8_t_2master_8hpp_source
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    LL_ADC_REG_Init(ConvertADCDevice(device), &amp;ADC_reg_init);</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  }</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <span class="keyword">inline</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno"><a class="line" href="class_s_d_1_1_specific_1_1_master.html#acceecfda00d1d24122b4e91da49dd481">  279</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_s_d_1_1_specific_1_1_master.html#acceecfda00d1d24122b4e91da49dd481">ConfigureDMAInterruption</a>(<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port)<span class="keyword"> const override </span>{</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    LL_AHB1_GRP1_EnableClock(ConvertDMAClock(dma_port.<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a42a9d719c7cf8868e349b966452bdef1">device</a>));</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    NVIC_SetPriority(ConvertDMAInterruption(dma_port),</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                     NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    NVIC_EnableIRQ(ConvertDMAInterruption(dma_port));</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  }</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
-<div class="line"><a name="l00287"></a><span class="lineno"><a class="line" href="class_s_d_1_1_specific_1_1_master.html#ae5b5016154a6511c225a5dd610c2c546">  287</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_s_d_1_1_specific_1_1_master.html#ae5b5016154a6511c225a5dd610c2c546">ConfigureDMA</a>(<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port,</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                           <span class="keyword">const</span> <a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_settings.html">Hardware::DMASettings</a>&amp; settings,</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                           uint32_t periph_or_src_address,</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                           uint32_t mem_or_dst_address,</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                           uint32_t size)<span class="keyword"> const override </span>{</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keyword">auto</span> dma = ConvertDMADevice(dma_port.<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a42a9d719c7cf8868e349b966452bdef1">device</a>);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keyword">auto</span> channel = ConvertDMAChannel(dma_port.<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a8aec09df8fd95495135d19216d490b81">channel</a>);</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keyword">auto</span> DMA_init = ConvertDMASettings(periph_or_src_address,</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                                       mem_or_dst_address,</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                                       size,</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                                       settings);</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    LL_DMA_Init(dma, channel, &amp;DMA_init);</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    LL_DMA_DisableChannel(dma, channel);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    LL_DMA_EnableIT_TC(dma, channel);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    LL_DMA_EnableIT_TE(dma, channel);</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  }</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
-<div class="line"><a name="l00306"></a><span class="lineno"><a class="line" href="class_s_d_1_1_specific_1_1_master.html#a8a64868de82a090b9583eeee2efa2130">  306</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_s_d_1_1_specific_1_1_master.html#a8a64868de82a090b9583eeee2efa2130">ConfigureDMA</a>(<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port,</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                            <span class="keyword">const</span> <a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_settings.html">Hardware::DMASettings</a>&amp; settings,</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                            <a class="code" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a> adc_device,</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                            uint32_t mem_address,</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                            uint32_t size)<span class="keyword"> const override </span>{</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keyword">auto</span> adc = ConvertADCDevice(adc_device);</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keyword">auto</span> periph_address = LL_ADC_DMA_GetRegAddr(adc, LL_ADC_DMA_REG_REGULAR_DATA);</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <a class="code" href="class_s_d_1_1_specific_1_1_master.html#ae5b5016154a6511c225a5dd610c2c546">ConfigureDMA</a>(dma_port, settings,</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                 periph_address, mem_address, size);</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  }</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
-<div class="line"><a name="l00318"></a><span class="lineno"><a class="line" href="class_s_d_1_1_specific_1_1_master.html#aca77efe993b1f4856eb45c6cfcece70b">  318</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_s_d_1_1_specific_1_1_master.html#aca77efe993b1f4856eb45c6cfcece70b">ConfigureDMA</a>(<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port,</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                           <span class="keyword">const</span> <a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_settings.html">Hardware::DMASettings</a>&amp; settings,</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                           <a class="code" href="namespace_s_d_1_1_hardware.html#ad1e8b1bacc9a620a73832d79b77632d6">Hardware::UART</a> uart_device,</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                           uint32_t mem_address,</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                           uint32_t size)<span class="keyword"> const override </span>{</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keyword">auto</span> uart = ConvertUART(uart_device);</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keyword">auto</span> periph_address = LL_USART_DMA_GetRegAddr(uart);</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <a class="code" href="class_s_d_1_1_specific_1_1_master.html#ae5b5016154a6511c225a5dd610c2c546">ConfigureDMA</a>(dma_port, settings,</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                 periph_address, mem_address, size);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;  }</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
-<div class="line"><a name="l00330"></a><span class="lineno"><a class="line" href="class_s_d_1_1_specific_1_1_master.html#a4ed9fd066c718418e24ed6c5bb501cb6">  330</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_s_d_1_1_specific_1_1_master.html#a4ed9fd066c718418e24ed6c5bb501cb6">EnableDMA</a>(<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port)<span class="keyword"> const override </span>{</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    LL_DMA_EnableChannel(ConvertDMADevice(dma_port.<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a42a9d719c7cf8868e349b966452bdef1">device</a>),</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                         ConvertDMAChannel(dma_port.<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a8aec09df8fd95495135d19216d490b81">channel</a>));</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  }</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
-<div class="line"><a name="l00335"></a><span class="lineno"><a class="line" href="class_s_d_1_1_specific_1_1_master.html#afbc2802388b263a35dd98871edca4647">  335</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_s_d_1_1_specific_1_1_master.html#afbc2802388b263a35dd98871edca4647">DisableDMA</a>(<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port)<span class="keyword"> const override </span>{</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    LL_DMA_DisableChannel(ConvertDMADevice(dma_port.<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a42a9d719c7cf8868e349b966452bdef1">device</a>),</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                          ConvertDMAChannel(dma_port.<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a8aec09df8fd95495135d19216d490b81">channel</a>));</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  [[nodiscard]] <span class="keyword">inline</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno"><a class="line" href="class_s_d_1_1_specific_1_1_master.html#a8faf86462bb3c15fd4791f7a3470088b">  279</a></span>&#160;  <a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> <a class="code" href="class_s_d_1_1_specific_1_1_master.html#a8faf86462bb3c15fd4791f7a3470088b">GetDMAMapping</a>(<a class="code" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a> device)<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">switch</span> (device) {</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;      <span class="keywordflow">case</span> <a class="code" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27a7db4c68e0a85031797c43decd8fa42c8">Hardware::ADCDevice::ADC_1</a>:</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keywordflow">return</span> {</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            .device = <a class="code" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156a605f1a120c73ab3b1dea879c2b3a106f">Hardware::DMADevice::DMA_1</a>,</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            .channel = <a class="code" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06ba6e7930d9e45cf08519eb5ea33285a737">Hardware::DMAChannel::Channel1</a></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        };</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;      <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="keywordflow">return</span> {}; <span class="comment">// TODO: Insert assert</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    }</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  }</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  [[nodiscard]] <span class="keyword">inline</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno"><a class="line" href="class_s_d_1_1_specific_1_1_master.html#a4a3c82569d6c2dd22d0377bce09eeb81">  292</a></span>&#160;  <a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> <a class="code" href="class_s_d_1_1_specific_1_1_master.html#a4a3c82569d6c2dd22d0377bce09eeb81">GetDMAMapping</a>(<a class="code" href="namespace_s_d_1_1_hardware.html#ad1e8b1bacc9a620a73832d79b77632d6">Hardware::UART</a> device,</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                                  <span class="keywordtype">bool</span> isTX)<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordflow">switch</span> (device) {</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;      <span class="keywordflow">case</span> <a class="code" href="namespace_s_d_1_1_hardware.html#ad1e8b1bacc9a620a73832d79b77632d6ae44893ffa131a8a5e0853469d79de6ff">Hardware::UART::UART1</a>:</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keywordflow">if</span> (isTX) {</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;          <span class="keywordflow">return</span> {</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;              .device = <a class="code" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156a605f1a120c73ab3b1dea879c2b3a106f">Hardware::DMADevice::DMA_1</a>,</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;              .channel = <a class="code" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06ba5c7e076937da7c1e9a00f383432a05fd">Hardware::DMAChannel::Channel4</a></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;          };</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;          <span class="keywordflow">return</span> {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;              .device = <a class="code" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156a605f1a120c73ab3b1dea879c2b3a106f">Hardware::DMADevice::DMA_1</a>,</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;              .channel = <a class="code" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06ba3f189c670b7f27cd75e266eade42d425">Hardware::DMAChannel::Channel5</a></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;          };</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        }</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;      <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keywordflow">return</span> {}; <span class="comment">// TODO: Insert assert</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    }</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  }</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  <span class="keyword">inline</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno"><a class="line" href="class_s_d_1_1_specific_1_1_master.html#acceecfda00d1d24122b4e91da49dd481">  313</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_s_d_1_1_specific_1_1_master.html#acceecfda00d1d24122b4e91da49dd481">ConfigureDMAInterruption</a>(<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port)<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    LL_AHB1_GRP1_EnableClock(ConvertDMAClock(dma_port.<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a42a9d719c7cf8868e349b966452bdef1">device</a>));</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    NVIC_SetPriority(ConvertDMAInterruption(dma_port),</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                     NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    NVIC_EnableIRQ(ConvertDMAInterruption(dma_port));</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  }</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
+<div class="line"><a name="l00321"></a><span class="lineno"><a class="line" href="class_s_d_1_1_specific_1_1_master.html#ae5b5016154a6511c225a5dd610c2c546">  321</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_s_d_1_1_specific_1_1_master.html#ae5b5016154a6511c225a5dd610c2c546">ConfigureDMA</a>(<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port,</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                           <span class="keyword">const</span> <a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_settings.html">Hardware::DMASettings</a>&amp; settings,</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                           uint32_t periph_or_src_address,</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                           uint32_t mem_or_dst_address,</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                           uint32_t size)<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="keyword">auto</span> dma = ConvertDMADevice(dma_port.<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a42a9d719c7cf8868e349b966452bdef1">device</a>);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keyword">auto</span> channel = ConvertDMAChannel(dma_port.<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a8aec09df8fd95495135d19216d490b81">channel</a>);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keyword">auto</span> DMA_init = ConvertDMASettings(periph_or_src_address,</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                                       mem_or_dst_address,</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                                       size,</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                                       settings);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    LL_DMA_Init(dma, channel, &amp;DMA_init);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    LL_DMA_DisableChannel(dma, channel);</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    LL_DMA_EnableIT_TC(dma, channel);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    LL_DMA_EnableIT_TE(dma, channel);</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  }</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
-<div class="line"><a name="l00340"></a><span class="lineno"><a class="line" href="class_s_d_1_1_specific_1_1_master.html#a37b6b041911a06e7c0036bfe6d6edba0">  340</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_s_d_1_1_specific_1_1_master.html#a37b6b041911a06e7c0036bfe6d6edba0">SetDMACallback</a>(<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port,</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                             std::function&lt;<span class="keywordtype">void</span>()&gt;&amp;&amp; func)<span class="keyword"> override </span>{</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="keywordflow">switch</span> (dma_port.<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a42a9d719c7cf8868e349b966452bdef1">device</a>) {</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;      <span class="keywordflow">case</span> <a class="code" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156a605f1a120c73ab3b1dea879c2b3a106f">Hardware::DMADevice::DMA_1</a>:</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keywordflow">switch</span> (dma_port.<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a8aec09df8fd95495135d19216d490b81">channel</a>) {</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06ba6e7930d9e45cf08519eb5ea33285a737">Hardware::DMAChannel::Channel1</a>:</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            dma1_channel1_callback_ = std::move(func);</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06ba5c7e076937da7c1e9a00f383432a05fd">Hardware::DMAChannel::Channel4</a>:</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            dma1_channel4_callback_ = std::move(func);</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;          <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            <span class="comment">// TODO: Insert assert</span></div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        }</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;      <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <span class="comment">// TODO: Insert assert</span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    }</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;  }</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
-<div class="line"><a name="l00362"></a><span class="lineno"><a class="line" href="class_s_d_1_1_specific_1_1_master.html#a8a85aa3d5f1e776320adf9902be1f181">  362</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_s_d_1_1_specific_1_1_master.html#a8a85aa3d5f1e776320adf9902be1f181">DMACallback</a>(<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="keywordflow">switch</span> (dma_port.<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a42a9d719c7cf8868e349b966452bdef1">device</a>) {</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;      <span class="keywordflow">case</span> <a class="code" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156a605f1a120c73ab3b1dea879c2b3a106f">Hardware::DMADevice::DMA_1</a>:</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <span class="keywordflow">switch</span> (dma_port.<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a8aec09df8fd95495135d19216d490b81">channel</a>) {</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06ba6e7930d9e45cf08519eb5ea33285a737">Hardware::DMAChannel::Channel1</a>:</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            <span class="keywordflow">if</span> (dma1_channel1_callback_) {</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;              dma1_channel1_callback_();</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            }</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06ba5c7e076937da7c1e9a00f383432a05fd">Hardware::DMAChannel::Channel4</a>:</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            <span class="keywordflow">if</span> (dma1_channel4_callback_) {</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;              dma1_channel4_callback_();</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            }</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;          <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            <span class="comment">// TODO: Insert assert</span></div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        }</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;      <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="comment">// TODO: Insert assert</span></div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    }</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;  }</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
-<div class="line"><a name="l00388"></a><span class="lineno"><a class="line" href="class_s_d_1_1_specific_1_1_master.html#a65ced6d6d41ab067f4d66941f68e3b85">  388</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_s_d_1_1_specific_1_1_master.html#a65ced6d6d41ab067f4d66941f68e3b85">ReadADCAsync</a>(<a class="code" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a> device)<span class="keyword"> const override </span>{</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    LL_ADC_REG_StartConversionSWStart(ConvertADCDevice(device));</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;  }</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;  std::function&lt;void()&gt; dma1_channel1_callback_;</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;  std::function&lt;void()&gt; dma1_channel4_callback_;</div>
+<div class="line"><a name="l00340"></a><span class="lineno"><a class="line" href="class_s_d_1_1_specific_1_1_master.html#a8a64868de82a090b9583eeee2efa2130">  340</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_s_d_1_1_specific_1_1_master.html#a8a64868de82a090b9583eeee2efa2130">ConfigureDMA</a>(<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port,</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                            <span class="keyword">const</span> <a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_settings.html">Hardware::DMASettings</a>&amp; settings,</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                            <a class="code" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a> adc_device,</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                            uint32_t mem_address,</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                            uint32_t size)<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="keyword">auto</span> adc = ConvertADCDevice(adc_device);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keyword">auto</span> periph_address = LL_ADC_DMA_GetRegAddr(adc, LL_ADC_DMA_REG_REGULAR_DATA);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <a class="code" href="class_s_d_1_1_specific_1_1_master.html#ae5b5016154a6511c225a5dd610c2c546">ConfigureDMA</a>(dma_port, settings,</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                 periph_address, mem_address, size);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;  }</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
+<div class="line"><a name="l00352"></a><span class="lineno"><a class="line" href="class_s_d_1_1_specific_1_1_master.html#aca77efe993b1f4856eb45c6cfcece70b">  352</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_s_d_1_1_specific_1_1_master.html#aca77efe993b1f4856eb45c6cfcece70b">ConfigureDMA</a>(<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port,</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                           <span class="keyword">const</span> <a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_settings.html">Hardware::DMASettings</a>&amp; settings,</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                           <a class="code" href="namespace_s_d_1_1_hardware.html#ad1e8b1bacc9a620a73832d79b77632d6">Hardware::UART</a> uart_device,</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                           uint32_t mem_address,</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                           uint32_t size)<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keyword">auto</span> uart = ConvertUART(uart_device);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keyword">auto</span> periph_address = LL_USART_DMA_GetRegAddr(uart);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <a class="code" href="class_s_d_1_1_specific_1_1_master.html#ae5b5016154a6511c225a5dd610c2c546">ConfigureDMA</a>(dma_port, settings,</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                 periph_address, mem_address, size);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;  }</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
+<div class="line"><a name="l00364"></a><span class="lineno"><a class="line" href="class_s_d_1_1_specific_1_1_master.html#a4ed9fd066c718418e24ed6c5bb501cb6">  364</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_s_d_1_1_specific_1_1_master.html#a4ed9fd066c718418e24ed6c5bb501cb6">EnableDMA</a>(<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port)<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    LL_DMA_EnableChannel(ConvertDMADevice(dma_port.<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a42a9d719c7cf8868e349b966452bdef1">device</a>),</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                         ConvertDMAChannel(dma_port.<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a8aec09df8fd95495135d19216d490b81">channel</a>));</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  }</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
+<div class="line"><a name="l00369"></a><span class="lineno"><a class="line" href="class_s_d_1_1_specific_1_1_master.html#afbc2802388b263a35dd98871edca4647">  369</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_s_d_1_1_specific_1_1_master.html#afbc2802388b263a35dd98871edca4647">DisableDMA</a>(<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port)<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    LL_DMA_DisableChannel(ConvertDMADevice(dma_port.<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a42a9d719c7cf8868e349b966452bdef1">device</a>),</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                          ConvertDMAChannel(dma_port.<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a8aec09df8fd95495135d19216d490b81">channel</a>));</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  }</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
+<div class="line"><a name="l00374"></a><span class="lineno"><a class="line" href="class_s_d_1_1_specific_1_1_master.html#a37b6b041911a06e7c0036bfe6d6edba0">  374</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_s_d_1_1_specific_1_1_master.html#a37b6b041911a06e7c0036bfe6d6edba0">SetDMACallback</a>(<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port,</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                             std::function&lt;<span class="keywordtype">void</span>()&gt;&amp;&amp; func)<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="keywordflow">switch</span> (dma_port.<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a42a9d719c7cf8868e349b966452bdef1">device</a>) {</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;      <span class="keywordflow">case</span> <a class="code" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156a605f1a120c73ab3b1dea879c2b3a106f">Hardware::DMADevice::DMA_1</a>:</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="keywordflow">switch</span> (dma_port.<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a8aec09df8fd95495135d19216d490b81">channel</a>) {</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06ba6e7930d9e45cf08519eb5ea33285a737">Hardware::DMAChannel::Channel1</a>:</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            dma1_channel1_callback_ = std::move(func);</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06ba5c7e076937da7c1e9a00f383432a05fd">Hardware::DMAChannel::Channel4</a>:</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            dma1_channel4_callback_ = std::move(func);</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;          <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            <span class="comment">// TODO: Insert assert</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        }</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;      <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <span class="comment">// TODO: Insert assert</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    }</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;  }</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;  <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ConfigureUART1(uint32_t speed, <span class="keywordtype">bool</span> async) {</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_USART1);</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_GPIOA);</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    LL_USART_InitTypeDef USART_init = {};</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    LL_GPIO_InitTypeDef GPIO_init = {};</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    GPIO_init.Pin = LL_GPIO_PIN_9;</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    GPIO_init.Mode = LL_GPIO_MODE_ALTERNATE;</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    GPIO_init.Speed = LL_GPIO_SPEED_FREQ_HIGH;</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    GPIO_init.OutputType = LL_GPIO_OUTPUT_PUSHPULL;</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    LL_GPIO_Init(GPIOA, &amp;GPIO_init);</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160; </div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    GPIO_init.Pin = LL_GPIO_PIN_10;</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    GPIO_init.Mode = LL_GPIO_MODE_FLOATING;</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    LL_GPIO_Init(GPIOA, &amp;GPIO_init);</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    USART_init.BaudRate = speed;</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    USART_init.DataWidth = LL_USART_DATAWIDTH_8B;</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    USART_init.StopBits = LL_USART_STOPBITS_1;</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    USART_init.Parity = LL_USART_PARITY_NONE;</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    USART_init.TransferDirection = LL_USART_DIRECTION_TX_RX;</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    USART_init.HardwareFlowControl = LL_USART_HWCONTROL_NONE;</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    USART_init.OverSampling = LL_USART_OVERSAMPLING_16;</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    LL_USART_Init(USART1, &amp;USART_init); <span class="comment">// TODO: Check ErrorStatus</span></div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    LL_USART_ConfigAsyncMode(USART1);</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    LL_USART_Enable(USART1);</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <span class="keywordflow">if</span> (async) {</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;      LL_USART_EnableDMAReq_TX(USART1);</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    }</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;  }</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160; </div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;  <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> SendByteUART1Blocking(uint8_t <span class="keywordtype">byte</span>) {</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">auto</span> using_uart = ConvertUART(<a class="code" href="namespace_s_d_1_1_hardware.html#ad1e8b1bacc9a620a73832d79b77632d6ae44893ffa131a8a5e0853469d79de6ff">Hardware::UART::UART1</a>);</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160; </div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="keywordflow">while</span> (!LL_USART_IsActiveFlag_TXE(using_uart)){</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    }</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    LL_USART_TransmitData8(using_uart, <span class="keywordtype">byte</span>);</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;  }</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160; </div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;  <span class="keyword">static</span> <span class="keyword">inline</span> uint8_t ReceiveByteUART1Blocking() {</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">auto</span> using_uart = ConvertUART(<a class="code" href="namespace_s_d_1_1_hardware.html#ad1e8b1bacc9a620a73832d79b77632d6ae44893ffa131a8a5e0853469d79de6ff">Hardware::UART::UART1</a>);</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    <span class="keywordflow">while</span> (!LL_USART_IsActiveFlag_RXNE(using_uart)){</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    }</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160; </div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    <span class="keywordflow">return</span> LL_USART_ReceiveData8(using_uart);</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;  }</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;};</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160; </div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;<span class="keyword">static</span> Master master_instance;</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160; </div>
-<div class="line"><a name="l00450"></a><span class="lineno"><a class="line" href="namespace_s_d_1_1_specific.html#af85135ce1ec22753335942740181d02e">  450</a></span>&#160;<a class="code" href="class_s_d_1_1_specific_1_1_master.html">Master</a>&amp; <a class="code" href="namespace_s_d_1_1_specific.html#af85135ce1ec22753335942740181d02e">GetMasterInstance</a>() {</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;  <span class="keywordflow">return</span> master_instance;</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;}</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160; </div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160; </div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;} <span class="comment">// namespace Specific</span></div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;} <span class="comment">// namespace SD</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno"><a class="line" href="class_s_d_1_1_specific_1_1_master.html#a8a85aa3d5f1e776320adf9902be1f181">  396</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_s_d_1_1_specific_1_1_master.html#a8a85aa3d5f1e776320adf9902be1f181">DMACallback</a>(<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">Hardware::DMAPort</a> dma_port)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <span class="keywordflow">switch</span> (dma_port.<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a42a9d719c7cf8868e349b966452bdef1">device</a>) {</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;      <span class="keywordflow">case</span> <a class="code" href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156a605f1a120c73ab3b1dea879c2b3a106f">Hardware::DMADevice::DMA_1</a>:</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <span class="keywordflow">switch</span> (dma_port.<a class="code" href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a8aec09df8fd95495135d19216d490b81">channel</a>) {</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06ba6e7930d9e45cf08519eb5ea33285a737">Hardware::DMAChannel::Channel1</a>:</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            <span class="keywordflow">if</span> (dma1_channel1_callback_) {</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;              dma1_channel1_callback_();</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;            }</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06ba5c7e076937da7c1e9a00f383432a05fd">Hardware::DMAChannel::Channel4</a>:</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            <span class="keywordflow">if</span> (dma1_channel4_callback_) {</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;              dma1_channel4_callback_();</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            }</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;          <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;            <span class="comment">// TODO: Insert assert</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        }</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;      <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        <span class="comment">// TODO: Insert assert</span></div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    }</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;  }</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160; </div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
+<div class="line"><a name="l00422"></a><span class="lineno"><a class="line" href="class_s_d_1_1_specific_1_1_master.html#a65ced6d6d41ab067f4d66941f68e3b85">  422</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_s_d_1_1_specific_1_1_master.html#a65ced6d6d41ab067f4d66941f68e3b85">ReadADCAsync</a>(<a class="code" href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">Hardware::ADCDevice</a> device)<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    LL_ADC_REG_StartConversionSWStart(ConvertADCDevice(device));</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;  }</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;  std::function&lt;void()&gt; dma1_channel1_callback_;</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;  std::function&lt;void()&gt; dma1_channel4_callback_;</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160; </div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;  <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ConfigureUART1(uint32_t speed, <span class="keywordtype">bool</span> async) {</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_USART1);</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_GPIOA);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160; </div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    LL_USART_InitTypeDef USART_init = {};</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    LL_GPIO_InitTypeDef GPIO_init = {};</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    GPIO_init.Pin = LL_GPIO_PIN_9;</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    GPIO_init.Mode = LL_GPIO_MODE_ALTERNATE;</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    GPIO_init.Speed = LL_GPIO_SPEED_FREQ_HIGH;</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    GPIO_init.OutputType = LL_GPIO_OUTPUT_PUSHPULL;</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    LL_GPIO_Init(GPIOA, &amp;GPIO_init);</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    GPIO_init.Pin = LL_GPIO_PIN_10;</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    GPIO_init.Mode = LL_GPIO_MODE_FLOATING;</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    LL_GPIO_Init(GPIOA, &amp;GPIO_init);</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160; </div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    USART_init.BaudRate = speed;</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    USART_init.DataWidth = LL_USART_DATAWIDTH_8B;</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    USART_init.StopBits = LL_USART_STOPBITS_1;</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    USART_init.Parity = LL_USART_PARITY_NONE;</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    USART_init.TransferDirection = LL_USART_DIRECTION_TX_RX;</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    USART_init.HardwareFlowControl = LL_USART_HWCONTROL_NONE;</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    USART_init.OverSampling = LL_USART_OVERSAMPLING_16;</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    LL_USART_Init(USART1, &amp;USART_init); <span class="comment">// TODO: Check ErrorStatus</span></div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    LL_USART_ConfigAsyncMode(USART1);</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    LL_USART_Enable(USART1);</div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160; </div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_s_t_m32_f103_c8_t_2handlers_8ipp.html">handlers.ipp</a>&quot;</span></div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    <span class="keywordflow">if</span> (async) {</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;      LL_USART_EnableDMAReq_TX(USART1);</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    }</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;  }</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160; </div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;  <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> SendByteUART1Blocking(uint8_t <span class="keywordtype">byte</span>) {</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">auto</span> using_uart = ConvertUART(<a class="code" href="namespace_s_d_1_1_hardware.html#ad1e8b1bacc9a620a73832d79b77632d6ae44893ffa131a8a5e0853469d79de6ff">Hardware::UART::UART1</a>);</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160; </div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    <span class="keywordflow">while</span> (!LL_USART_IsActiveFlag_TXE(using_uart)){</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    }</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160; </div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    LL_USART_TransmitData8(using_uart, <span class="keywordtype">byte</span>);</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;  }</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160; </div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;  <span class="keyword">static</span> <span class="keyword">inline</span> uint8_t ReceiveByteUART1Blocking() {</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">auto</span> using_uart = ConvertUART(<a class="code" href="namespace_s_d_1_1_hardware.html#ad1e8b1bacc9a620a73832d79b77632d6ae44893ffa131a8a5e0853469d79de6ff">Hardware::UART::UART1</a>);</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160; </div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    <span class="keywordflow">while</span> (!LL_USART_IsActiveFlag_RXNE(using_uart)){</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    }</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160; </div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    <span class="keywordflow">return</span> LL_USART_ReceiveData8(using_uart);</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;  }</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;};</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160; </div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;<span class="keyword">static</span> Master master_instance;</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160; </div>
+<div class="line"><a name="l00484"></a><span class="lineno"><a class="line" href="namespace_s_d_1_1_specific.html#af85135ce1ec22753335942740181d02e">  484</a></span>&#160;<a class="code" href="class_s_d_1_1_specific_1_1_master.html">Master</a>&amp; <a class="code" href="namespace_s_d_1_1_specific.html#af85135ce1ec22753335942740181d02e">GetMasterInstance</a>() {</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;  <span class="keywordflow">return</span> master_instance;</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;}</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160; </div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160; </div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;} <span class="comment">// namespace Specific</span></div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;} <span class="comment">// namespace SD</span></div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160; </div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_s_t_m32_f103_c8_t_2handlers_8ipp.html">handlers.ipp</a>&quot;</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_a652123dc34c322ce7c4cdad1e0cab040"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#a652123dc34c322ce7c4cdad1e0cab040">SD::Specific::Master::ConfigureADCDataSingleChannel</a></div><div class="ttdeci">void ConfigureADCDataSingleChannel(Hardware::ADCDevice device) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00240">STM32F103C8T/master.hpp:240</a></div></div>
@@ -527,7 +561,7 @@ $(document).ready(function(){initNavTree('_s_t_m32_f103_c8_t_2master_8hpp_source
 <div class="ttc" id="astruct_s_d_1_1_hardware_1_1_d_m_a_port_html_a8aec09df8fd95495135d19216d490b81"><div class="ttname"><a href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a8aec09df8fd95495135d19216d490b81">SD::Hardware::DMAPort::channel</a></div><div class="ttdeci">DMAChannel channel</div><div class="ttdef"><b>Definition:</b> <a href="hardware__layout_8hpp_source.html#l00079">hardware_layout.hpp:79</a></div></div>
 <div class="ttc" id="astruct_s_d_1_1_hardware_1_1_d_m_a_port_html"><div class="ttname"><a href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html">SD::Hardware::DMAPort</a></div><div class="ttdef"><b>Definition:</b> <a href="hardware__layout_8hpp_source.html#l00077">hardware_layout.hpp:77</a></div></div>
 <div class="ttc" id="anamespace_s_d_1_1_hardware_html_a9ee875bc428d3aff721ee7d11b1ce06ba6e7930d9e45cf08519eb5ea33285a737"><div class="ttname"><a href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06ba6e7930d9e45cf08519eb5ea33285a737">SD::Hardware::DMAChannel::Channel1</a></div><div class="ttdeci">@ Channel1</div></div>
-<div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_a37b6b041911a06e7c0036bfe6d6edba0"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#a37b6b041911a06e7c0036bfe6d6edba0">SD::Specific::Master::SetDMACallback</a></div><div class="ttdeci">void SetDMACallback(Hardware::DMAPort dma_port, std::function&lt; void()&gt; &amp;&amp;func) override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00340">STM32F103C8T/master.hpp:340</a></div></div>
+<div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_a37b6b041911a06e7c0036bfe6d6edba0"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#a37b6b041911a06e7c0036bfe6d6edba0">SD::Specific::Master::SetDMACallback</a></div><div class="ttdeci">void SetDMACallback(Hardware::DMAPort dma_port, std::function&lt; void()&gt; &amp;&amp;func) override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00374">STM32F103C8T/master.hpp:374</a></div></div>
 <div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_a2fa98cb3e6ccf0b0051ad83593c272f6"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#a2fa98cb3e6ccf0b0051ad83593c272f6">SD::Specific::Master::EnableClocking</a></div><div class="ttdeci">void EnableClocking() const override</div><div class="ttdoc">System clock configuration The system clock is configured as follow:</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00042">STM32F103C8T/master.hpp:42</a></div></div>
 <div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_a7cd16c76ebacd13113d8d722d2365d20"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#a7cd16c76ebacd13113d8d722d2365d20">SD::Specific::Master::ConfigureADCDataScanning</a></div><div class="ttdeci">void ConfigureADCDataScanning(Hardware::ADCDevice device) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00248">STM32F103C8T/master.hpp:248</a></div></div>
 <div class="ttc" id="anamespace_s_d_1_1_hardware_html_a9ee875bc428d3aff721ee7d11b1ce06ba5c7e076937da7c1e9a00f383432a05fd"><div class="ttname"><a href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06ba5c7e076937da7c1e9a00f383432a05fd">SD::Hardware::DMAChannel::Channel4</a></div><div class="ttdeci">@ Channel4</div></div>
@@ -535,26 +569,29 @@ $(document).ready(function(){initNavTree('_s_t_m32_f103_c8_t_2master_8hpp_source
 <div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_ab52019e2b7ee9660609c6c3c1795ab29"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#ab52019e2b7ee9660609c6c3c1795ab29">SD::Specific::Master::ConfigureADCSingleChannelBlocking</a></div><div class="ttdeci">void ConfigureADCSingleChannelBlocking(Hardware::ADCDevice device, Hardware::GPIO port, Hardware::Pin pin) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00153">STM32F103C8T/master.hpp:153</a></div></div>
 <div class="ttc" id="a_s_t_m32_f103_c8_t_2hardware__mapping_8hpp_html"><div class="ttname"><a href="_s_t_m32_f103_c8_t_2hardware__mapping_8hpp.html">hardware_mapping.hpp</a></div></div>
 <div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_ac26bb3c3be57ecb525e4191b2157a019"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#ac26bb3c3be57ecb525e4191b2157a019">SD::Specific::Master::SendByteUARTBlocking</a></div><div class="ttdeci">void SendByteUARTBlocking(Hardware::UART uart, uint8_t byte) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00133">STM32F103C8T/master.hpp:133</a></div></div>
-<div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_aca77efe993b1f4856eb45c6cfcece70b"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#aca77efe993b1f4856eb45c6cfcece70b">SD::Specific::Master::ConfigureDMA</a></div><div class="ttdeci">void ConfigureDMA(Hardware::DMAPort dma_port, const Hardware::DMASettings &amp;settings, Hardware::UART uart_device, uint32_t mem_address, uint32_t size) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00318">STM32F103C8T/master.hpp:318</a></div></div>
+<div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_a4a3c82569d6c2dd22d0377bce09eeb81"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#a4a3c82569d6c2dd22d0377bce09eeb81">SD::Specific::Master::GetDMAMapping</a></div><div class="ttdeci">Hardware::DMAPort GetDMAMapping(Hardware::UART device, bool isTX) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00292">STM32F103C8T/master.hpp:292</a></div></div>
+<div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_aca77efe993b1f4856eb45c6cfcece70b"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#aca77efe993b1f4856eb45c6cfcece70b">SD::Specific::Master::ConfigureDMA</a></div><div class="ttdeci">void ConfigureDMA(Hardware::DMAPort dma_port, const Hardware::DMASettings &amp;settings, Hardware::UART uart_device, uint32_t mem_address, uint32_t size) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00352">STM32F103C8T/master.hpp:352</a></div></div>
+<div class="ttc" id="anamespace_s_d_1_1_hardware_html_a9ee875bc428d3aff721ee7d11b1ce06ba3f189c670b7f27cd75e266eade42d425"><div class="ttname"><a href="namespace_s_d_1_1_hardware.html#a9ee875bc428d3aff721ee7d11b1ce06ba3f189c670b7f27cd75e266eade42d425">SD::Hardware::DMAChannel::Channel5</a></div><div class="ttdeci">@ Channel5</div></div>
 <div class="ttc" id="anamespace_s_d_1_1_hardware_html_ad1e8b1bacc9a620a73832d79b77632d6"><div class="ttname"><a href="namespace_s_d_1_1_hardware.html#ad1e8b1bacc9a620a73832d79b77632d6">SD::Hardware::UART</a></div><div class="ttdeci">UART</div><div class="ttdef"><b>Definition:</b> <a href="hardware__layout_8hpp_source.html#l00039">hardware_layout.hpp:39</a></div></div>
 <div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_acfb894f467f99e6f76e9ffb126cfa94a"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#acfb894f467f99e6f76e9ffb126cfa94a">SD::Specific::Master::ClockADC</a></div><div class="ttdeci">void ClockADC(Hardware::ADCDevice device) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00213">STM32F103C8T/master.hpp:213</a></div></div>
 <div class="ttc" id="a_s_t_m32_f103_c8_t_2handlers_8ipp_html"><div class="ttname"><a href="_s_t_m32_f103_c8_t_2handlers_8ipp.html">handlers.ipp</a></div></div>
 <div class="ttc" id="anamespace_s_d_1_1_hardware_html_a25dd574e1e2b7aa369eaa8c778990156a605f1a120c73ab3b1dea879c2b3a106f"><div class="ttname"><a href="namespace_s_d_1_1_hardware.html#a25dd574e1e2b7aa369eaa8c778990156a605f1a120c73ab3b1dea879c2b3a106f">SD::Hardware::DMADevice::DMA_1</a></div><div class="ttdeci">@ DMA_1</div></div>
 <div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html">SD::Specific::Master</a></div><div class="ttdoc">Master-class implementation for a certain controller.</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00027">STM32F103C8T/master.hpp:27</a></div></div>
-<div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_acceecfda00d1d24122b4e91da49dd481"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#acceecfda00d1d24122b4e91da49dd481">SD::Specific::Master::ConfigureDMAInterruption</a></div><div class="ttdeci">void ConfigureDMAInterruption(Hardware::DMAPort dma_port) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00279">STM32F103C8T/master.hpp:279</a></div></div>
+<div class="ttc" id="anamespace_s_d_1_1_hardware_html_ac2afc9645ca41fddd88859781ede4c27a7db4c68e0a85031797c43decd8fa42c8"><div class="ttname"><a href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27a7db4c68e0a85031797c43decd8fa42c8">SD::Hardware::ADCDevice::ADC_1</a></div><div class="ttdeci">@ ADC_1</div></div>
+<div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_acceecfda00d1d24122b4e91da49dd481"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#acceecfda00d1d24122b4e91da49dd481">SD::Specific::Master::ConfigureDMAInterruption</a></div><div class="ttdeci">void ConfigureDMAInterruption(Hardware::DMAPort dma_port) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00313">STM32F103C8T/master.hpp:313</a></div></div>
 <div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_a2c1424fd57eb16ad7b73989a32e05d19"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#a2c1424fd57eb16ad7b73989a32e05d19">SD::Specific::Master::CalibrateADC</a></div><div class="ttdeci">void CalibrateADC(Hardware::ADCDevice device) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00191">STM32F103C8T/master.hpp:191</a></div></div>
 <div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_ad78ec6d2522399890e868b5b3ebe9110"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#ad78ec6d2522399890e868b5b3ebe9110">SD::Specific::Master::Delay</a></div><div class="ttdeci">void Delay(uint32_t millis) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00083">STM32F103C8T/master.hpp:83</a></div></div>
 <div class="ttc" id="anamespace_s_d_1_1_hardware_html_aa3de14d9eb7caec3aaa2c2401350e003"><div class="ttname"><a href="namespace_s_d_1_1_hardware.html#aa3de14d9eb7caec3aaa2c2401350e003">SD::Hardware::Pin</a></div><div class="ttdeci">Pin</div><div class="ttdoc">Abstraction for a GPIO pin.</div><div class="ttdef"><b>Definition:</b> <a href="hardware__layout_8hpp_source.html#l00020">hardware_layout.hpp:20</a></div></div>
-<div class="ttc" id="anamespace_s_d_1_1_specific_html_af85135ce1ec22753335942740181d02e"><div class="ttname"><a href="namespace_s_d_1_1_specific.html#af85135ce1ec22753335942740181d02e">SD::Specific::GetMasterInstance</a></div><div class="ttdeci">Master &amp; GetMasterInstance()</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00450">STM32F103C8T/master.hpp:450</a></div></div>
+<div class="ttc" id="anamespace_s_d_1_1_specific_html_af85135ce1ec22753335942740181d02e"><div class="ttname"><a href="namespace_s_d_1_1_specific.html#af85135ce1ec22753335942740181d02e">SD::Specific::GetMasterInstance</a></div><div class="ttdeci">Master &amp; GetMasterInstance()</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00484">STM32F103C8T/master.hpp:484</a></div></div>
 <div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_a3152a554a050d0a245824ccf034256aa"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#a3152a554a050d0a245824ccf034256aa">SD::Specific::Master::ResetIOPort</a></div><div class="ttdeci">void ResetIOPort(Hardware::GPIO port, Hardware::Pin pin) const override</div><div class="ttdoc">Reset the certain pin in the certain port.</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00118">STM32F103C8T/master.hpp:118</a></div></div>
 <div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_af064375b0712a1d8eab9fcec6bb2ce71"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#af064375b0712a1d8eab9fcec6bb2ce71">SD::Specific::Master::ReadADC</a></div><div class="ttdeci">uint16_t ReadADC(Hardware::ADCDevice device) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00203">STM32F103C8T/master.hpp:203</a></div></div>
-<div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_a65ced6d6d41ab067f4d66941f68e3b85"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#a65ced6d6d41ab067f4d66941f68e3b85">SD::Specific::Master::ReadADCAsync</a></div><div class="ttdeci">void ReadADCAsync(Hardware::ADCDevice device) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00388">STM32F103C8T/master.hpp:388</a></div></div>
-<div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_a8a85aa3d5f1e776320adf9902be1f181"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#a8a85aa3d5f1e776320adf9902be1f181">SD::Specific::Master::DMACallback</a></div><div class="ttdeci">void DMACallback(Hardware::DMAPort dma_port) const</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00362">STM32F103C8T/master.hpp:362</a></div></div>
-<div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_a4ed9fd066c718418e24ed6c5bb501cb6"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#a4ed9fd066c718418e24ed6c5bb501cb6">SD::Specific::Master::EnableDMA</a></div><div class="ttdeci">void EnableDMA(Hardware::DMAPort dma_port) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00330">STM32F103C8T/master.hpp:330</a></div></div>
+<div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_a65ced6d6d41ab067f4d66941f68e3b85"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#a65ced6d6d41ab067f4d66941f68e3b85">SD::Specific::Master::ReadADCAsync</a></div><div class="ttdeci">void ReadADCAsync(Hardware::ADCDevice device) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00422">STM32F103C8T/master.hpp:422</a></div></div>
+<div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_a8a85aa3d5f1e776320adf9902be1f181"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#a8a85aa3d5f1e776320adf9902be1f181">SD::Specific::Master::DMACallback</a></div><div class="ttdeci">void DMACallback(Hardware::DMAPort dma_port) const</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00396">STM32F103C8T/master.hpp:396</a></div></div>
+<div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_a4ed9fd066c718418e24ed6c5bb501cb6"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#a4ed9fd066c718418e24ed6c5bb501cb6">SD::Specific::Master::EnableDMA</a></div><div class="ttdeci">void EnableDMA(Hardware::DMAPort dma_port) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00364">STM32F103C8T/master.hpp:364</a></div></div>
 <div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_a32b32091a5c143e7914d91d626694e92"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#a32b32091a5c143e7914d91d626694e92">SD::Specific::Master::SetIOPort</a></div><div class="ttdeci">void SetIOPort(Hardware::GPIO port, Hardware::Pin pin) const override</div><div class="ttdoc">Set the certain pin in the certain port.</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00113">STM32F103C8T/master.hpp:113</a></div></div>
 <div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_a6b60a07313a44dda2de915adcb6ea569"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#a6b60a07313a44dda2de915adcb6ea569">SD::Specific::Master::AddADCChannel</a></div><div class="ttdeci">void AddADCChannel(Hardware::ADCDevice device, uint8_t rank, Hardware::GPIO port, Hardware::Pin pin) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00220">STM32F103C8T/master.hpp:220</a></div></div>
 <div class="ttc" id="astruct_s_d_1_1_hardware_1_1_d_m_a_port_html_a42a9d719c7cf8868e349b966452bdef1"><div class="ttname"><a href="struct_s_d_1_1_hardware_1_1_d_m_a_port.html#a42a9d719c7cf8868e349b966452bdef1">SD::Hardware::DMAPort::device</a></div><div class="ttdeci">DMADevice device</div><div class="ttdef"><b>Definition:</b> <a href="hardware__layout_8hpp_source.html#l00078">hardware_layout.hpp:78</a></div></div>
-<div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_ae5b5016154a6511c225a5dd610c2c546"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#ae5b5016154a6511c225a5dd610c2c546">SD::Specific::Master::ConfigureDMA</a></div><div class="ttdeci">void ConfigureDMA(Hardware::DMAPort dma_port, const Hardware::DMASettings &amp;settings, uint32_t periph_or_src_address, uint32_t mem_or_dst_address, uint32_t size) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00287">STM32F103C8T/master.hpp:287</a></div></div>
+<div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_ae5b5016154a6511c225a5dd610c2c546"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#ae5b5016154a6511c225a5dd610c2c546">SD::Specific::Master::ConfigureDMA</a></div><div class="ttdeci">void ConfigureDMA(Hardware::DMAPort dma_port, const Hardware::DMASettings &amp;settings, uint32_t periph_or_src_address, uint32_t mem_or_dst_address, uint32_t size) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00321">STM32F103C8T/master.hpp:321</a></div></div>
 <div class="ttc" id="anamespace_s_d_1_1_hardware_html_ad1e8b1bacc9a620a73832d79b77632d6ae44893ffa131a8a5e0853469d79de6ff"><div class="ttname"><a href="namespace_s_d_1_1_hardware.html#ad1e8b1bacc9a620a73832d79b77632d6ae44893ffa131a8a5e0853469d79de6ff">SD::Hardware::UART::UART1</a></div><div class="ttdeci">@ UART1</div></div>
 <div class="ttc" id="anamespace_s_d_1_1_hardware_html_ac2afc9645ca41fddd88859781ede4c27"><div class="ttname"><a href="namespace_s_d_1_1_hardware.html#ac2afc9645ca41fddd88859781ede4c27">SD::Hardware::ADCDevice</a></div><div class="ttdeci">ADCDevice</div><div class="ttdef"><b>Definition:</b> <a href="hardware__layout_8hpp_source.html#l00043">hardware_layout.hpp:43</a></div></div>
 <div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_a0f4f225d72769e7006081710351d71b7"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#a0f4f225d72769e7006081710351d71b7">SD::Specific::Master::ClockPort</a></div><div class="ttdeci">void ClockPort(Hardware::GPIO port) const override</div><div class="ttdoc">Enable clocking on the certain port.</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00087">STM32F103C8T/master.hpp:87</a></div></div>
@@ -564,10 +601,11 @@ $(document).ready(function(){initNavTree('_s_t_m32_f103_c8_t_2master_8hpp_source
 <div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_aa0705d0a8afd68d2957aaba224a21f7a"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#aa0705d0a8afd68d2957aaba224a21f7a">SD::Specific::Master::ReceiveByteUARTBlocking</a></div><div class="ttdeci">uint8_t ReceiveByteUARTBlocking(Hardware::UART uart) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00144">STM32F103C8T/master.hpp:144</a></div></div>
 <div class="ttc" id="ahardware__layout_8hpp_html"><div class="ttname"><a href="hardware__layout_8hpp.html">hardware_layout.hpp</a></div></div>
 <div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_ab1d0740eb8e7342edadfb40a082206c7"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#ab1d0740eb8e7342edadfb40a082206c7">SD::Specific::Master::ConfigureADC</a></div><div class="ttdeci">void ConfigureADC(Hardware::ADCDevice device, uint8_t channels_number, bool isDMA) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00255">STM32F103C8T/master.hpp:255</a></div></div>
-<div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_afbc2802388b263a35dd98871edca4647"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#afbc2802388b263a35dd98871edca4647">SD::Specific::Master::DisableDMA</a></div><div class="ttdeci">void DisableDMA(Hardware::DMAPort dma_port) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00335">STM32F103C8T/master.hpp:335</a></div></div>
+<div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_afbc2802388b263a35dd98871edca4647"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#afbc2802388b263a35dd98871edca4647">SD::Specific::Master::DisableDMA</a></div><div class="ttdeci">void DisableDMA(Hardware::DMAPort dma_port) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00369">STM32F103C8T/master.hpp:369</a></div></div>
 <div class="ttc" id="anamespace_s_d_html"><div class="ttname"><a href="namespace_s_d.html">SD</a></div><div class="ttdef"><b>Definition:</b> <a href="abstract__master_8hpp_source.html#l00005">abstract_master.hpp:5</a></div></div>
-<div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_a8a64868de82a090b9583eeee2efa2130"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#a8a64868de82a090b9583eeee2efa2130">SD::Specific::Master::ConfigureDMA</a></div><div class="ttdeci">void ConfigureDMA(Hardware::DMAPort dma_port, const Hardware::DMASettings &amp;settings, Hardware::ADCDevice adc_device, uint32_t mem_address, uint32_t size) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00306">STM32F103C8T/master.hpp:306</a></div></div>
+<div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_a8a64868de82a090b9583eeee2efa2130"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#a8a64868de82a090b9583eeee2efa2130">SD::Specific::Master::ConfigureDMA</a></div><div class="ttdeci">void ConfigureDMA(Hardware::DMAPort dma_port, const Hardware::DMASettings &amp;settings, Hardware::ADCDevice adc_device, uint32_t mem_address, uint32_t size) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00340">STM32F103C8T/master.hpp:340</a></div></div>
 <div class="ttc" id="anamespace_s_d_1_1_hardware_html_ab116e9e8f29c58a522a398a4bd1b6717"><div class="ttname"><a href="namespace_s_d_1_1_hardware.html#ab116e9e8f29c58a522a398a4bd1b6717">SD::Hardware::GPIO</a></div><div class="ttdeci">GPIO</div><div class="ttdoc">Abstraction for a GPIO port.</div><div class="ttdef"><b>Definition:</b> <a href="hardware__layout_8hpp_source.html#l00010">hardware_layout.hpp:10</a></div></div>
+<div class="ttc" id="aclass_s_d_1_1_specific_1_1_master_html_a8faf86462bb3c15fd4791f7a3470088b"><div class="ttname"><a href="class_s_d_1_1_specific_1_1_master.html#a8faf86462bb3c15fd4791f7a3470088b">SD::Specific::Master::GetDMAMapping</a></div><div class="ttdeci">Hardware::DMAPort GetDMAMapping(Hardware::ADCDevice device) const override</div><div class="ttdef"><b>Definition:</b> <a href="_s_t_m32_f103_c8_t_2master_8hpp_source.html#l00279">STM32F103C8T/master.hpp:279</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
