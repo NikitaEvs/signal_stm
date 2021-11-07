@@ -19,6 +19,8 @@ jobs:
           cd build
           cmake -DCMAKE_TOOLCHAIN_FILE=../CMake/arm-none-eabi-gcc.cmake -DDEVICE=STM32F103C8T ..
           make
+          cd ..
+          rm -r build/
 
       - name: Build STM32F411CE6
         run : |
@@ -26,3 +28,5 @@ jobs:
           cd build
           cmake -DCMAKE_TOOLCHAIN_FILE=../CMake/arm-none-eabi-gcc.cmake -DDEVICE=STM32F411CE6 ..
           make
+          cd ..
+          rm -r build/
