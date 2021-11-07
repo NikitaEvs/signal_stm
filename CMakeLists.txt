@@ -25,7 +25,7 @@ target_link_libraries(${EXECUTABLE} SignalDrivers)
 set_target_properties(${EXECUTABLE} PROPERTIES LINKER_LANGUAGE CXX)
 
 
-target_include_directories(${EXECUTABLE} SYSTEM PRIVATE
+target_include_directories(${EXECUTABLE} SYSTEM PUBLIC
         SignalDrivers
         )
 
