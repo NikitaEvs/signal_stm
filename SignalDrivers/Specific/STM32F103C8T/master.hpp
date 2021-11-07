@@ -275,6 +275,40 @@ class Master : public Hardware::AbstractMaster {
     LL_ADC_REG_Init(ConvertADCDevice(device), &ADC_reg_init);
   }
 
+  [[nodiscard]] inline
+  Hardware::DMAPort GetDMAMapping(Hardware::ADCDevice device) const override {
+    switch (device) {
+      case Hardware::ADCDevice::ADC_1:
+        return {
+            .device = Hardware::DMADevice::DMA_1,
+            .channel = Hardware::DMAChannel::Channel1
+        };
+      default:
+        return {}; // TODO: Insert assert
+    }
+  }
+
+  [[nodiscard]] inline
+  Hardware::DMAPort GetDMAMapping(Hardware::UART device,
+                                  bool isTX) const override {
+    switch (device) {
+      case Hardware::UART::UART1:
+        if (isTX) {
+          return {
+              .device = Hardware::DMADevice::DMA_1,
+              .channel = Hardware::DMAChannel::Channel4
+          };
+        } else {
+          return {
+              .device = Hardware::DMADevice::DMA_1,
+              .channel = Hardware::DMAChannel::Channel5
+          };
+        }
+      default:
+        return {}; // TODO: Insert assert
+    }
+  }
+
   inline
   void ConfigureDMAInterruption(Hardware::DMAPort dma_port) const override {
     LL_AHB1_GRP1_EnableClock(ConvertDMAClock(dma_port.device));
