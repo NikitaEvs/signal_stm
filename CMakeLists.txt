@@ -15,7 +15,7 @@ add_subdirectory(Drivers)
 add_subdirectory(SignalDrivers)
 
 set(SOURCES
-        Src/example.cpp
+        Src/example_${DEVICE}.cpp
         )
 set(EXECUTABLE ${PROJECT_NAME}.out)
 add_executable(${EXECUTABLE} ${SOURCES})
