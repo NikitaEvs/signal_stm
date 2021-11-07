@@ -160,11 +160,10 @@ template <typename T>
 class AsyncBufferView : public Hardware::DMAUnit {
  public:
   AsyncBufferView(Hardware::AbstractMaster& master,
-                  Hardware::DMADevice device,
-                  Hardware::DMAChannel channel,
+                  Hardware::DMAPort dma_port,
                   const T* data,
                   std::size_t size)
-      : Hardware::DMAUnit(master, device, channel), data_(data), size_(size) {
+      : Hardware::DMAUnit(master, dma_port), data_(data), size_(size) {
   }
 
   void ConnectSource(uint32_t from_address,
