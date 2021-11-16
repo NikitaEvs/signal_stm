@@ -52,7 +52,7 @@ This library provides high-level asynchronous abstractions that can be useful in
 | ```SD::Utils::AsyncBuffer<T, std::size_t>``` | Storage with asynchronous support functions. Main features: chaining with asynchronous source/destination like AsyncUART or ADC, callbacks controlling | Implemented |
 | ```SD::Hardware::ADC<bool>```                | Analog-digital converter abstraction with asynchronous/synchronous versions. Main features: support for the scan mode, chaining with buffers           | Implemented |
 | ```SD::Hardware::AsyncUART```                | UART abstraction with asynchronous/synchronous versions. Main features: logger abstraction, chaining with buffers                                      | In progress |
-| ```SD::Utils::DataPipe```                    | Asynchronous connector for the data processing between source like ADC and  destination like UART.                                                        | Planning    |
+| ```SD::Utils::DataPipe```                    | Asynchronous connector for the data processing between source like ADC and  destination like UART.                                                        | In progress   |
 ### Support devices
 | Name      | Status   |
 |-----------|----------|
@@ -62,6 +62,14 @@ This library provides high-level asynchronous abstractions that can be useful in
 Guide for other devices support coming soon.
 ### Documentation
 [Link to the documentation](https://nikitaevs.github.io/signal_stm/)
+
+### Library structure 
+| Directory              | Description                                |
+|------------------------|--------------------------------------------|
+| Drivers                | Third-party drivers (CMSIS and LL)         |
+| SignalDrivers/Hardware | Hardware abstractions                      |
+| SignalDrivers/Specific | Platform-specific functions implementation |
+| SignalDrivers/Utils    | Useful abstractions                        |
 
 ## Build
 ### Prerequisites
@@ -89,3 +97,6 @@ Example for ```st-link```:
 ```shell
 st-flash write Example.bin 0x08000000
 ```
+### Testing
+Because of the platform-specific code, unit tests aren't implemented right now. Expected behavior can be tested using examples and additional hardware like a USB-Serial adapter (for UART testing).
+
