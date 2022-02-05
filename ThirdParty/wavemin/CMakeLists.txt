@@ -9,7 +9,7 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(wavelib)
 
-message(${wavelib_SOURCE_DIR})
+set(WAVELIB_PATH ${wavelib_SOURCE_DIR} PARENT_SCOPE)
 
 set(INCLUDE_PATH ${wavelib_SOURCE_DIR})
 set(SOURCE_PATH ${wavelib_SOURCE_DIR})
