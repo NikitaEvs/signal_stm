@@ -7,6 +7,7 @@ FetchContent_Declare(
         GIT_REPOSITORY https://github.com/rafat/wavemin.git
 )
 
+message("Fetch wavelib")
 FetchContent_MakeAvailable(wavelib)
 
 set(WAVELIB_PATH ${wavelib_SOURCE_DIR} PARENT_SCOPE)

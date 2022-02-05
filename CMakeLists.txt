@@ -9,6 +9,7 @@ if(DSP)
                 URL     https://github.com/ARM-software/CMSIS_5/archive/refs/tags/5.8.0.tar.gz
         )
 
+        message("Fetch DSP library")
         FetchContent_MakeAvailable(DSPlib)
 
         message("Compile with DSP library")
