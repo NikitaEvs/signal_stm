@@ -47,6 +47,7 @@ See [examples](Examples/STM32F411CE6).
 This library provides high-level asynchronous abstractions that can be useful in effective signal measurement and processing.
 
 ### Main features
+
 | Name                                         | Description                                                                                                                                                 | Status      |
 |----------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
 | ```SD::Utils::AsyncBuffer<T, std::size_t>``` | Storage with asynchronous support functions. Main features: chaining with asynchronous source/destination like AsyncUART or ADC, callbacks controlling      | Implemented |
@@ -56,6 +57,7 @@ This library provides high-level asynchronous abstractions that can be useful in
 | ```SD::Utils::WaveletTransformerFactory```   | Integration of DWT (Discrete Wavelet Transform) pipeline using [wavelib](https://github.com/rafat/wavemin) for working with `SD::Utils::DataProcessor`      | Implemented |
 | ```SD::Utils::RealFFTFactory```              | Integration of RFFT (Real Fast Fourier Transform) pipeline using [DSP](https://github.com/ARM-software/CMSIS_5) for working with `SD::Utils::DataProcessor` | In progress |
 | ```SD::Hardware::AsyncUART```                | UART abstraction with asynchronous/synchronous versions. Main features: logger abstraction, chaining with buffers                                           | In progress |
+
 ### Support devices
 | Name      | Core | DWT | RFFT        |
 |-----------|------|-----|-------------|
@@ -66,7 +68,8 @@ Guide for other devices support coming soon.
 ### Documentation
 [Link to the documentation](https://nikitaevs.github.io/signal_stm/)
 
-### Library structure
+### Library structure 
+
 | Directory              | Description                                |
 |------------------------|--------------------------------------------|
 | Drivers                | Third-party drivers (CMSIS and LL)         |
@@ -111,3 +114,6 @@ Example for ```st-link```:
 ```shell
 st-flash write <name-of-example>.bin 0x08000000
 ```
+### Testing
+Because of the platform-specific code, unit tests aren't implemented right now. Expected behavior can be tested using examples and additional hardware like a USB-Serial adapter (for UART testing).
+
