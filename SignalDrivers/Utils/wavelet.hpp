@@ -80,14 +80,19 @@ class WaveletTransformerFactory : public TransformerFactory<U, double> {
         [this](U* in, double* out, std::size_t in_size, std::size_t /*out_size*/){
           wave_object wave_obj;
           wt_object wt_obj;
-          
-          wave_obj = wave_init(ConvertWaveName(wave_name_));
+
+          // const_cast for the library compatibility
+          // TODO: Make PR in the library to fix it
+          wave_obj = wave_init(
+              const_cast<char*>(ConvertWaveName(wave_name_)));
           wt_obj = wt_init(wave_obj, 
-                           kMethod_name_, 
+                           const_cast<char*>(kMethod_name_),
                            static_cast<int>(in_size),
                            decomposition_iter_);
-          setDWTExtension(wt_obj, ConvertDWTExtension(extension_));
-          setWTConv(wt_obj, kCMethod_);
+          setDWTExtension(wt_obj,
+                          const_cast<char*>(ConvertDWTExtension(extension_)));
+          setWTConv(wt_obj,
+                    const_cast<char*>(kCMethod_));
 
           for (std::size_t i = 0; i < in_size; ++i) {
             // TODO: Insert check in_size == sig_size
