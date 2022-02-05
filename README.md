@@ -48,15 +48,15 @@ This library provides high-level asynchronous abstractions that can be useful in
 
 ### Main features
 
-| Name                                         | Description                                                                                                                                                 | Status      |
-|----------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
-| ```SD::Utils::AsyncBuffer<T, std::size_t>``` | Storage with asynchronous support functions. Main features: chaining with asynchronous source/destination like AsyncUART or ADC, callbacks controlling      | Implemented |
-| ```SD::Hardware::ADC<bool>```                | Analog-digital converter abstraction with asynchronous/synchronous versions. Main features: support for the scan mode, chaining with buffers                | Implemented |
-| ```SD::Utils::DataProcessor```               | Connector for the data processing between source like ADC and  destination like UART while using `SD::Utils::AsyncBuffer`.                                  | Implemented |
-| ```SD::Utils::TransformerFactory```          | Base class for working with `SD::Utils::DataProcessor` and creating own data transformation pipelines.                                                      | Implemented |
-| ```SD::Utils::WaveletTransformerFactory```   | Integration of DWT (Discrete Wavelet Transform) pipeline using [wavelib](https://github.com/rafat/wavemin) for working with `SD::Utils::DataProcessor`      | Implemented |
-| ```SD::Utils::RealFFTFactory```              | Integration of RFFT (Real Fast Fourier Transform) pipeline using [DSP](https://github.com/ARM-software/CMSIS_5) for working with `SD::Utils::DataProcessor` | In progress |
-| ```SD::Hardware::AsyncUART```                | UART abstraction with asynchronous/synchronous versions. Main features: logger abstraction, chaining with buffers                                           | In progress |
+| Name                                         | Description                                                                                                                                                  | Status      |
+|----------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
+| ```SD::Utils::AsyncBuffer<T, std::size_t>``` | Storage with asynchronous support functions. Main features: chaining with asynchronous source/destination like AsyncUART or ADC, callbacks controlling.      | Implemented |
+| ```SD::Hardware::ADC<bool>```                | Analog-digital converter abstraction with asynchronous/synchronous versions. Main features: support for the scan mode, chaining with buffers.                | Implemented |
+| ```SD::Utils::DataProcessor```               | Connector for the data processing between source like ADC and  destination like UART while using `SD::Utils::AsyncBuffer`.                                   | Implemented |
+| ```SD::Utils::TransformerFactory```          | Base class for working with `SD::Utils::DataProcessor` and creating own data transformation pipelines.                                                       | Implemented |
+| ```SD::Utils::WaveletTransformerFactory```   | Integration of DWT (Discrete Wavelet Transform) pipeline using [wavelib](https://github.com/rafat/wavemin) for working with `SD::Utils::DataProcessor`.      | Implemented |
+| ```SD::Utils::RealFFTFactory```              | Integration of RFFT (Real Fast Fourier Transform) pipeline using [DSP](https://github.com/ARM-software/CMSIS_5) for working with `SD::Utils::DataProcessor`. | In progress |
+| ```SD::Hardware::AsyncUART```                | UART abstraction with asynchronous/synchronous versions. Main features: logger abstraction, chaining with buffers.                                           | In progress |
 
 ### Support devices
 | Name      | Core | DWT | RFFT        |
