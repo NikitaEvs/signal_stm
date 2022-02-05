@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7edmaunit_302',['~DMAUnit',['../class_s_d_1_1_hardware_1_1_d_m_a_unit.html#a3b5fc023c6d3ffd1e1d7d20b8371419f',1,'SD::Hardware::DMAUnit']]]
+  ['variablesize_387',['VariableSize',['../class_s_d_1_1_utils_1_1_data_processor_view.html#a795099c07817eaab62d54f033c31b10d',1,'SD::Utils::DataProcessorView']]]
 ];

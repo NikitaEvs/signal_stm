@@ -1,5 +1,7 @@
 <map id="SD::Utils::AsyncBuffer::ConnectDestination" name="SD::Utils::AsyncBuffer::ConnectDestination">
-<area shape="rect" id="node1" title=" " alt="" coords="5,39,169,80"/>
-<area shape="rect" id="node2" href="$class_s_d_1_1_hardware_1_1_d_m_a_pipe.html#ace791ea3005ae38e0ddb3687675b2e18" title=" " alt="" coords="217,5,396,47"/>
-<area shape="rect" id="node3" href="$class_s_d_1_1_hardware_1_1_d_m_a_pipe.html#a006459ab016d9e1361ba8be6a635d063" title=" " alt="" coords="217,71,396,112"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,104,169,145"/>
+<area shape="rect" id="node2" href="$class_s_d_1_1_utils_1_1_async_buffer.html#a1489e1e2791e0163c7c4c309c1579bda" title=" " alt="" coords="225,5,389,47"/>
+<area shape="rect" id="node3" href="$class_s_d_1_1_hardware_1_1_d_m_a_pipe.html#ace791ea3005ae38e0ddb3687675b2e18" title=" " alt="" coords="217,71,396,112"/>
+<area shape="rect" id="node4" href="$class_s_d_1_1_hardware_1_1_d_m_a_pipe.html#a006459ab016d9e1361ba8be6a635d063" title=" " alt="" coords="217,136,396,177"/>
+<area shape="rect" id="node5" href="$class_s_d_1_1_utils_1_1_async_buffer.html#a81546eee902f8ebb8ed49a9f030fba04" title=" " alt="" coords="225,201,389,243"/>
 </map>

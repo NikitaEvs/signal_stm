@@ -1,4 +1,5 @@
 <map id="SD::Utils::AsyncBuffer::SetOutputCallback" name="SD::Utils::AsyncBuffer::SetOutputCallback">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,169,47"/>
-<area shape="rect" id="node2" href="$class_s_d_1_1_hardware_1_1_d_m_a_pipe.html#ace791ea3005ae38e0ddb3687675b2e18" title=" " alt="" coords="217,5,396,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,35,169,76"/>
+<area shape="rect" id="node2" href="$class_s_d_1_1_utils_1_1_async_buffer.html#aa3dd7b025bdd878a2c8e14d804967b6f" title=" " alt="" coords="217,5,381,47"/>
+<area shape="rect" id="node3" href="$class_s_d_1_1_hardware_1_1_d_m_a_pipe.html#ace791ea3005ae38e0ddb3687675b2e18" title=" " alt="" coords="429,35,608,76"/>
 </map>

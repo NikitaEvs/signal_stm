@@ -12,6 +12,8 @@ var hierarchy =
         [ "SD::Utils::Logger", "class_s_d_1_1_utils_1_1_logger.html", null ]
       ] ]
     ] ],
+    [ "SD::Utils::DataProcessor< T, U, size >", "class_s_d_1_1_utils_1_1_data_processor.html", null ],
+    [ "SD::Utils::DataProcessorView< T >", "class_s_d_1_1_utils_1_1_data_processor_view.html", null ],
     [ "SD::Hardware::DMAPipe", "class_s_d_1_1_hardware_1_1_d_m_a_pipe.html", [
       [ "SD::Utils::AsyncBuffer< T, size >", "class_s_d_1_1_utils_1_1_async_buffer.html", null ]
     ] ],
@@ -23,5 +25,14 @@ var hierarchy =
     [ "SD::Utils::LED", "class_s_d_1_1_utils_1_1_l_e_d.html", null ],
     [ "SD::Hardware::Port", "class_s_d_1_1_hardware_1_1_port.html", [
       [ "SD::Hardware::IOPort", "class_s_d_1_1_hardware_1_1_i_o_port.html", null ]
+    ] ],
+    [ "SD::Utils::Transformer< U, V >", "class_s_d_1_1_utils_1_1_transformer.html", null ],
+    [ "SD::Utils::Transformer< T, U >", "class_s_d_1_1_utils_1_1_transformer.html", null ],
+    [ "SD::Utils::TransformerFactory< U, V >", "class_s_d_1_1_utils_1_1_transformer_factory.html", [
+      [ "SD::Utils::BasicTransformerFactory< U, V >", "class_s_d_1_1_utils_1_1_basic_transformer_factory.html", null ],
+      [ "SD::Utils::RealFFTFactory< U, V >", "class_s_d_1_1_utils_1_1_real_f_f_t_factory.html", null ]
+    ] ],
+    [ "SD::Utils::TransformerFactory< U, double >", "class_s_d_1_1_utils_1_1_transformer_factory.html", [
+      [ "SD::Utils::WaveletTransformerFactory< U, sig_size >", "class_s_d_1_1_utils_1_1_wavelet_transformer_factory.html", null ]
     ] ]
 ];

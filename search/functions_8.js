@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['off_276',['Off',['../class_s_d_1_1_utils_1_1_l_e_d.html#a7fb6ad4edc2be367de595438293d2106',1,'SD::Utils::LED']]],
-  ['on_277',['On',['../class_s_d_1_1_utils_1_1_l_e_d.html#abc335cad2f2777bf8bc4be748208484d',1,'SD::Utils::LED']]],
-  ['operator_3d_278',['operator=',['../class_s_d_1_1_hardware_1_1_d_m_a_unit.html#a857a85fcd55cf9126430b49c9814ae6e',1,'SD::Hardware::DMAUnit::operator=(const DMAUnit &amp;other)'],['../class_s_d_1_1_hardware_1_1_d_m_a_unit.html#a7bfacbcf1f0c9e82239a106076422c59',1,'SD::Hardware::DMAUnit::operator=(DMAUnit &amp;&amp;other)=delete']]],
-  ['operator_5b_5d_279',['operator[]',['../class_s_d_1_1_utils_1_1_async_buffer.html#a58ccef540ec60273157345e4fed5f799',1,'SD::Utils::AsyncBuffer::operator[]()'],['../class_s_d_1_1_utils_1_1_async_buffer_view.html#ad556c21482a04deff3919276a28cc273',1,'SD::Utils::AsyncBufferView::operator[]()']]]
+  ['led_353',['LED',['../class_s_d_1_1_utils_1_1_l_e_d.html#ab29d4fad4e1b7607bb62959cbe025b85',1,'SD::Utils::LED']]],
+  ['log_354',['Log',['../class_s_d_1_1_utils_1_1_logger.html#afe71a07875e8071e8762ff0ef1477520',1,'SD::Utils::Logger::Log(const char *msg)'],['../class_s_d_1_1_utils_1_1_logger.html#acf041179d74a31b0edde50bee4733c53',1,'SD::Utils::Logger::Log(uint32_t data)']]],
+  ['logger_355',['Logger',['../class_s_d_1_1_utils_1_1_logger.html#af07dea42ed3509f4d8cb548e8e4453ef',1,'SD::Utils::Logger']]]
 ];

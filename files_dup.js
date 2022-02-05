@@ -12,6 +12,10 @@ var files_dup =
       [ "AsyncBuffer", "class_s_d_1_1_utils_1_1_async_buffer.html", "class_s_d_1_1_utils_1_1_async_buffer" ],
       [ "AsyncBufferView", "class_s_d_1_1_utils_1_1_async_buffer_view.html", "class_s_d_1_1_utils_1_1_async_buffer_view" ]
     ] ],
+    [ "data.hpp", "data_8hpp.html", [
+      [ "DataProcessorView", "class_s_d_1_1_utils_1_1_data_processor_view.html", "class_s_d_1_1_utils_1_1_data_processor_view" ],
+      [ "DataProcessor", "class_s_d_1_1_utils_1_1_data_processor.html", "class_s_d_1_1_utils_1_1_data_processor" ]
+    ] ],
     [ "dma.hpp", "dma_8hpp.html", [
       [ "DMAUnit", "class_s_d_1_1_hardware_1_1_d_m_a_unit.html", "class_s_d_1_1_hardware_1_1_d_m_a_unit" ],
       [ "DMAPipe", "class_s_d_1_1_hardware_1_1_d_m_a_pipe.html", "class_s_d_1_1_hardware_1_1_d_m_a_pipe" ]
@@ -33,9 +37,18 @@ var files_dup =
     [ "port.hpp", "port_8hpp.html", [
       [ "Port", "class_s_d_1_1_hardware_1_1_port.html", "class_s_d_1_1_hardware_1_1_port" ]
     ] ],
+    [ "processor.hpp", "processor_8hpp.html", [
+      [ "Transformer", "class_s_d_1_1_utils_1_1_transformer.html", "class_s_d_1_1_utils_1_1_transformer" ],
+      [ "TransformerFactory", "class_s_d_1_1_utils_1_1_transformer_factory.html", "class_s_d_1_1_utils_1_1_transformer_factory" ],
+      [ "BasicTransformerFactory", "class_s_d_1_1_utils_1_1_basic_transformer_factory.html", "class_s_d_1_1_utils_1_1_basic_transformer_factory" ]
+    ] ],
+    [ "rfft.hpp", "rfft_8hpp.html", [
+      [ "RealFFTFactory", "class_s_d_1_1_utils_1_1_real_f_f_t_factory.html", "class_s_d_1_1_utils_1_1_real_f_f_t_factory" ]
+    ] ],
     [ "uart.hpp", "uart_8hpp.html", [
       [ "BaseUART", "class_s_d_1_1_hardware_1_1_base_u_a_r_t.html", "class_s_d_1_1_hardware_1_1_base_u_a_r_t" ],
       [ "BlockingUART", "class_s_d_1_1_hardware_1_1_blocking_u_a_r_t.html", "class_s_d_1_1_hardware_1_1_blocking_u_a_r_t" ],
       [ "AsyncUART", "class_s_d_1_1_hardware_1_1_async_u_a_r_t.html", "class_s_d_1_1_hardware_1_1_async_u_a_r_t" ]
-    ] ]
+    ] ],
+    [ "wavelet.hpp", "wavelet_8hpp.html", "wavelet_8hpp" ]
 ];

@@ -1,4 +1,7 @@
 <map id="SD::Utils::AsyncBuffer::SetInputCallback" name="SD::Utils::AsyncBuffer::SetInputCallback">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,169,47"/>
-<area shape="rect" id="node2" href="$class_s_d_1_1_hardware_1_1_d_m_a_pipe.html#a3872594f36a7975c5883b267e171f431" title=" " alt="" coords="217,5,396,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,100,169,141"/>
+<area shape="rect" id="node2" href="$class_s_d_1_1_utils_1_1_async_buffer.html#afd41131ba5ac4180d1f1ec0301ab6990" title=" " alt="" coords="217,5,381,47"/>
+<area shape="rect" id="node3" href="$class_s_d_1_1_utils_1_1_async_buffer.html#a0b4163c6aa4260cac7742eb983f16e4c" title=" " alt="" coords="217,71,381,112"/>
+<area shape="rect" id="node4" href="$class_s_d_1_1_hardware_1_1_d_m_a_pipe.html#a3872594f36a7975c5883b267e171f431" title=" " alt="" coords="429,100,608,141"/>
+<area shape="rect" id="node5" href="$class_s_d_1_1_utils_1_1_async_buffer.html#a1489e1e2791e0163c7c4c309c1579bda" title=" " alt="" coords="217,188,381,229"/>
 </map>

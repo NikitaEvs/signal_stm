@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['led_273',['LED',['../class_s_d_1_1_utils_1_1_l_e_d.html#ab29d4fad4e1b7607bb62959cbe025b85',1,'SD::Utils::LED']]],
-  ['log_274',['Log',['../class_s_d_1_1_utils_1_1_logger.html#afe71a07875e8071e8762ff0ef1477520',1,'SD::Utils::Logger::Log(const char *msg)'],['../class_s_d_1_1_utils_1_1_logger.html#acf041179d74a31b0edde50bee4733c53',1,'SD::Utils::Logger::Log(uint32_t data)']]],
-  ['logger_275',['Logger',['../class_s_d_1_1_utils_1_1_logger.html#af07dea42ed3509f4d8cb548e8e4453ef',1,'SD::Utils::Logger']]]
+  ['init_349',['Init',['../class_s_d_1_1_hardware_1_1_a_d_c_unit_3_01false_01_4.html#a43a68f4a3d46fa5d323ad1791298a74d',1,'SD::Hardware::ADCUnit&lt; false &gt;::Init()'],['../class_s_d_1_1_hardware_1_1_d_m_a_unit.html#aa7a84354364a3e8c94c072a49d30358b',1,'SD::Hardware::DMAUnit::Init(uint32_t from_address, uint32_t to_address, uint32_t size, const Hardware::DMASettings &amp;settings) const'],['../class_s_d_1_1_hardware_1_1_d_m_a_unit.html#a1b02feee50c36822f683cbbfedcfa683',1,'SD::Hardware::DMAUnit::Init(Hardware::ADCDevice device, uint32_t mem_address, uint32_t size, const Hardware::DMASettings &amp;settings) const'],['../class_s_d_1_1_hardware_1_1_d_m_a_unit.html#adad89a3f608d57516710a633cafd02cf',1,'SD::Hardware::DMAUnit::Init(Hardware::UART device, uint32_t mem_address, uint32_t size, const Hardware::DMASettings &amp;settings) const']]],
+  ['invalid_350',['Invalid',['../class_s_d_1_1_utils_1_1_data_processor_view.html#a208bc9032be971628533d4767ff81341',1,'SD::Utils::DataProcessorView']]],
+  ['ioport_351',['IOPort',['../class_s_d_1_1_hardware_1_1_i_o_port.html#a84aade115eb323c589076038dc307a88',1,'SD::Hardware::IOPort']]],
+  ['isvalid_352',['IsValid',['../class_s_d_1_1_utils_1_1_data_processor_view.html#a04278f7f67e9d4385662dace2f498aae',1,'SD::Utils::DataProcessorView']]]
 ];

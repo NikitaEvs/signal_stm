@@ -126,6 +126,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7d4fea0ecf3ff444f2988f6fda5cb0ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb5b53a862ef38727fe7545b35afa67b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_utils_1_1_async_buffer.html#afb5b53a862ef38727fe7545b35afa67b">SetOutputCallback</a> (std::function&lt; void()&gt; &amp;&amp;callback)</td></tr>
 <tr class="separator:afb5b53a862ef38727fe7545b35afa67b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b70f80efd56ceb868a9c35927a86a78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_utils_1_1_async_buffer.html#a5b70f80efd56ceb868a9c35927a86a78">SetDataProcessor</a> (<a class="el" href="class_s_d_1_1_utils_1_1_data_processor_view.html">DataProcessorView</a>&lt; T &gt; &amp;&amp;view)</td></tr>
+<tr class="separator:a5b70f80efd56ceb868a9c35927a86a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22a8bf48fc7e3ec6e7736917a946bedc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_utils_1_1_async_buffer.html#a22a8bf48fc7e3ec6e7736917a946bedc">EnableInput</a> ()</td></tr>
 <tr class="separator:a22a8bf48fc7e3ec6e7736917a946bedc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b4163c6aa4260cac7742eb983f16e4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_utils_1_1_async_buffer.html#a0b4163c6aa4260cac7742eb983f16e4c">DisableInput</a> ()</td></tr>
@@ -146,6 +148,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab9e405b47064dbabd37367329bc6acdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81546eee902f8ebb8ed49a9f030fba04"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_utils_1_1_async_buffer.html#a81546eee902f8ebb8ed49a9f030fba04">Size</a> () const</td></tr>
 <tr class="separator:a81546eee902f8ebb8ed49a9f030fba04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd41131ba5ac4180d1f1ec0301ab6990"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_utils_1_1_async_buffer.html#afd41131ba5ac4180d1f1ec0301ab6990">DataSize</a> () const</td></tr>
+<tr class="separator:afd41131ba5ac4180d1f1ec0301ab6990"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72a7a1844b25af847fbae0d3f06e5366"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_utils_1_1_async_buffer.html#a72a7a1844b25af847fbae0d3f06e5366">begin</a> ()</td></tr>
 <tr class="separator:a72a7a1844b25af847fbae0d3f06e5366"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb6e0ba81d2436e036b700a09e2783de"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_1_1_utils_1_1_async_buffer.html#adb6e0ba81d2436e036b700a09e2783de">end</a> ()</td></tr>
@@ -167,7 +171,7 @@ Public Member Functions</h2></td></tr>
 class SD::Utils::AsyncBuffer&lt; T, size &gt;</h3>
 
 
-<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00012">12</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00014">14</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ace2634000363a4fa6e4d38dfcb2b5119"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ace2634000363a4fa6e4d38dfcb2b5119">&#9670;&nbsp;</a></span>AsyncBuffer() <span class="overload">[1/2]</span></h2>
@@ -195,7 +199,7 @@ template&lt;typename T , std::size_t size&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00014">14</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00016">16</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
 
 </div>
 </div>
@@ -235,7 +239,7 @@ template&lt;typename T , std::size_t size&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00018">18</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00020">20</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
 
 </div>
 </div>
@@ -265,7 +269,7 @@ template&lt;typename T , std::size_t size&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00115">115</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00168">168</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
 
 </div>
 </div>
@@ -313,15 +317,17 @@ template&lt;typename DeviceT &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00033">33</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00039">39</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_s_d_1_1_utils_1_1_async_buffer_a00da71244a9c9de65ef626938525ff15_cgraph.png" border="0" usemap="#class_s_d_1_1_utils_1_1_async_buffer_a00da71244a9c9de65ef626938525ff15_cgraph" alt=""/></div>
 <map name="class_s_d_1_1_utils_1_1_async_buffer_a00da71244a9c9de65ef626938525ff15_cgraph" id="class_s_d_1_1_utils_1_1_async_buffer_a00da71244a9c9de65ef626938525ff15_cgraph">
-<area shape="rect" title=" " alt="" coords="5,39,169,80"/>
-<area shape="rect" href="class_s_d_1_1_hardware_1_1_d_m_a_pipe.html#ace791ea3005ae38e0ddb3687675b2e18" title=" " alt="" coords="217,5,396,47"/>
-<area shape="rect" href="class_s_d_1_1_hardware_1_1_d_m_a_pipe.html#a006459ab016d9e1361ba8be6a635d063" title=" " alt="" coords="217,71,396,112"/>
+<area shape="rect" title=" " alt="" coords="5,104,169,145"/>
+<area shape="rect" href="class_s_d_1_1_utils_1_1_async_buffer.html#a1489e1e2791e0163c7c4c309c1579bda" title=" " alt="" coords="225,5,389,47"/>
+<area shape="rect" href="class_s_d_1_1_hardware_1_1_d_m_a_pipe.html#ace791ea3005ae38e0ddb3687675b2e18" title=" " alt="" coords="217,71,396,112"/>
+<area shape="rect" href="class_s_d_1_1_hardware_1_1_d_m_a_pipe.html#a006459ab016d9e1361ba8be6a635d063" title=" " alt="" coords="217,136,396,177"/>
+<area shape="rect" href="class_s_d_1_1_utils_1_1_async_buffer.html#a81546eee902f8ebb8ed49a9f030fba04" title=" " alt="" coords="225,201,389,243"/>
 </map>
 </div>
 
@@ -371,7 +377,7 @@ template&lt;typename DeviceT &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00024">24</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00026">26</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -382,6 +388,35 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="class_s_d_1_1_hardware_1_1_d_m_a_pipe.html#aaf8a62561dc1f445c58187317b95adf3" title=" " alt="" coords="217,71,396,112"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="afd41131ba5ac4180d1f1ec0301ab6990"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd41131ba5ac4180d1f1ec0301ab6990">&#9670;&nbsp;</a></span>DataSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::size_t size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="class_s_d_1_1_utils_1_1_async_buffer.html">SD::Utils::AsyncBuffer</a>&lt; T, size &gt;::DataSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00164">164</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
 
 </div>
 </div>
@@ -410,7 +445,7 @@ template&lt;typename T , std::size_t size&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00064">64</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00113">113</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -448,7 +483,7 @@ template&lt;typename T , std::size_t size&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00085">85</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00134">134</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -486,7 +521,7 @@ template&lt;typename T , std::size_t size&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00057">57</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00106">106</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -524,7 +559,7 @@ template&lt;typename T , std::size_t size&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00078">78</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00127">127</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -562,7 +597,7 @@ template&lt;typename T , std::size_t size&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00119">119</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00172">172</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
 
 </div>
 </div>
@@ -591,7 +626,7 @@ template&lt;typename T , std::size_t size&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00107">107</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00156">156</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
 
 </div>
 </div>
@@ -620,7 +655,7 @@ template&lt;typename T , std::size_t size&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00103">103</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00152">152</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
 
 </div>
 </div>
@@ -650,7 +685,37 @@ template&lt;typename T , std::size_t size&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00099">99</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00148">148</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5b70f80efd56ceb868a9c35927a86a78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b70f80efd56ceb868a9c35927a86a78">&#9670;&nbsp;</a></span>SetDataProcessor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::size_t size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_s_d_1_1_utils_1_1_async_buffer.html">SD::Utils::AsyncBuffer</a>&lt; T, size &gt;::SetDataProcessor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_s_d_1_1_utils_1_1_data_processor_view.html">DataProcessorView</a>&lt; T &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>view</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00102">102</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
 
 </div>
 </div>
@@ -680,14 +745,17 @@ template&lt;typename T , std::size_t size&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00043">43</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00071">71</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_s_d_1_1_utils_1_1_async_buffer_a7d4fea0ecf3ff444f2988f6fda5cb0ce_cgraph.png" border="0" usemap="#class_s_d_1_1_utils_1_1_async_buffer_a7d4fea0ecf3ff444f2988f6fda5cb0ce_cgraph" alt=""/></div>
 <map name="class_s_d_1_1_utils_1_1_async_buffer_a7d4fea0ecf3ff444f2988f6fda5cb0ce_cgraph" id="class_s_d_1_1_utils_1_1_async_buffer_a7d4fea0ecf3ff444f2988f6fda5cb0ce_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,169,47"/>
-<area shape="rect" href="class_s_d_1_1_hardware_1_1_d_m_a_pipe.html#a3872594f36a7975c5883b267e171f431" title=" " alt="" coords="217,5,396,47"/>
+<area shape="rect" title=" " alt="" coords="5,100,169,141"/>
+<area shape="rect" href="class_s_d_1_1_utils_1_1_async_buffer.html#afd41131ba5ac4180d1f1ec0301ab6990" title=" " alt="" coords="217,5,381,47"/>
+<area shape="rect" href="class_s_d_1_1_utils_1_1_async_buffer.html#a0b4163c6aa4260cac7742eb983f16e4c" title=" " alt="" coords="217,71,381,112"/>
+<area shape="rect" href="class_s_d_1_1_hardware_1_1_d_m_a_pipe.html#a3872594f36a7975c5883b267e171f431" title=" " alt="" coords="429,100,608,141"/>
+<area shape="rect" href="class_s_d_1_1_utils_1_1_async_buffer.html#a1489e1e2791e0163c7c4c309c1579bda" title=" " alt="" coords="217,188,381,229"/>
 </map>
 </div>
 
@@ -719,14 +787,15 @@ template&lt;typename T , std::size_t size&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00050">50</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00091">91</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_s_d_1_1_utils_1_1_async_buffer_afb5b53a862ef38727fe7545b35afa67b_cgraph.png" border="0" usemap="#class_s_d_1_1_utils_1_1_async_buffer_afb5b53a862ef38727fe7545b35afa67b_cgraph" alt=""/></div>
 <map name="class_s_d_1_1_utils_1_1_async_buffer_afb5b53a862ef38727fe7545b35afa67b_cgraph" id="class_s_d_1_1_utils_1_1_async_buffer_afb5b53a862ef38727fe7545b35afa67b_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,169,47"/>
-<area shape="rect" href="class_s_d_1_1_hardware_1_1_d_m_a_pipe.html#ace791ea3005ae38e0ddb3687675b2e18" title=" " alt="" coords="217,5,396,47"/>
+<area shape="rect" title=" " alt="" coords="5,35,169,76"/>
+<area shape="rect" href="class_s_d_1_1_utils_1_1_async_buffer.html#aa3dd7b025bdd878a2c8e14d804967b6f" title=" " alt="" coords="217,5,381,47"/>
+<area shape="rect" href="class_s_d_1_1_hardware_1_1_d_m_a_pipe.html#ace791ea3005ae38e0ddb3687675b2e18" title=" " alt="" coords="429,35,608,76"/>
 </map>
 </div>
 
@@ -757,7 +826,7 @@ template&lt;typename T , std::size_t size&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00111">111</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00160">160</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
 
 </div>
 </div>
@@ -786,7 +855,7 @@ template&lt;typename T , std::size_t size&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00071">71</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00120">120</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -824,7 +893,7 @@ template&lt;typename T , std::size_t size&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00092">92</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00141">141</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
