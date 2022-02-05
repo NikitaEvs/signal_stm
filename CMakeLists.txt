@@ -2,8 +2,24 @@ cmake_minimum_required(VERSION 3.16)
 
 # Select toolchain
 if(DSP)
+        include(FetchContent)
         # DSP toolchain
-        set(CMAKE_TOOLCHAIN_FILE ../Drivers/${DEVICE}/CMSIS/DSP/gcc.cmake)
+        FetchContent_Declare(
+                DSPlib
+                URL     https://github.com/ARM-software/CMSIS_5/archive/refs/tags/5.8.0.tar.gz
+        )
+
+        FetchContent_MakeAvailable(DSPlib)
+
+        message("Compile with DSP library")
+        message(${dsplib_SOURCE_DIR})
+        set(ROOT ${dsplib_SOURCE_DIR})
+        #        set(ROOT ${CMAKE_SOURCE_DIR}/Drivers/${DEVICE})
+        set(DSP ${ROOT}/CMSIS/DSP)
+        list(APPEND CMAKE_MODULE_PATH "${DSP}")
+        list(APPEND CMAKE_MODULE_PATH "${DSP}/Source")
+
+        set(CMAKE_TOOLCHAIN_FILE ${DSP}/gcc.cmake)
 else()
         # Simple toolchain
         set(CMAKE_TOOLCHAIN_FILE ../CMake/arm-none-eabi-gcc.cmake)
@@ -27,11 +43,6 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 # DSP library (optional)
 if(DSP)
-        message("Compile with DSP library")
-        set(ROOT ${CMAKE_SOURCE_DIR}/Drivers/${DEVICE})
-        set(DSP ${ROOT}/CMSIS/DSP)
-        list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/${DSP}")
-        list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/${DSP}/Source")
         add_subdirectory(${DSP}/Source bin_dsp)
 
         # Take care about other cortex processors
@@ -44,7 +55,9 @@ endif()
 # Wavemin library (optional)
 if(WAVELIB)
         message("Compile with wavelib")
-        add_subdirectory(ThirdParty/wavemin)
+        set(WAVEMIN ThirdParty/wavemin)
+
+        add_subdirectory(${WAVEMIN})
 endif()
 
 # Hard drivers library
@@ -67,15 +80,15 @@ foreach(EXAMPLE IN LISTS ${DEVICE}_examples)
         if(DSP)
                 target_link_libraries(${EXECUTABLE} CMSISDSP)
                 target_include_directories(${EXECUTABLE} SYSTEM PUBLIC
-                        ThirdParty/CMSIS/DSP/Include
-                        ThirdParty/CMSIS/DSP/Include/dsp
+                        ${DSP}/Include
+                        ${DSP}/Include/dsp
                         )
         endif()
 
         if(WAVELIB)
                 target_link_libraries(${EXECUTABLE} wavemin)
                 target_include_directories(${EXECUTABLE} SYSTEM PUBLIC
-                        ThirdParty/wavemin
+                        ${WAVEMIN}
                         )
         endif()
 
@@ -120,7 +133,7 @@ foreach(EXAMPLE IN LISTS ${DEVICE}_examples)
                 -lc
                 -lm
                 -lnosys
-                -Wl,-Map=${PROJECT_NAME}.map,--cref
+                -Wl,-Map=${EXAMPLE}.map,--cref
                 -Wl,--gc-sections
                 -Wl,--print-memory-usage
                 )
