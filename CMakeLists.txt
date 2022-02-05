@@ -87,8 +87,6 @@ foreach(EXAMPLE IN LISTS ${DEVICE}_examples)
         endif()
 
         if(WAVELIB)
-                message("Path")
-                message(${WAVELIB_PATH})
                 target_link_libraries(${EXECUTABLE} wavemin)
                 target_include_directories(${EXECUTABLE} SYSTEM PUBLIC
                         ${WAVELIB_PATH}
