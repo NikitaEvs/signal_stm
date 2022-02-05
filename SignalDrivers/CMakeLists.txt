@@ -25,7 +25,19 @@ set(UTIL_SOURCES
         ${UTIL_PATH}/buffer.hpp
         ${UTIL_PATH}/led.hpp
         ${UTIL_PATH}/logger.hpp
+        ${UTIL_PATH}/data.hpp
+        ${UTIL_PATH}/processor.hpp
         )
+if(WAVELIB)
+        set(UTIL_SOURCES ${UTIL_SOURCES}
+                ${UTIL_PATH}/wavelet.hpp)
+endif()
+
+if(DSP)
+        set(UTIL_SOURCES ${UTIL_SOURCES}
+                ${UTIL_PATH}/rfft.hpp)
+endif()
+
 
 add_library(
         SignalDrivers STATIC
