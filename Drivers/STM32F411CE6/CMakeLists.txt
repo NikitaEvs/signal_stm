@@ -27,16 +27,7 @@ add_library(
 set_target_properties(${LIBRARY} PROPERTIES LINKER_LANGUAGE CXX)
 
 target_compile_definitions(${LIBRARY} PUBLIC
-        -DUSE_FULL_LL_DRIVER
-        -DHSE_VALUE=25000000
-        -DHSE_STARTUP_TIMEOUT=100
-        -DLSE_STARTUP_TIMEOUT=5000
-        -DLSE_VALUE=32768
-        -DHSI_VALUE=16000000
-        -DLSI_VALUE=32000
-        -DVDD_VALUE=3300
-        -DPREFETCH_ENABLE=1
-        -DSTM32F411xE
+        ${SPECIFIC_COMPILE_DEFINITIONS}
         )
 
 target_include_directories(${LIBRARY} SYSTEM PUBLIC
@@ -46,8 +37,7 @@ target_include_directories(${LIBRARY} SYSTEM PUBLIC
         )
 
 target_compile_options(${LIBRARY} PUBLIC
-        -mcpu=cortex-m4
-        -mthumb
+        ${SPECIFIC_COMPILE_OPTIONS}
         )
 
 set_source_files_properties(
@@ -58,8 +48,5 @@ set_source_files_properties(
 
 target_link_options(${LIBRARY} PUBLIC
         -T${CMAKE_SOURCE_DIR}/Drivers/STM32F411CE6/System/STM32F411CEUx_FLASH.ld
-        -mcpu=cortex-m4
-        -mthumb
-        -specs=nano.specs
-        -specs=nosys.specs
+        ${SPECIFIC_LINK_OPTIONS}
         )

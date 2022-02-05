@@ -1,3 +1,4 @@
+-Werror
 -Wuseless-cast
 -Wsuggest-override
 
