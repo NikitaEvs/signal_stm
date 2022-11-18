@@ -23,6 +23,8 @@ set(UTIL_PATH Utils)
 
 set(UTIL_SOURCES
         ${UTIL_PATH}/buffer.hpp
+        ${UTIL_PATH}/codec.hpp
+        ${UTIL_PATH}/converters.hpp
         ${UTIL_PATH}/led.hpp
         ${UTIL_PATH}/logger.hpp
         ${UTIL_PATH}/data.hpp

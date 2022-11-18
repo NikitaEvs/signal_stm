@@ -11,7 +11,7 @@ namespace SD {
 
 namespace Specific {
 
-static constexpr uint32_t kUART_SPEED = 115200;
+static constexpr uint32_t kUART_SPEED = 19200;
 
 /**
  * @brief Util function for converting constants from the Hardware::GPIO type

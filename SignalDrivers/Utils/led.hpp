@@ -43,8 +43,10 @@ class LED {
   }
 
  private:
-  static constexpr Hardware::GPIO kLED_Port = Hardware::GPIO::C;
-  static constexpr Hardware::Pin kLED_Pin = Hardware::Pin::Pin13;
+//  static constexpr Hardware::GPIO kLED_Port = Hardware::GPIO::C;
+  static constexpr Hardware::GPIO kLED_Port = Hardware::GPIO::A;
+//  static constexpr Hardware::Pin kLED_Pin = Hardware::Pin::Pin13;
+  static constexpr Hardware::Pin kLED_Pin = Hardware::Pin::Pin5;
 
   Hardware::IOPort port_;
 };

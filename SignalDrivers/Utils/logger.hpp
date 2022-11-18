@@ -5,14 +5,11 @@
 
 #include "Hardware/uart.hpp"
 
+#include "Utils/converters.hpp"
+
 namespace SD {
 
 namespace Utils {
-
-// TODO: Move to the another file?
-void to_chars(char* start, char* end, uint32_t data);
-void to_chars(char* start, char* end, int32_t data);
-
 
 class Logger : public Hardware::BlockingUART {
  public:
@@ -46,56 +43,6 @@ class Logger : public Hardware::BlockingUART {
     SendBytes(msg_cast_ptr, msg_size);
   }
 };
-
-void to_chars(char* start, char* end, int32_t data) {
-  static constexpr char kSign = '-';
-
-  if (start == end) [[unlikely]] {
-    return;
-  }
-
-  if (data < 0) {
-    *start++ = '-';
-    data = -data;
-  }
-
-  to_chars(start, end, static_cast<uint32_t>(data));
-}
-
-void to_chars(char* start, char* end, uint32_t data) {
-  if (start == end) [[unlikely]] {
-    return;
-  }
-
-  static constexpr uint32_t kBase = 10;
-  static constexpr char kZeroChar = '0';
-
-  if (data == 0) {
-    *start = kZeroChar;
-    return;
-  }
-
-  uint32_t pos = 1;
-  uint32_t base = kBase;
-  while (true) {
-    if (data < base) {
-      break;
-    }
-
-    ++pos;
-    base *= kBase;
-  }
-
-  while (data > 0) {
-    --pos;
-    start[pos] = kZeroChar + (data % kBase);
-    data /= kBase;
-
-    if (start == end) [[unlikely]] {
-      return;
-    }
-  }
-}
 
 } // namespace Utils
 } // namespace SD

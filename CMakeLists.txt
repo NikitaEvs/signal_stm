@@ -59,8 +59,14 @@ if(WAVELIB)
         set(WAVELIB ThirdParty/wavemin)
 
         add_subdirectory(${WAVELIB})
-
 endif()
+
+# base32 library (mandatory)
+set(BASENAME cppcodec)
+message("Compile with ${BASENAME}")
+set(BASELIB ThirdParty/${BASENAME})
+add_subdirectory(${BASELIB})
+
 
 # Hard drivers library
 add_subdirectory(Drivers)
@@ -93,6 +99,12 @@ foreach(EXAMPLE IN LISTS ${DEVICE}_examples)
                         ${WAVELIB_PATH}
                         )
         endif()
+
+        target_link_libraries(${EXECUTABLE} ${BASENAME})
+        target_include_directories(${EXECUTABLE} SYSTEM PUBLIC
+                ${BASELIB}
+                )
+
 
         target_link_libraries(${EXECUTABLE} Drivers)
 

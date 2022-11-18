@@ -29,7 +29,7 @@ add_library(
         ${SOURCES}
 )
 
-set_target_properties(wavemin PROPERTIES LINKER_LANGUAGE C)
+set_target_properties(${LIBRARY} PROPERTIES LINKER_LANGUAGE C)
 
 target_compile_options(${LIBRARY} PUBLIC
         ${SPECIFIC_COMPILE_OPTIONS}
