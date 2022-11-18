@@ -18,29 +18,13 @@
 #include "Hardware/hardware_layout.hpp"
 
 int main() {
-  auto& master = SD::Specific::GetMasterInstance();
-  master.EnableClocking();
-
-  SD::Utils::Logger logger(master);
-
-  while (true) {
-    logger.Log("Hello");
-    master.Delay(1000);
-  }
-}
-
-int main1() {
   // Configure peripherals usage
   const auto kUsingUART = SD::Hardware::UART::UART1;
   const auto kUsingADC = SD::Hardware::ADCDevice::ADC_1;
 
   // Sizes for buffers
-//  const std::size_t kBufferSize = 2048;
   const std::size_t kBufferSize = 4096;
   const std::size_t kDelimiterSize = 1;
-//  const std::size_t kDWTBufferSize = 2149; // From properties of using DWT
-//  const std::size_t kDWTBufferSize = 16; // From properties of using DWT
-//  const std::size_t kDWTBufferSize = 32; // From properties of using DWT
   const std::size_t kDWTBufferSize = 2 * 2 * (7 + 1 + 1); // From properties of using DWT
 
   // Get main supervisor instance and enable default clocking
@@ -61,9 +45,6 @@ int main1() {
   adc.Init();
 
   // Create the storage with the asynchronous support
-//  SD::Utils::AsyncBuffer<uint16_t, /*size=*/kBufferSize + kDelimiterSize>
-//      buffer(master,
-//             /*delimiter=*/std::numeric_limits<uint16_t>::max());
   SD::Utils::AsyncBuffer<uint16_t, /*size=*/kBufferSize>
       buffer(master);
 
@@ -97,14 +78,11 @@ int main1() {
   // Set input and output callbacks
   // which will be executed in interruption handlers
   buffer.SetInputCallback([&buffer, &led, &master]{
-    led.On();
     master.Delay(1000);
     buffer.EnableOutput();
   });
 
   buffer.SetOutputCallback([&buffer, &adc, &led, &master]{
-//    master.Delay(5000);
-    led.Off();
     master.Delay(1000);
     adc.Read();
     buffer.EnableInput();
@@ -119,9 +97,9 @@ int main1() {
 
   // Do something in the main loop while data is processed in the background
   while (true) {
-//    led.On();
-//    master.Delay(1000);
-//    led.Off();
-//    master.Delay(1000);
+    led.On();
+    master.Delay(1000);
+    led.Off();
+    master.Delay(1000);
   }
 }
